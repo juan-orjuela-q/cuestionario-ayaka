@@ -1,0 +1,215 @@
+//Colores
+$c-1: #f2ce2f;
+$c-2: #538E71;
+$c-3: #7db794;
+$c-4: #40a7ba;
+$c-claro: #f2f2f2;
+
+//Carga de fuentes
+//Dosis
+@font-face {
+  font-family: 'Dosis';
+  src: url('/static/fuentes/dosis/Dosis-Regular.eot');
+  src: url('/static/fuentes/dosis/Dosis-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/static/fuentes/dosis/Dosis-Regular.ttf') format('truetype'),
+    url('/static/fuentes/dosis/Dosis-Regular.woff') format('woff'),
+    url('/static/fuentes/dosis/Dosis-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dosis';
+  src: url('/static/fuentes/dosis/Dosis-SemiBold.eot');
+  src: url('/static/fuentes/dosis/Dosis-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('/static/fuentes/dosis/Dosis-SemiBold.ttf') format('truetype'),
+    url('/static/fuentes/dosis/Dosis-SemiBold.woff') format('woff'),
+    url('/static/fuentes/dosis/Dosis-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dosis';
+  src: url('/static/fuentes/dosis/Dosis-ExtraBold.eot');
+  src: url('/static/fuentes/dosis/Dosis-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('/static/fuentes/dosis/Dosis-ExtraBold.ttf') format('truetype'),
+    url('/static/fuentes/dosis/Dosis-ExtraBold.woff') format('woff'),
+    url('/static/fuentes/dosis/Dosis-ExtraBold.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+//Work Sans
+@font-face {
+  font-family: 'WorkSans';
+  src: url('/static/fuentes/work-sans/WorkSans-Medium.eot');
+  src: url('/static/fuentes/work-sans/WorkSans-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/static/fuentes/work-sans/WorkSans-Medium.ttf') format('truetype'),
+    url('/static/fuentes/work-sans/WorkSans-Medium.woff') format('woff'),
+    url('/static/fuentes/work-sans/WorkSans-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans';
+  src: url('/static/fuentes/work-sans/WorkSans-Bold.eot');
+  src: url('/static/fuentes/work-sans/WorkSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/static/fuentes/work-sans/WorkSans-Bold.ttf') format('truetype'),
+    url('/static/fuentes/work-sans/WorkSans-Bold.woff') format('woff'),
+    url('/static/fuentes/work-sans/WorkSans-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+//MISC
+img {
+  max-width: 100%;
+}
+
+//Estilos tipograficos
+$f-h1 : normal 900 4rem/1 'Dosis',
+sans-serif;
+$f-h2 : normal 400 3rem/1 'Dosis',
+sans-serif;
+$f-h3 : normal 900 4rem/1 'Dosis',
+sans-serif;
+$f-h4 : normal 900 4rem/1 'Dosis',
+sans-serif;
+$f-h5 : normal 900 4rem/1 'Dosis',
+sans-serif;
+$f-h6 : normal 900 4rem/1 'Dosis',
+sans-serif;
+$f-p : normal 400 1.5rem/1.2 'Dosis',
+sans-serif;
+
+body {
+  font: $f-p
+}
+
+h1 {
+  font: $f-h1
+}
+
+h2 {
+  font: $f-h2;
+  margin-bottom: 1em;
+  strong {
+    font-weight: 900;
+  }
+}
+
+.worksans {
+  font-family: 'Worksans'
+}
+
+.lg {
+  font-size: 3rem;
+}
+
+//Botones
+.btn {
+  display: inline-block;
+  padding: .5rem 2rem .85rem;
+  border-radius: 200px;
+  font: normal 900 2.5rem/1 'Dosis', sans-serif;
+  margin: 1rem auto;
+  text-decoration: none;
+  transition: all .5s ease;
+  background: url('/static/img/green-dust-and-scratches.png') repeat center;
+  background-size: 40%;
+  
+}
+
+.btn-verde {
+  background-color: $c-2;
+  color: white;
+  box-shadow: 0 0 0 0 $c-2;
+
+  &:hover {
+    color: black;
+    box-shadow: 0 0 0 .5rem $c-2;
+  }
+}
+
+.btn-amarillo {
+  background-color: $c-1;
+  color: black;
+  box-shadow: 0 0 0 0 $c-1;
+
+  &:hover {
+    color: white;
+    box-shadow: 0 0 0 .5rem $c-1;
+  }
+}
+
+//Espaciado
+
+.fila {
+  display: flex;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.cont {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0 15px
+}
+
+//Formularios
+input {
+  background: white;
+  padding: .5rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  transition: all .5s ease;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  width: 100%;
+  display: block;
+
+  &:focus {
+    box-shadow: 0 0 0 .25rem $c-1;
+  }
+
+  &[type="radio"] {
+    display: none;
+    width: initial;
+    border-radius: 100%;
+  }
+  &[type="radio"] + label {
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+    margin-right: 1rem;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: white;
+      border-radius: 100%;
+      box-shadow: 0 0 0 .125rem $c-2 inset;
+      left: 0; 
+      transition: all .25s ease;
+    }
+  }
+  &[type="radio"]:checked + label:after {
+    box-shadow: 0 0 0 .5rem $c-2 inset;
+  }
+}
+
+.form-grupo {
+  margin-bottom: 2.5rem;
+
+  p {
+    margin-bottom: .5rem;
+    font-weight: 900;
+  }
+}

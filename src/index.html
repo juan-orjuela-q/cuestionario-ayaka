@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lupa Creativa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="contenedor-maestro">
+        <!-- Pantalla 1 -->
+        <div id="p_in_1" class="pantalla info">
+            <div class="graf">
+                <div class="el-happy"><img src="/static/img/graf/el-1-feliz@1x.png" alt=""></div>
+                <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
+                <div class="el-circBorde"><img src="/static/img/graf/el-1-borde@1x.png" alt=""></div>
+
+            </div>
+            <main>
+                <div class="cont">
+                    <h1>
+                        <img src="/static/img/tit-intro.svg"
+                            alt="Te damos la bienvenida a las creencias y temores que nos limitan">
+                        <span>Te damos la bienvenida a las creencias y temores que nos limitan</span>
+                    </h1>
+                    <p class="lg worksans">
+                        ¿Te ha pasado que cuando tienes un impulso y un sueño por hacer algo o materializar una idea,
+                        aparece <strong>una voz o un miedo que hace que retrocedas</strong> y no lo hagas?
+                    </p>
+                    <p class="lg worksans">
+                        <strong>Ayúdanos a descubrir cuales son esas creencias y temores que impiden que lo
+                            logremos.</strong>
+                    </p>
+                    <a href="#" data-destino="p_in_2" class="btn btn-verde">Iniciemos</a>
+                </div>
+            </main>
+            <footer>
+                <div class="cont">
+                    <div class="fila">
+                        <div class="col"><img src="/static/img/lupa-creativa.svg" alt="Lupa Creativa"> </div>
+                        <div class="col"><img src="/static/img/credito-ayaka.svg" alt="Diseñado por Ayaka"> </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Pantalla 2 -->
+        <div id="p_in_2" class="pantalla pregunta activo">
+            <div class="graf">
+                <div class="el-happy"><img src="/static/img/graf/el-2-feliz@1x.png" alt=""></div>
+                <div class="el-circ"><img src="/static/img/graf/el-2-circulo@1x.png" alt=""></div>
+                <div class="el-circBorde"><img src="/static/img/graf/el-2-borde@1x.png" alt=""></div>
+            </div>
+            <main>
+                <div class="cont">
+                    <h2>¡Antes de continuar,<br>
+                        <strong>deseamos mucho conocerte!</strong>
+                    </h2>
+                    <div class="form-grupo">
+                        <input  type="text" placeholder="¿Cuál es tu nombre completo?">
+                    </div>
+                    <div class="form-grupo">
+                        <p>¿Cuál es tu género?</p>
+                        <input type="radio" id="gen_hombre" name="genero" value="Hombre">
+                        <label for="gen_hombre">Hombre</label>
+
+                        <input type="radio" id="gen_mujer" name="genero" value="Mujer">
+                        <label for="gen_mujer">Mujer</label>
+
+                        <input type="radio" id="gen_nobinario" name="genero" value="No binario">
+                        <label for="gen_nobinario">No binario</label>
+
+                        <input type="radio" id="gen_otro" name="genero" value="Otro">
+                        <label for="gen_otro">Otro</label>
+                        <input type="text" placeholder="¿Cuál?" name="" id="">
+                    </div>
+                    <div class="form-grupo">
+                        <input placeholder="¿ Cuál es tu profesión? (la que ejerces, no necesariamente tu título profesional)" type="text">
+                    </div>
+                    <div class="form-grupo">
+                        <input placeholder="¿Cuál es tu correo electrónico?" type="email">
+                    </div>
+                    <div class="form-grupo">
+                        <p>¿Quieres que compartamos información contigo a este correo?</p>
+                        <input type="radio" id="comp_si" name="compartir_info" value="Sí">
+                        <label for="comp_si"><strong>¡SÍ!</strong> Me encantan sus creaciones</label>
+
+                        <input type="radio" id="comp_no" name="compartir_info" value="No">
+                        <label for="comp_no"><strong>¡NO!</strong> Solo quiero participar de este estudio</label>
+                    </div>
+
+                    <a href="#" data-destino="p_in_3" class="btn btn-amarillo">Continuar</a>
+                </div>
+            </main>
+        </div>
+        <!-- Pantalla 3 -->
+        <div id="p_in_3" class="pantalla anim">
+            <div class="graf">
+                <div class="el-happy"><img src="/static/img/graf/el-1-feliz@1x.png" alt=""></div>
+                <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
+                <div class="el-circBorde"><img src="/static/img/graf/el-1-borde@1x.png" alt=""></div>
+            </div>
+        </div>
+        <!-- Pantalla 4 -->
+        <div id="p_in_4" class="pantalla pregunta">
+            <div class="graf">
+                <div class="el-happy"><img src="/static/img/graf/el-1-feliz@1x.png" alt=""></div>
+                <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
+                <div class="el-circBorde"><img src="/static/img/graf/el-1-borde@1x.png" alt=""></div>
+            </div>
+            <main>
+                <div class="cont">
+                    ...
+                    <a href="#" data-destino="p_in_5" class="btn btn-amarillo">Continuar</a>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
