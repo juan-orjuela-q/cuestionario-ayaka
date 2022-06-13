@@ -46,7 +46,37 @@ body {
 
     }
 }
-
+//Botones LG
+.radio-lg {
+    
+    label{
+        padding: .125rem !important;
+        width: 10rem;
+        height: 10rem;
+        text-align: center;
+        display: inline-block;
+        border-radius: 100%;
+        font-size: 4rem;
+        line-height: 10rem;
+        margin-right: 1em !important;
+        box-shadow: 0 0 0 0 $c-1;
+        transition: all .5s ease;
+        &.ultimo {
+            margin-right: 0 !important;
+        }
+        &:after {
+            display: none;
+        }
+    }
+    
+    input:checked + label {
+        box-shadow: 0 0 0 .75rem $c-1;
+        color: white;
+    }
+    &.amarillo label {
+        background: $c-1;
+    }
+}
 //Pantallas
 #p_in_1 {
     text-align:center;
@@ -123,5 +153,40 @@ body {
         bottom: 0;
         right: 0;
         transform: translate(50%, 30%);
+    }
+}
+#p_in_4 {
+    .form-grupo {
+        margin: 20vh 0 5vh;
+    }
+    #pcreativa_no ~ input {
+        display: none;
+        margin: 1.5rem auto 0;
+        max-width: 480px; 
+    }
+    #pcreativa_no:checked ~ input {
+        display: block;
+    }
+    .el-happy {
+        max-width: 70vw;
+        width: 70%;
+        top: 55%;
+        left: 25%;
+        z-index: 2;
+        
+    }
+    .el-circ{
+        max-width: 100vw;
+        width: 100%;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 60%);
+    }
+    .el-circBorde{
+        max-width: 50vw;
+        width: 50%;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -30%);
     }
 }
