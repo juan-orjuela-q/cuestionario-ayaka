@@ -3,7 +3,6 @@ body {
 
     min-height: 100vh;
 }
-
 #contenedor-maestro {
     background: $c-claro url('/static/img/textura-fondo.jpg') no-repeat center;
     background-size: cover;
@@ -83,8 +82,51 @@ body {
         background: $c-1;
     }
 }
+//Seleccion multiple
+.opcion1 span::before {
+    content: "A";
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    font-weight: 900;
+}
 
-//Pantallas
+.opcion2 span::before {
+    content: "B";
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.opcion3 span::before {
+    content: "C";
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.opcion4 span::before {
+    content: "D";
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    font-weight: 900;
+}
+/*
+====================
+Pantalla INTRO
+====================
+*/
 #p_in_1 {
     text-align: center;
 
@@ -315,104 +357,6 @@ body {
     }
 }
 
-#p_f_2 {
-    main {
-        align-items: stretch;
-
-        .cont {
-            display: flex;
-            align-items: stretch;
-        }
-    }
-
-    .col:first-child {
-        text-align: left;
-        align-self: center;
-
-        p {
-            max-width: 400px;
-        }
-
-        .btn {
-            font-size: 1.5rem;
-            margin-top: 4rem;
-            position: relative;
-
-            &:after {
-                content: '';
-                width: 90px;
-                height: 90px;
-                position: absolute;
-                bottom: 80%;
-                left: 90%;
-                background: url('/static/img/flecha.png') no-repeat center;
-                background-size: contain;
-            }
-        }
-    }
-
-    .col:last-child {
-        align-self: flex-end;
-
-        img {
-            display: block;
-            margin: 0 auto -34px;
-            max-width: 320px;
-        }
-    }
-
-    .el-circBorde {
-        transform: translate(-50%, -50%);
-    }
-
-    .el-happy {
-        width: 50%;
-        bottom: 5%;
-        left: 50%;
-        transform: translate(-15%);
-    }
-
-    .cont-compartir {
-        background: url('/static/img/graf/el-12-circulo@1x.png') no-repeat center top;
-        background-size: cover;
-        width: 45vw;
-        height: 12.5vw;
-        min-height: 150px;
-        padding: 8.5% 0 4% 0;
-        position: relative;
-        z-index: 2;
-    }
-}
-
-#p_contacto {
-    .graf {
-        background: $c-4multiply;
-        mix-blend-mode: multiply;
-    }
-
-    .fila {
-        align-items: center;
-        text-align: left;
-    }
-
-    label {
-        font-size: 1rem;
-        font-weight: 900;
-        margin-bottom: .5em;
-        display: block;
-    }
-
-    .col {
-        width: 50%;
-    }
-
-    .el-happy {
-        width: 30%;
-        top: 20%;
-        left: -3%;
-    }
-}
-
 #p_in_5 {
     .form-grupo {
         margin: 10vh 0 5vh;
@@ -540,46 +484,109 @@ body {
 
 
 }
+/*
+====================
+Pantalla FINALES
+====================
+*/
+#p_f_2 {
+    main {
+        align-items: stretch;
 
+        .cont {
+            display: flex;
+            align-items: stretch;
+        }
+    }
 
+    .col:first-child {
+        text-align: left;
+        align-self: center;
 
+        p {
+            max-width: 400px;
+        }
 
-.opcion1 span::before {
-    content: "A";
-    position: absolute;
-    left: 35px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 4rem;
-    font-weight: 900;
+        .btn {
+            font-size: 1.5rem;
+            margin-top: 4rem;
+            position: relative;
+
+            &:after {
+                content: '';
+                width: 90px;
+                height: 90px;
+                position: absolute;
+                bottom: 80%;
+                left: 90%;
+                background: url('/static/img/flecha.png') no-repeat center;
+                background-size: contain;
+            }
+        }
+    }
+
+    .col:last-child {
+        align-self: flex-end;
+
+        img {
+            display: block;
+            margin: 0 auto -34px;
+            max-width: 320px;
+        }
+    }
+
+    .el-circBorde {
+        transform: translate(-50%, -50%);
+    }
+
+    .el-happy {
+        width: 50%;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-15%);
+    }
+
+    .cont-compartir {
+        background: url('/static/img/graf/el-12-circulo@1x.png') no-repeat center top;
+        background-size: cover;
+        width: 45vw;
+        height: 12.5vw;
+        min-height: 150px;
+        padding: 8.5% 0 4% 0;
+        position: relative;
+        z-index: 2;
+    }
 }
 
-.opcion2 span::before {
-    content: "B";
-    position: absolute;
-    left: 35px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 4rem;
-    font-weight: 900;
+#p_contacto {
+    .graf {
+        background: $c-4multiply;
+        mix-blend-mode: multiply;
+    }
+
+    .fila {
+        align-items: center;
+        text-align: left;
+    }
+
+    label {
+        font-size: 1rem;
+        font-weight: 900;
+        margin-bottom: .5em;
+        display: block;
+    }
+
+    .col {
+        width: 50%;
+    }
+
+    .el-happy {
+        width: 30%;
+        top: 20%;
+        left: -3%;
+    }
 }
 
-.opcion3 span::before {
-    content: "C";
-    position: absolute;
-    left: 35px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 4rem;
-    font-weight: 900;
-}
 
-.opcion4 span::before {
-    content: "D";
-    position: absolute;
-    left: 35px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 4rem;
-    font-weight: 900;
-}
+
+
