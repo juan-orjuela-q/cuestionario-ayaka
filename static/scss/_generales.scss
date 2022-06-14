@@ -1,8 +1,10 @@
 //Colores
 $c-1: #f2ce2f;
 $c-2: #538E71;
+$c-2multiply: #99caaa;
 $c-3: #7db794;
 $c-4: #40a7ba;
+$c-4multiply: #59e2c6;
 $c-claro: #f2f2f2;
 
 //Carga de fuentes
@@ -67,7 +69,11 @@ $c-claro: #f2f2f2;
 img {
   max-width: 100%;
 }
-
+@keyframes rotar {
+  to {
+      transform: rotate(360deg);
+  }
+}
 //Estilos tipograficos
 $f-h1 : normal 900 4rem/1 'Dosis',
 sans-serif;
@@ -109,7 +115,7 @@ h2 {
 }
 
 //Botones
-.btn {
+.btn, input[type='submit'] {
   display: inline-block;
   padding: .5rem 2rem .85rem;
   border-radius: 200px;
@@ -123,7 +129,7 @@ h2 {
 }
 
 .btn-verde {
-  background-color: $c-2;
+  background-color: $c-2 !important;
   color: white;
   box-shadow: 0 0 0 0 $c-2;
 
@@ -134,7 +140,7 @@ h2 {
 }
 
 .btn-amarillo {
-  background-color: $c-1;
+  background-color: $c-1 !important;
   color: black;
   box-shadow: 0 0 0 0 $c-1;
 
@@ -162,7 +168,11 @@ h2 {
 }
 
 //Formularios
-input {
+textarea {
+  min-height: 5rem !important;
+  min-width: 100%;
+}
+input, select, textarea {
   background: white;
   padding: .5rem 1.5rem;
   border-radius: 1rem;
@@ -171,7 +181,15 @@ input {
   transition: all .5s ease;
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   display: block;
+  min-height: 3rem;
+
+  &[type="submit"] {
+    width: initial;
+    cursor: pointer;
+  }
 
   &:focus {
     box-shadow: 0 0 0 .25rem $c-1;

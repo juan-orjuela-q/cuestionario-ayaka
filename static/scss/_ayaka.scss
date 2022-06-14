@@ -1,8 +1,9 @@
 body {
-    
-    
+
+
     min-height: 100vh;
 }
+
 #contenedor-maestro {
     background: $c-claro url('/static/img/textura-fondo.jpg') no-repeat center;
     background-size: cover;
@@ -10,6 +11,7 @@ body {
     width: 100%;
     height: 100%;
 }
+
 .pantalla {
     position: absolute;
     width: 100%;
@@ -36,20 +38,21 @@ body {
         pointer-events: none;
         z-index: -1;
         overflow: hidden;
-        
+
 
         div {
             position: absolute;
             transition: all .5s ease 1s;
-            
+
         }
 
     }
 }
+
 //Botones LG
 .radio-lg {
-    
-    label{
+
+    label {
         padding: .125rem !important;
         width: 10rem;
         height: 10rem;
@@ -61,33 +64,40 @@ body {
         margin-right: 1em !important;
         box-shadow: 0 0 0 0 $c-1;
         transition: all .5s ease;
+
         &.ultimo {
             margin-right: 0 !important;
         }
+
         &:after {
             display: none;
         }
     }
-    
-    input:checked + label {
+
+    input:checked+label {
         box-shadow: 0 0 0 .75rem $c-1;
         color: white;
     }
+
     &.amarillo label {
         background: $c-1;
     }
 }
+
 //Pantallas
 #p_in_1 {
-    text-align:center;
+    text-align: center;
+
     main .cont {
         margin-bottom: 200px;
     }
+
     h1 {
         span {
             display: none
         }
     }
+
     footer {
         background: white;
         padding: 20px 0;
@@ -98,95 +108,303 @@ body {
         .col:first-child {
             text-align: left;
         }
+
         .col:last-child {
             text-align: right;
         }
     }
+
     .el-happy {
         max-width: 50vw;
         top: -10%;
         left: 5%;
-        
+
     }
-    .el-circ{
+
+    .el-circ {
         max-width: 35vw;
         bottom: 0;
         left: 0;
         transform: translate(-30%, 30%);
     }
-    .el-circBorde{
+
+    .el-circBorde {
         max-width: 25vw;
         bottom: 0;
         right: 0;
         transform: translate(50%, 30%);
     }
 }
+
 #p_in_2 {
+    main {
+        transition: opacity .3s ease .25s, transform 2s ease;
+    }
+
     .cont {
         max-width: 800px;
     }
-    #gen_otro ~ input {
+
+    #gen_otro~input {
         display: none;
         margin: .25rem auto 0;
-        max-width: 400px; 
+        max-width: 400px;
     }
-    #gen_otro:checked ~ input {
+
+    #gen_otro:checked~input {
         display: block;
     }
+
+    .graf {
+        background: $c-claro url('/static/img/textura-fondo.jpg') no-repeat center;
+        background-size: cover;
+    }
+
     .el-happy {
         max-width: 70vw;
         width: 90%;
         top: -25%;
         left: -10%;
         z-index: 2;
-        
+
+        img {
+            transition: transform .5s ease;
+        }
+
     }
-    .el-circ{
-        max-width: 100vw;
-        width: 100%;
+
+    .el-circ {
+
+        width: 100vw;
+        height: 100vw;
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 60%);
+        background: $c-2multiply;
+        border-radius: 100%;
+        mix-blend-mode: multiply;
+        transition: all .8s ease-in .5s;
+
+
+        /*&.el-circ:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background: $c-2;
+            opacity:.5;
+            mix-blend-mode: initial;
+        }*/
+
+        img {
+            display: none;
+        }
     }
-    .el-circBorde{
+
+    .el-circBorde {
         max-width: 25vw;
         bottom: 0;
         right: 0;
         transform: translate(50%, 30%);
+
+        img {
+            transition: transform .5s ease;
+        }
+    }
+
+    &.animando {
+        main {
+            opacity: 0;
+            transform: translateY(25%);
+        }
+
+        .el-circ {
+
+            width: 500vw;
+            height: 500vw;
+        }
+
+        .el-circBorde img {
+            transform: translate(200%, 200%)
+        }
+
+        .el-happy img {
+            transform: translate(-200%, -200%)
+        }
     }
 }
+
+#p_in_3 {
+    main {
+        color: white;
+    }
+
+    .graf {
+        background: $c-2multiply;
+        mix-blend-mode: multiply;
+
+        .el-happy {
+            width: 45vw;
+            animation: rotar 5s linear infinite;
+            transform-origin: 100% -150%;
+            z-index: 2;
+        }
+
+        .el-circ {
+            animation: rotar 15s linear infinite;
+            width: 65vw;
+            max-width: 1000px;
+            height: 65vw;
+            max-height: 1000px;
+            right: 45%;
+            bottom: 5%;
+
+        }
+
+        .el-circBorde {
+            animation: rotar 12s linear infinite;
+            width: 40vw;
+            max-width: 700px;
+            height: 40vw;
+            max-height: 700px;
+            left: 55%;
+            bottom: 25%;
+        }
+    }
+}
+
 #p_in_4 {
     .form-grupo {
         margin: 20vh 0 5vh;
     }
-    #pcreativa_no ~ input {
+
+    #pcreativa_no~input {
         display: none;
         margin: 1.5rem auto 0;
-        max-width: 480px; 
+        max-width: 480px;
     }
-    #pcreativa_no:checked ~ input {
+
+    #pcreativa_no:checked~input {
         display: block;
     }
+
     .el-happy {
         max-width: 70vw;
         width: 70%;
         top: 55%;
         left: 25%;
         z-index: 2;
-        
+
     }
-    .el-circ{
+
+    .el-circ {
         max-width: 100vw;
         width: 100%;
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 60%);
     }
-    .el-circBorde{
+
+    .el-circBorde {
         max-width: 50vw;
         width: 50%;
         top: 0;
         left: 50%;
         transform: translate(-50%, -30%);
     }
+}
+
+#p_f_2 {
+    main {
+        align-items: stretch;
+
+        .cont {
+            display: flex;
+            align-items: stretch;
+        }
+    }
+
+    .col:first-child {
+        text-align: left;
+        align-self: center;
+
+        p {
+            max-width: 400px;
+        }
+
+        .btn {
+            font-size: 1.5rem;
+            margin-top: 4rem;
+            position: relative;
+
+            &:after {
+                content: '';
+                width: 90px;
+                height: 90px;
+                position: absolute;
+                bottom: 80%;
+                left: 90%;
+                background: url('/static/img/flecha.png') no-repeat center;
+                background-size: contain;
+            }
+        }
+    }
+
+    .col:last-child {
+        align-self: flex-end;
+
+        img {
+            display: block;
+            margin: 0 auto -34px;
+            max-width: 320px;
+        }
+    }
+
+    .el-circBorde {
+        transform: translate(-50%, -50%);
+    }
+
+    .el-happy {
+        width: 50%;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-15%);
+    }
+
+    .cont-compartir {
+        background: url('/static/img/graf/el-12-circulo@1x.png') no-repeat center top;
+        background-size: cover;
+        width: 45vw;
+        height: 12.5vw;
+        min-height: 150px;
+        padding: 8.5% 0  4% 0;
+        position: relative;
+        z-index: 2;
+    }
+}
+#p_contacto {
+    .graf {
+        background: $c-4multiply;
+        mix-blend-mode: multiply;
+    }
+    .fila {
+        align-items: center;
+        text-align:left;
+    }
+    label {
+        font-size: 1rem;
+        font-weight: 900;
+        margin-bottom: .5em;
+        display: block;
+    }
+    .col {
+        width: 50%;
+    }
+    .el-happy {
+        width: 30%;
+        top: 20%;
+        left: -3%;
+    }
+    
 }
