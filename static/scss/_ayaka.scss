@@ -484,6 +484,279 @@ Pantalla INTRO
 
 
 }
+#p_in_am1 {
+    .form-grupo {
+        margin: 20vh 0 5vh;
+    }
+
+    #pcreativa_no~input {
+        display: none;
+        margin: 1.5rem auto 0;
+        max-width: 480px;
+    }
+
+    #pcreativa_no:checked~input {
+        display: block;
+    }
+
+    .el-happy {
+        max-width: 70vw;
+        width: 70%;
+        top: 55%;
+        left: 25%;
+        z-index: 2;
+
+    }
+
+    .el-circ{
+        max-width: 100vw;
+        width: 100%;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, 60%);
+    }
+
+    .el-circBorde {
+        max-width:70vw;
+        width: 70%;
+        top: -80vh;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+    }
+
+    .radio-lg.verde label {
+         
+        background-image: url("/static/img/graf/circle.png");
+        background-size: contain;
+    }
+    .btn-amarillo {
+
+        float: right;
+        margin-right: 6vw;
+    }
+    
+}
+#p_in_am2 {
+    .form-grupo {
+         
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin:  10vh auto 3%;
+    }
+
+    #pcreativa_no~input {
+        display: none;
+        margin: 1.5rem auto 0;
+        max-width: 480px;
+    }
+
+    #pcreativa_no:checked~input {
+        display: block;
+    }
+
+    .el-happy {
+        max-width: 50vw;
+        width: 100%;
+        top: -50%;
+        right: -35%;
+        z-index: -1;
+    }
+    .el-circ  {
+        max-width: 100vw;
+        width: 100%;
+        bottom: -55%;
+        left: 0;
+        right: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .el-circBorde {
+        max-width: 50vw;
+        width: 50%;
+        top: 0%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .txt {
+        font-size: 2rem;
+      }
+    a.pieza {
+        cursor: pointer;
+        text-align: left;
+        margin: 1px;
+        font-size: 1rem;
+        max-width: 13%;
+    }
+
+}
+
+.overlay {
+
+    background-color: #8a8484cc;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index:99 ;
+    display: none;
+
+    .modal {
+
+        position: fixed; 
+        width: 80%;
+        height: 80vh;
+        z-index: 99999; 
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        max-width: 1442px;
+    
+
+        .fila {
+
+            width: 100%;
+            .izq {
+                width: 40%;
+                flex: initial;
+                position: relative;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .der {
+                width: 60%;
+                background-color: #fff;
+                margin-left:10px ;
+                padding: 0px 46px;
+
+                .cerrar{
+                    background-image: url("/static/img/graf/circle.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 60px;
+                    width: 60px;
+                    position: absolute;
+                    right: -20px;
+                    top: -20px;
+
+                    svg{
+                        height: 100%;
+                        width: 100%;
+                    } 
+                     
+                }
+                .container {
+                    display: block;
+                    position: relative;
+                    padding-left: 40px;
+                    margin-bottom: 1.2rem;
+                    cursor: pointer;
+                    font-size: 22px;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+                  
+                  /* Hide the browser's default checkbox */
+                  .container input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                  }
+                  
+                  /* Create a custom checkbox */
+                  .checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 25px;
+                    width: 25px;
+                    border: 3px solid #538e71;
+
+                    
+                  }
+                  :focus-visible {
+                    outline: -webkit-focus-ring-color auto 0px!important;
+                }
+                  
+                  /* On mouse-over, add a grey background color */
+                  .container:hover input ~ .checkmark {
+                    background-color: #ccc;
+                  }
+                  
+                  /* When the checkbox is checked, add a blue background */
+                  .container input:checked ~ .checkmark {
+                    background-color: #538e71;
+                  }
+                  
+                  /* Create the checkmark/indicator (hidden when not checked) */
+                  .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                  }
+                  
+                  /* Show the checkmark when checked */
+                  .container input:checked ~ .checkmark:after {
+                    display: block;
+                  }
+                  
+                  /* Style the checkmark/indicator */
+                  .container .checkmark:after {
+                    left: 9px;
+                    top: 5px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                  }
+                .btn-amarillo{
+                    float: right;
+                }
+            }
+
+
+             
+        }
+
+  
+
+        
+    }
+}
+.mostrar {
+    display: initial!important;
+}
+
+
+
+
+ 
+
 /*
 ====================
 Pantalla FINALES
@@ -584,6 +857,7 @@ Pantalla FINALES
         width: 30%;
         top: 20%;
         left: -3%;
+    
     }
 }
 
