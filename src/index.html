@@ -18,7 +18,7 @@
         ========== 
         -->
         <!-- Pantalla 1 -->
-        <div id="p_in_1" class="pantalla info">
+        <div id="p_in_1" class="pantalla info activo">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-1-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
@@ -40,7 +40,7 @@
                         <strong>Ayúdanos a descubrir cuales son esas creencias y temores que impiden que lo
                             logremos.</strong>
                     </p>
-                    <a href="#" data-destino="p_in_2" class="btn btn-verde">Iniciemos</a>
+                    <a href="#" data-origen="p_in_1" data-destino="p_in_2" class="btn btn-verde">Iniciemos</a>
                 </div>
             </main>
             <footer>
@@ -99,7 +99,7 @@
                         <label for="comp_no"><strong>¡NO!</strong> Solo quiero participar de este estudio</label>
                     </div>
 
-                    <a href="#" data-destino="p_in_3" class="btn btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_2" data-destino="p_in_3" class="btn btn-amarillo">Continuar</a>
                 </div>
             </main>
         </div>
@@ -136,7 +136,7 @@
                         <label class="ultimo" for="pcreativa_no"><strong>¡NO!</strong></label>
                         <input type="text" placeholder="¿Por qué?" name="" id="">
                     </div>
-                    <a href="#" data-destino="p_in_5" class="btn btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_4" data-destino="p_in_5" class="btn btn-amarillo">Continuar</a>
                 </div>
             </main>
         </div>
@@ -162,12 +162,12 @@
                             <label class="ultimo" for="pcreativa_no"><strong>¡NO!</strong></label>
                             <input type="text" placeholder="¿Por qué?" name="" id=""> -->
                     </div>
-                    <a href="#" data-destino="p_in_5" class="btn btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_5" data-destino="p_in_6" class="btn btn-amarillo">Continuar</a>
                 </div>
             </main>
         </div>
         <!-- Pantalla 7 -->
-        <div id="p_in_7" class="pantalla pregunta activo">
+        <div id="p_in_7" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-5-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -195,10 +195,6 @@
                         <input type="radio" id="opcion4" name="compartir_info" value="No">
                         <label class="ultimo opcion4" for="opcion4"><span><strong>No he encontrado algo que me
                                     apasione</strong></span></label>
-
-
-
-
                     </div>
                     <a href="#" data-destino="p_in_5" class="btn btn-verde">Continuar</a>
                 </div>
