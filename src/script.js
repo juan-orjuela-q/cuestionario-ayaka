@@ -8,22 +8,29 @@ botones.forEach(btn => {
         event.preventDefault()
         const destino = document.getElementById(btn.dataset.destino)
         const origen = document.getElementById(btn.dataset.origen)
-        
-        console.log('Estoy en ', origen)
-        console.log('Voy para ', destino)
-        origen.classList.add('saliendo')
-        destino.classList.add('entrando')
+        avanzar(origen,destino)
 
-        setTimeout(() => {
-            origen.classList.remove('saliendo')
-            origen.classList.remove('activo')
-            destino.classList.remove('entrando')
-            destino.classList.add('activo')
-        }, 4000);
+        if(destino.classList.contains('anim')) {
+            setTimeout(() => {
+                //Avanzar
+                avanzar(destino, document.getElementById(destino.dataset.destino))
+            }, 9000);
+        }
 
     })
 })
 
+function avanzar(origen, destino) {
+    origen.classList.add('saliendo')
+    destino.classList.add('entrando')
+
+    setTimeout(() => {
+        origen.classList.remove('saliendo')
+        origen.classList.remove('activo')
+        destino.classList.remove('entrando')
+        destino.classList.add('activo')
+    }, 3000);
+}
 //Temores
 const temores = []
 const pops = document.querySelectorAll('.pieza')

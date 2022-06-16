@@ -29,6 +29,7 @@ body {
         top: 0;
         display: flex;
         align-items: center;
+        transition: transform 1.25s ease 1.5s, opacity 1s ease 1.75s;
     }
 
     .graf {
@@ -46,6 +47,13 @@ body {
 
         }
 
+    }
+
+    &.saliendo, &.entrando {
+        main {
+            transform: translateY(25vh);
+            opacity: 0;
+        }
     }
 }
 
@@ -149,6 +157,7 @@ Pantalla INTRO
         position: absolute;
         bottom: 0;
         width: 100%;
+        transition: transform .75s ease-out 1s;
 
         .col:first-child {
             text-align: left;
@@ -184,6 +193,10 @@ Pantalla INTRO
     &.saliendo {
         .el-circ {
             animation: slide-out-fwd-center 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+
+        footer {
+            transform: translateY(100%);
         }
 
         @keyframes slide-out-fwd-center {
@@ -257,11 +270,10 @@ Pantalla INTRO
         z-index: 2;
 
         img {
-            transition: transform .5s ease;
+            /*anim*/transition: transform 1s ease 1s;
         }
 
     }
-
     .el-circ {
 
         width: 100vw;
@@ -272,19 +284,7 @@ Pantalla INTRO
         background: $c-2multiply;
         border-radius: 100%;
         mix-blend-mode: multiply;
-        transition: all .8s ease-in .5s;
-
-
-        /*&.el-circ:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-            background: $c-2;
-            opacity:.5;
-            mix-blend-mode: initial;
-        }*/
+        /*anim*/transition: transform 1.5s ease;
 
         img {
             display: none;
@@ -298,20 +298,13 @@ Pantalla INTRO
         transform: translate(50%, 30%);
 
         img {
-            transition: transform .5s ease;
+            /*anim*/transition: transform 1s ease 1s;
         }
     }
 
-    &.animando {
-        main {
-            opacity: 0;
-            transform: translateY(25%);
-        }
-
+    &.entrando, &.saliendo {
         .el-circ {
-
-            width: 500vw;
-            height: 500vw;
+            transform: translate(-50%, 260%);
         }
 
         .el-circBorde img {
@@ -332,12 +325,14 @@ Pantalla INTRO
     .graf {
         background: $c-2multiply;
         mix-blend-mode: multiply;
+        transition: opacity .5s ease;
 
         .el-happy {
             width: 45vw;
             animation: rotar 5s linear infinite;
             transform-origin: 100% -150%;
             z-index: 2;
+            /*anim*/opacity: 1;
         }
 
         .el-circ {
@@ -348,6 +343,7 @@ Pantalla INTRO
             max-height: 1000px;
             right: 45%;
             bottom: 5%;
+            /*anim*/transition: right 1s ease 1s;
 
         }
 
@@ -359,7 +355,25 @@ Pantalla INTRO
             max-height: 700px;
             left: 55%;
             bottom: 25%;
+            opacity: 1;
+            /*anim*/transition: transform 1s ease 1s, opacity .75s ease .75s;
         }
+    }
+    &.entrando, &.saliendo {
+        .graf {
+            opacity: 0;
+        }
+        .el-happy {
+            opacity: 0
+        }
+        .el-circ {
+            right: 200%;
+        }
+        .el-circBorde {
+            /*anim*/transform: translateX(20%);
+            /*anim*/opacity: 0;
+        }
+
     }
 }
 
