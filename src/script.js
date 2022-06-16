@@ -9,6 +9,8 @@ botones.forEach(btn => {
         const destino = document.getElementById(btn.dataset.destino)
         const origen = document.getElementById(btn.dataset.origen)
         
+        console.log('Estoy en ', origen)
+        console.log('Voy para ', destino)
         origen.classList.add('saliendo')
         destino.classList.add('entrando')
 

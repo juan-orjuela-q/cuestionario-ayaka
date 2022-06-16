@@ -168,6 +168,7 @@ Pantalla INTRO
         bottom: 0;
         left: 0;
         transform: translate(-30%, 30%);
+        transition: all 1s ease .5s;
     }
 
     .el-circBorde {
@@ -175,6 +176,12 @@ Pantalla INTRO
         bottom: 0;
         right: 0;
         transform: translate(50%, 30%);
+    }
+    &.saliendo {
+        .el-circ {
+            transform: translate(-130%, 30%);
+        }
+        
     }
 }
 
