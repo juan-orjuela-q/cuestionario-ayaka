@@ -3,6 +3,7 @@ body {
 
     min-height: 100vh;
 }
+
 #contenedor-maestro {
     background: $c-claro url('/static/img/textura-fondo.jpg') no-repeat center;
     background-size: cover;
@@ -82,6 +83,7 @@ body {
         background: $c-1;
     }
 }
+
 //Seleccion multiple
 .opcion1 span::before {
     content: "A";
@@ -122,6 +124,7 @@ body {
     font-size: 4rem;
     font-weight: 900;
 }
+
 /*
 ====================
 Pantalla INTRO
@@ -177,11 +180,48 @@ Pantalla INTRO
         right: 0;
         transform: translate(50%, 30%);
     }
+
     &.saliendo {
         .el-circ {
-            transform: translate(-130%, 30%);
+            animation: slide-out-fwd-center 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
         }
-        
+
+        @keyframes slide-out-fwd-center {
+            0% {
+                transform: translateZ(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateZ(600px);
+                opacity: 0;
+                transform: scale(10);
+            }
+        }
+
+        .el-happy {
+            animation: puff-out-center 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+        }
+
+        @keyframes puff-out-center {
+            0% {
+                transform: scale(1);
+                filter: blur(0px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2);
+                filter: blur(4px);
+                opacity: 0;
+            }
+        }
+
+        .el-circBorde {
+            animation: puff-out-center 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+        }
+
+
     }
 }
 
@@ -344,6 +384,7 @@ Pantalla INTRO
         top: 55%;
         left: 25%;
         z-index: 2;
+        transition: all 3s;
 
     }
 
@@ -353,6 +394,7 @@ Pantalla INTRO
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 60%);
+        transition: all 3s;
     }
 
     .el-circBorde {
@@ -361,6 +403,63 @@ Pantalla INTRO
         top: 0;
         left: 50%;
         transform: translate(-50%, -30%);
+        transition: all 3s;
+    }
+
+    &.saliendo {
+
+        .el-happy {
+            animation: scale-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+
+        @keyframes scale-out-bottom {
+            0% {
+                transform: scale(1);
+                transform-origin: 50% 100%;
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0);
+                transform-origin: 50% 100%;
+                opacity: 1;
+            }
+        }
+
+        .el-circ {
+            animation: puff-out-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.1s both;
+        }
+
+        @keyframes puff-out-center {
+            0% {}
+
+            100% {
+                transform: scale(2);
+                filter: blur(4px);
+                opacity: 0;
+            }
+        }
+
+
+
+        .el-circBorde {
+            animation: puff-out-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.3s both;
+        }
+
+        @keyframes puff-out-center {
+            0% {}
+
+            100% {
+                transform: scale(2);
+                filter: blur(4px);
+                opacity: 0;
+            }
+        }
+
+
+
+
+
     }
 }
 
@@ -421,6 +520,56 @@ Pantalla INTRO
 
         float: right;
         margin-right: 6vw;
+    }
+
+    &.saliendo {
+
+        .el-happy {
+            animation: rotate-out-center 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+
+        @keyframes rotate-out-center {
+            0% {
+                transform: rotate(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        .el-circBorde {
+            animation: slide-out-tl 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+
+        @keyframes slide-out-tl {
+            0% {}
+
+            100% {
+                transform: translateY(-1000px) translateX(-1000px);
+                opacity: 0;
+            }
+        }
+
+        .el-circ {
+            animation: slide-out-fwd-center 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+
+        @keyframes slide-out-fwd-center {
+            0% {
+                transform: translateZ(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateZ(600px);
+                opacity: 0;
+            }
+        }
+
+
     }
 }
 
@@ -491,6 +640,7 @@ Pantalla INTRO
 
 
 }
+
 #p_in_am1 {
     .form-grupo {
         margin: 20vh 0 5vh;
@@ -515,7 +665,7 @@ Pantalla INTRO
 
     }
 
-    .el-circ{
+    .el-circ {
         max-width: 100vw;
         width: 100%;
         bottom: 10%;
@@ -524,7 +674,7 @@ Pantalla INTRO
     }
 
     .el-circBorde {
-        max-width:70vw;
+        max-width: 70vw;
         width: 70%;
         top: -80vh;
         margin-left: auto;
@@ -534,25 +684,27 @@ Pantalla INTRO
     }
 
     .radio-lg.verde label {
-         
+
         background-image: url("/static/img/graf/circle.png");
         background-size: contain;
     }
+
     .btn-amarillo {
 
         float: right;
         margin-right: 6vw;
     }
-    
+
 }
+
 #p_in_am2 {
     .form-grupo {
-         
+
         display: flex;
         align-items: stretch;
         justify-content: center;
         flex-wrap: wrap;
-        margin:  10vh auto 3%;
+        margin: 10vh auto 3%;
     }
 
     #pcreativa_no~input {
@@ -572,7 +724,8 @@ Pantalla INTRO
         right: -35%;
         z-index: -1;
     }
-    .el-circ  {
+
+    .el-circ {
         max-width: 100vw;
         width: 100%;
         bottom: -55%;
@@ -593,7 +746,8 @@ Pantalla INTRO
 
     .txt {
         font-size: 2rem;
-      }
+    }
+
     a.pieza {
         cursor: pointer;
         text-align: left;
@@ -610,15 +764,15 @@ Pantalla INTRO
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index:99 ;
+    z-index: 99;
     display: none;
 
     .modal {
 
-        position: fixed; 
+        position: fixed;
         width: 80%;
         height: 80vh;
-        z-index: 99999; 
+        z-index: 99999;
         left: 0;
         right: 0;
         top: 0;
@@ -626,11 +780,12 @@ Pantalla INTRO
         margin: auto;
         display: flex;
         max-width: 1442px;
-    
+
 
         .fila {
 
             width: 100%;
+
             .izq {
                 width: 40%;
                 flex: initial;
@@ -646,13 +801,14 @@ Pantalla INTRO
                     transform: translate(-50%, -50%);
                 }
             }
+
             .der {
                 width: 60%;
                 background-color: #fff;
-                margin-left:10px ;
+                margin-left: 10px;
                 padding: 0px 46px;
 
-                .cerrar{
+                .cerrar {
                     background-image: url("/static/img/graf/circle.png");
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -662,12 +818,13 @@ Pantalla INTRO
                     right: -20px;
                     top: -20px;
 
-                    svg{
+                    svg {
                         height: 100%;
                         width: 100%;
-                    } 
-                     
+                    }
+
                 }
+
                 .container {
                     display: block;
                     position: relative;
@@ -682,18 +839,18 @@ Pantalla INTRO
                     font-size: 2rem;
                     font-weight: 600;
                 }
-                  
-                  /* Hide the browser's default checkbox */
-                  .container input {
+
+                /* Hide the browser's default checkbox */
+                .container input {
                     position: absolute;
                     opacity: 0;
                     cursor: pointer;
                     height: 0;
                     width: 0;
-                  }
-                  
-                  /* Create a custom checkbox */
-                  .checkmark {
+                }
+
+                /* Create a custom checkbox */
+                .checkmark {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -701,36 +858,37 @@ Pantalla INTRO
                     width: 25px;
                     border: 3px solid #538e71;
 
-                    
-                  }
-                  :focus-visible {
-                    outline: -webkit-focus-ring-color auto 0px!important;
+
                 }
-                  
-                  /* On mouse-over, add a grey background color */
-                  .container:hover input ~ .checkmark {
+
+                :focus-visible {
+                    outline: -webkit-focus-ring-color auto 0px !important;
+                }
+
+                /* On mouse-over, add a grey background color */
+                .container:hover input~.checkmark {
                     background-color: #ccc;
-                  }
-                  
-                  /* When the checkbox is checked, add a blue background */
-                  .container input:checked ~ .checkmark {
+                }
+
+                /* When the checkbox is checked, add a blue background */
+                .container input:checked~.checkmark {
                     background-color: #538e71;
-                  }
-                  
-                  /* Create the checkmark/indicator (hidden when not checked) */
-                  .checkmark:after {
+                }
+
+                /* Create the checkmark/indicator (hidden when not checked) */
+                .checkmark:after {
                     content: "";
                     position: absolute;
                     display: none;
-                  }
-                  
-                  /* Show the checkmark when checked */
-                  .container input:checked ~ .checkmark:after {
+                }
+
+                /* Show the checkmark when checked */
+                .container input:checked~.checkmark:after {
                     display: block;
-                  }
-                  
-                  /* Style the checkmark/indicator */
-                  .container .checkmark:after {
+                }
+
+                /* Style the checkmark/indicator */
+                .container .checkmark:after {
                     left: 9px;
                     top: 5px;
                     width: 5px;
@@ -740,29 +898,31 @@ Pantalla INTRO
                     -webkit-transform: rotate(45deg);
                     -ms-transform: rotate(45deg);
                     transform: rotate(45deg);
-                  }
-                .btn-amarillo{
+                }
+
+                .btn-amarillo {
                     float: right;
                 }
             }
 
 
-             
+
         }
 
-  
 
-        
+
+
     }
 }
+
 .mostrar {
-    display: initial!important;
+    display: initial !important;
 }
 
 
 
 
- 
+
 
 /*
 ====================
@@ -864,10 +1024,6 @@ Pantalla FINALES
         width: 30%;
         top: 20%;
         left: -3%;
-    
+
     }
 }
-
-
-
-
