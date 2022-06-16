@@ -38,19 +38,35 @@ pops.forEach(i => {
 
 
 const btncerrar = document.querySelectorAll('.cerrar')
-
-
- var parentDiv = btncerrar.parentNode;
-
-
-
 btncerrar.forEach(a => {
+        
     a.addEventListener('click', (event) => {
         event.preventDefault()
-        var parentDiv = a.closest('.overlay');
-        parentDiv.classList.remove("mostrar")
-        console.log(parentDiv) 
+        cerrarpop(a)
 
               
     })
 })
+const aceptar = document.querySelectorAll('.aceptar')
+aceptar.forEach(a => {
+        
+        a.addEventListener('click', (event) => {
+            event.preventDefault()
+            cerrarpop(a)
+    
+                  
+        })
+    })
+function cerrarpop(btnclse) {
+    
+            var parentDiv = btnclse.closest('.overlay');
+            parentDiv.classList.remove("mostrar")
+        
+        }
+    
+  
+
+
+
+
+

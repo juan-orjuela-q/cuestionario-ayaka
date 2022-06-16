@@ -176,6 +176,42 @@ Pantalla INTRO
         right: 0;
         transform: translate(50%, 30%);
     }
+    &.saliendo {
+        .el-circ {
+            animation: slide-out-fwd-center 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+        @keyframes slide-out-fwd-center {
+            0% {
+              transform: translateZ(1);
+              opacity: 1;
+            }
+            100% {
+              transform: translateZ(600px);
+              opacity: 0;
+              transform: scale(10);
+            }
+          }
+        .el-happy {
+            animation: puff-out-center 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+          }
+          @keyframes puff-out-center {
+            0% {
+              transform: scale(1);
+              filter: blur(0px);
+              opacity: 1;
+            }
+            100% {
+              transform: scale(2);
+              filter: blur(4px);
+              opacity: 0;
+            }
+          }
+        .el-circBorde {
+            animation: puff-out-center 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+        }
+         
+        
+    }
 }
 
 #p_in_2 {
@@ -337,6 +373,7 @@ Pantalla INTRO
         top: 55%;
         left: 25%;
         z-index: 2;
+        transition: all 3s;
 
     }
 
@@ -346,6 +383,7 @@ Pantalla INTRO
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 60%);
+        transition: all 3s;
     }
 
     .el-circBorde {
@@ -354,6 +392,59 @@ Pantalla INTRO
         top: 0;
         left: 50%;
         transform: translate(-50%, -30%);
+        transition: all 3s;
+    }
+    &.saliendo{
+        
+        .el-happy {
+            animation: scale-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+        @keyframes scale-out-bottom {
+            0% {
+              transform: scale(1);
+              transform-origin: 50% 100%;
+              opacity: 1;
+            }
+            100% {
+              transform: scale(0);
+              transform-origin: 50% 100%;
+              opacity: 1;
+            }
+          }
+        .el-circ {
+            animation: puff-out-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.1s both;
+        }
+        @keyframes puff-out-center {
+            0% {
+             
+            }
+            100% {
+              transform: scale(2);
+              filter: blur(4px);
+              opacity: 0;
+            }
+          }
+          
+          
+          
+        .el-circBorde {
+            animation: puff-out-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.3s both;
+        }
+        @keyframes puff-out-center {
+            0% {
+              
+            }
+            100% {
+              transform: scale(2);
+              filter: blur(4px);
+              opacity: 0;
+            }
+          }
+          
+          
+          
+
+
     }
 }
 
@@ -414,6 +505,50 @@ Pantalla INTRO
 
         float: right;
         margin-right: 6vw;
+    }
+
+    &.saliendo{
+
+        .el-happy {
+            animation: rotate-out-center 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+        @keyframes rotate-out-center {
+            0% {
+              transform: rotate(0);
+              opacity: 1;
+            }
+            100% {
+              transform: rotate(-360deg);
+              opacity: 0;
+            }
+          }
+          .el-circBorde {
+            animation: slide-out-tl 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          }
+          @keyframes slide-out-tl {
+            0% {
+              
+            }
+            100% {
+              transform: translateY(-1000px) translateX(-1000px);
+              opacity: 0;
+            }
+          }
+          .el-circ {
+            animation: slide-out-fwd-center 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+          }
+          @keyframes slide-out-fwd-center {
+            0% {
+              transform: translateZ(1);
+              opacity: 1;
+            }
+            100% {
+              transform: translateZ(600px);
+              opacity: 0;
+            }
+          }
+          
+
     }
 }
 
