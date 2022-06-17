@@ -73,9 +73,38 @@ function cerrarpop(btnclse) {
         
         }
     
-  
+
+// const validador = document.getElementsByClassName("validar");
+// validador.addEventListener("click", validacion);
+// const collection = document.getElementsByClassName("opcion1");
+var isChecked = document.getElementById('validar');
+isChecked.addEventListener("click", validacion);
+//     if(collection) {
+//           alert('checkbox esta seleccionado');
+//     }
 
 
 
+    
+
+function validacion(){
+    
+    var op1 = document.getElementById('opcion1').checked;
+    var op2 = document.getElementById('opcion2').checked;
+    var op3 = document.getElementById('opcion3').checked;
+    var op4 = document.getElementById('opcion4').checked;
+    const origen = document.getElementById('p_in_7')
+    const destino = document.getElementById('p_in_am1')
 
 
+  if(op1 || op3) {
+    console.log("primera seleccion")
+    avanzar(origen,destino)
+  }
+  else if(op2 || op4){
+    console.log("segunda seleccion ")
+  }
+  else{
+    console.log("ninguno")
+  }
+}
