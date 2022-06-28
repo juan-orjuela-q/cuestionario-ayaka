@@ -95,6 +95,8 @@ function validacion(){
     var op4 = document.getElementById('opcion4').checked;
     const origen = document.getElementById('p_in_7')
     const destino = document.getElementById('p_in_am1')
+    const destinoazul = document.getElementById('p_in_az2')
+
 
 
   if(op1 || op3) {
@@ -103,6 +105,7 @@ function validacion(){
   }
   else if(op2 || op4){
     console.log("segunda seleccion ")
+    avanzar(origen,destinoazul)
   }
   else{
     console.log("ninguno")
