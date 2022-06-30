@@ -14,3 +14,6 @@ npm run dev
 # Build for production in the dist/ directory
 npm run build
 ```
+
+## Para postear las respuestas al backend se utiliza axios
+npm install axios

@@ -1,5 +1,7 @@
 import './principal.scss'
 
+var uuid = generateUUID();
+
 //Botones
 const botones = document.querySelectorAll('.btn')
 
@@ -101,13 +103,55 @@ function validacion(){
 
   if(op1 || op3) {
     console.log("primera seleccion")
+    postAnswer('FRASE','A')
     avanzar(origen,destino)
   }
   else if(op2 || op4){
     console.log("segunda seleccion ")
+    postAnswer('FRASE','B')
     avanzar(origen,destinoazul)
   }
   else{
     console.log("ninguno")
   }
 }
+
+function postAnswer(question,answer){
+    let axios = require('axios');
+    let FormData = require('form-data');
+    let data = new FormData();
+    data.append('uuid', uuid);
+    data.append('question', question);
+    data.append('answer', answer);
+
+    let config = {
+        method: 'post',
+        url: 'http://vps260373.vps.ovh.ca:8082/lupa.php',
+        //headers: {            'Access-Control-Allow-Origin': '*',            'Content-Type': 'application/text',          },
+        data : data
+        };
+
+    axios(config).then(function (response) {
+        console.log(response.data);
+        //console.log(JSON.stringify(response.data));
+    }).catch(function (error) { console.log(error); });
+}
+
+function generateUUID() { // Public Domain/MIT
+    var d = new Date().getTime();//Timestamp
+    var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16;//random number between 0 and 16
+        if(d > 0){//Use timestamp until depleted
+            r = (d + r)%16 | 0;
+            d = Math.floor(d/16);
+        } else {//Use microseconds since page-load if supported
+            r = (d2 + r)%16 | 0;
+            d2 = Math.floor(d2/16);
+        }
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+}
+//window.addEventListener('load', function() {
+//    document.getElementById('uuid').value = generateUUID();
+//});
