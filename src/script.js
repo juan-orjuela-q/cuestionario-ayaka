@@ -103,12 +103,14 @@ function validacion(){
 
   if(op1 || op3) {
     console.log("primera seleccion")
-    postAnswer('FRASE','A')
+    if(op1) postAnswer('FRASE','A')
+    if(op3) postAnswer('FRASE','C')
     avanzar(origen,destino)
   }
   else if(op2 || op4){
     console.log("segunda seleccion ")
-    postAnswer('FRASE','B')
+    if(op2) postAnswer('FRASE','B')
+    if(op4) postAnswer('FRASE','D')
     avanzar(origen,destinoazul)
   }
   else{
