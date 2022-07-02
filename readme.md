@@ -15,5 +15,5 @@ npm run dev
 npm run build
 ```
 
-## Para postear las respuestas al backend se utiliza axios
+# Para postear las respuestas al backend se utiliza axios
 npm install axios
