@@ -69,11 +69,13 @@ $c-claro: #f2f2f2;
 img {
   max-width: 100%;
 }
+
 @keyframes rotar {
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
+
 //Estilos tipograficos
 $f-h1 : normal 900 4rem/1 'Dosis',
 sans-serif;
@@ -101,6 +103,7 @@ h1 {
 h2 {
   font: $f-h2;
   margin-bottom: 1em;
+
   strong {
     font-weight: 900;
   }
@@ -115,7 +118,8 @@ h2 {
 }
 
 //Botones
-.btn, input[type='submit'] {
+.btn,
+input[type='submit'] {
   display: inline-block;
   padding: .5rem 2rem .85rem;
   border-radius: 200px;
@@ -125,11 +129,11 @@ h2 {
   transition: all .5s ease;
   background: url('/static/img/green-dust-and-scratches.png') repeat center;
   background-size: 40%;
-  
+
 }
 
 .btn-verde {
-  background-color: $c-2 !important;
+  background-color: $c-2  !important;
   color: white;
   box-shadow: 0 0 0 0 $c-2;
 
@@ -140,7 +144,7 @@ h2 {
 }
 
 .btn-amarillo {
-  background-color: $c-1 !important;
+  background-color: $c-1  !important;
   color: black;
   box-shadow: 0 0 0 0 $c-1;
 
@@ -172,7 +176,10 @@ textarea {
   min-height: 5rem !important;
   min-width: 100%;
 }
-input, select, textarea {
+
+input,
+select,
+textarea {
   background: white;
   padding: .5rem 1.5rem;
   border-radius: 1rem;
@@ -200,7 +207,8 @@ input, select, textarea {
     width: initial;
     border-radius: 100%;
   }
-  &[type="radio"] + label {
+
+  &[type="radio"]+label {
     position: relative;
     padding-left: 2rem;
     cursor: pointer;
@@ -214,11 +222,12 @@ input, select, textarea {
       background: white;
       border-radius: 100%;
       box-shadow: 0 0 0 .125rem $c-2 inset;
-      left: 0; 
+      left: 0;
       transition: all .25s ease;
     }
   }
-  &[type="radio"]:checked + label:after {
+
+  &[type="radio"]:checked+label:after {
     box-shadow: 0 0 0 .5rem $c-2 inset;
   }
 }
@@ -230,4 +239,67 @@ input, select, textarea {
     margin-bottom: .5rem;
     font-weight: 900;
   }
+}
+
+.checkbox-cont {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.checkbox-cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 3px solid #538e71;
+
+
+}
+
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+.checkbox-cont:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.checkbox-cont input:checked~.checkmark {
+  background-color: #538e71;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-cont input:checked~.checkmark:after {
+  display: block;
+}
+
+.checkbox-cont .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }

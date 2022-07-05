@@ -49,7 +49,8 @@ body {
 
     }
 
-    &.saliendo, &.entrando {
+    &.saliendo,
+    &.entrando {
         main {
             transform: translateY(25vh);
             opacity: 0;
@@ -85,8 +86,8 @@ body {
     input:checked+label {
         box-shadow: 0 0 0 .75rem $c-1;
         color: rgb(0, 0, 0);
-        mix-blend-mode: normal!important;
-        background-color: $c-3!important;
+        mix-blend-mode: normal !important;
+        background-color: $c-3 !important;
     }
 
     &.amarillo label {
@@ -272,10 +273,12 @@ Pantalla INTRO
         z-index: 2;
 
         img {
-            /*anim*/transition: transform 1s ease 1s;
+            /*anim*/
+            transition: transform 1s ease 1s;
         }
 
     }
+
     .el-circ {
 
         width: 100vw;
@@ -286,7 +289,8 @@ Pantalla INTRO
         background: $c-2multiply;
         border-radius: 100%;
         mix-blend-mode: multiply;
-        /*anim*/transition: transform 1.5s ease;
+        /*anim*/
+        transition: transform 1.5s ease;
 
         img {
             display: none;
@@ -300,11 +304,13 @@ Pantalla INTRO
         transform: translate(50%, 30%);
 
         img {
-            /*anim*/transition: transform 1s ease 1s;
+            /*anim*/
+            transition: transform 1s ease 1s;
         }
     }
 
-    &.entrando, &.saliendo {
+    &.entrando,
+    &.saliendo {
         .el-circ {
             transform: translate(-50%, 260%);
         }
@@ -334,7 +340,8 @@ Pantalla INTRO
             animation: rotar 5s linear infinite;
             transform-origin: 100% -150%;
             z-index: 2;
-            /*anim*/opacity: 1;
+            /*anim*/
+            opacity: 1;
         }
 
         .el-circ {
@@ -345,7 +352,8 @@ Pantalla INTRO
             max-height: 1000px;
             right: 45%;
             bottom: 5%;
-            /*anim*/transition: right 1s ease 1s;
+            /*anim*/
+            transition: right 1s ease 1s;
 
         }
 
@@ -358,22 +366,30 @@ Pantalla INTRO
             left: 55%;
             bottom: 25%;
             opacity: 1;
-            /*anim*/transition: transform 1s ease 1s, opacity .75s ease .75s;
+            /*anim*/
+            transition: transform 1s ease 1s, opacity .75s ease .75s;
         }
     }
-    &.entrando, &.saliendo {
+
+    &.entrando,
+    &.saliendo {
         .graf {
             opacity: 0;
         }
+
         .el-happy {
             opacity: 0
         }
+
         .el-circ {
             right: 200%;
         }
+
         .el-circBorde {
-            /*anim*/transform: translateX(20%);
-            /*anim*/opacity: 0;
+            /*anim*/
+            transform: translateX(20%);
+            /*anim*/
+            opacity: 0;
         }
 
     }
@@ -401,7 +417,7 @@ Pantalla INTRO
         left: 25%;
         z-index: 2;
         transition: all 1s cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        
+
 
     }
 
@@ -411,7 +427,7 @@ Pantalla INTRO
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 60%);
-        transition: all 1s 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) ;
+        transition: all 1s 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
     }
 
@@ -426,7 +442,8 @@ Pantalla INTRO
         transition: all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.3s;
     }
 
-    &.saliendo, &.entrando {
+    &.saliendo,
+    &.entrando {
 
         .el-circBorde {
             transform: scale(2);
@@ -439,16 +456,17 @@ Pantalla INTRO
             filter: blur(4px);
             opacity: 0;
         }
+
         .el-happy {
             transform: translateY(1000px) scaleY(0) scaleX(0.2);
             transform-origin: 50% 0%;
             filter: blur(40px);
             opacity: 0;
         }
-     
+
     }
-    
-     
+
+
 }
 
 #p_in_5 {
@@ -482,7 +500,7 @@ Pantalla INTRO
         left: 50%;
         transform: translate(-50%, 60%);
         transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
-        
+
     }
 
     .el-circBorde {
@@ -491,7 +509,7 @@ Pantalla INTRO
         top: -10%;
         left: 0;
         transform: translate(-50%, -30%);
-        transition:  all 1s  cubic-bezier(0.550, 0.085, 0.680, 0.530);
+        transition: all 1s cubic-bezier(0.550, 0.085, 0.680, 0.530);
     }
 
     textarea {
@@ -513,7 +531,9 @@ Pantalla INTRO
         float: right;
         margin-right: 6vw;
     }
-    &.saliendo , &.entrando {
+
+    &.saliendo,
+    &.entrando {
 
         .el-happy {
             transform: translateY(1000px);
@@ -521,10 +541,12 @@ Pantalla INTRO
             filter: blur(40px);
             opacity: 0;
         }
+
         .el-circBorde {
             transform: translateY(-1000px) translateX(-1000px);
             opacity: 0;
         }
+
         .el-circ {
             transform: translateZ(-600px);
             opacity: 0;
@@ -532,7 +554,7 @@ Pantalla INTRO
         }
     }
 
-    
+
 }
 
 #p_in_7 {
@@ -571,7 +593,7 @@ Pantalla INTRO
         bottom: 0;
         left: 50%;
         transform: translate(60%, 5%);
-        transition: all 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+        transition: all 1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
     }
 
     .el-circBorde {
@@ -601,16 +623,20 @@ Pantalla INTRO
         background-color: $c-2;
         mix-blend-mode: hard-light;
     }
-    &.saliendo , &.entrando {
+
+    &.saliendo,
+    &.entrando {
         .el-circBorde {
             transform: translate(-150%, -130%);
             opacity: 1;
 
         }
+
         .el-happy {
             transform: translateY(1000px);
             opacity: 0;
         }
+
         .el-circ {
             transform: scale(1);
             opacity: 1;
@@ -643,7 +669,7 @@ Pantalla INTRO
         top: 55%;
         left: 25%;
         z-index: 2;
-        transition: all 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+        transition: all 1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 
     }
 
@@ -653,7 +679,7 @@ Pantalla INTRO
         bottom: 10%;
         left: 50%;
         transform: translate(-50%, 60%);
-        transition: all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) ;
+        transition: all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
     }
 
@@ -679,16 +705,20 @@ Pantalla INTRO
         float: right;
         margin-right: 6vw;
     }
-    &.saliendo, &.entrando{
+
+    &.saliendo,
+    &.entrando {
         .el-happy {
             transform: translateY(1000px);
             opacity: 0;
         }
+
         .el-circ {
             transform: scale(2);
             filter: blur(4px);
             opacity: 0;
         }
+
         .el-circBorde {
             transform: translateZ(600px);
             opacity: 0;
@@ -758,16 +788,20 @@ Pantalla INTRO
         font-size: 1rem;
         max-width: 13%;
     }
-    &.saliendo, &.entrando{
+
+    &.saliendo,
+    &.entrando {
         .el-circ {
             transform: scale(2);
             filter: blur(4px);
             opacity: 0;
         }
+
         .el-circBorde {
             transform: translateZ(-1100px);
             opacity: 0;
         }
+
         .el-happy {
             transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
             opacity: 0;
@@ -838,16 +872,20 @@ Pantalla INTRO
         font-size: 1rem;
         max-width: 13%;
     }
-    &.saliendo, &.entrando{
+
+    &.saliendo,
+    &.entrando {
         .el-circ {
             transform: scale(2);
             filter: blur(4px);
             opacity: 0;
         }
+
         .el-circBorde {
             transform: translateZ(-1100px);
             opacity: 0;
         }
+
         .el-happy {
             transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
             opacity: 0;
@@ -857,11 +895,7 @@ Pantalla INTRO
 
 }
 
-
-
-
-.overlay {
-
+.modal-temor {
     background-color: #8a8484cc;
     position: fixed;
     width: 100%;
@@ -870,7 +904,6 @@ Pantalla INTRO
     display: none;
 
     .modal {
-
         position: fixed;
         width: 80%;
         height: 80vh;
@@ -927,80 +960,7 @@ Pantalla INTRO
 
                 }
 
-                .container {
-                    display: block;
-                    position: relative;
-                    padding-left: 40px;
-                    margin-bottom: 1.2rem;
-                    cursor: pointer;
-                    font-size: 22px;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                    user-select: none;
-                    font-size: 2rem;
-                    font-weight: 600;
-                }
 
-                /* Hide the browser's default checkbox */
-                .container input {
-                    position: absolute;
-                    opacity: 0;
-                    cursor: pointer;
-                    height: 0;
-                    width: 0;
-                }
-
-                /* Create a custom checkbox */
-                .checkmark {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 25px;
-                    width: 25px;
-                    border: 3px solid #538e71;
-
-
-                }
-
-                :focus-visible {
-                    outline: -webkit-focus-ring-color auto 0px !important;
-                }
-
-                /* On mouse-over, add a grey background color */
-                .container:hover input~.checkmark {
-                    background-color: #ccc;
-                }
-
-                /* When the checkbox is checked, add a blue background */
-                .container input:checked~.checkmark {
-                    background-color: #538e71;
-                }
-
-                /* Create the checkmark/indicator (hidden when not checked) */
-                .checkmark:after {
-                    content: "";
-                    position: absolute;
-                    display: none;
-                }
-
-                /* Show the checkmark when checked */
-                .container input:checked~.checkmark:after {
-                    display: block;
-                }
-
-                /* Style the checkmark/indicator */
-                .container .checkmark:after {
-                    left: 9px;
-                    top: 5px;
-                    width: 5px;
-                    height: 10px;
-                    border: solid white;
-                    border-width: 0 3px 3px 0;
-                    -webkit-transform: rotate(45deg);
-                    -ms-transform: rotate(45deg);
-                    transform: rotate(45deg);
-                }
 
                 .btn-amarillo {
                     float: right;
@@ -1031,6 +991,54 @@ Pantalla INTRO
 Pantalla FINALES
 ====================
 */
+#p_f_1 {
+
+    h2 {
+        font-size: 1.5rem;
+        max-width: 690px;
+        margin: 0 auto 2em;
+    }
+
+    #temores-finales {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .checkbox-cont {
+            display: flex;
+            font-size: 1rem;
+            padding: 0;
+            margin: 0 4px 0 0;
+            position: relative;
+            align-items: center;
+
+            .span-temor {
+                background: rgba(255, 255, 255, .5);
+                padding: 8px 12px 8px 34px;
+                border-radius: 1rem;
+            }
+
+            &:hover .span-temor,
+            input:checked+.span-temor {
+                background-color: $c-1;
+            }
+
+            .checkmark {
+                height: 14px;
+                width: 14px;
+                left: 8px;
+                top: 50%;
+                margin-top: -10px;
+
+                &:after {
+                    left: 4px;
+                    top: 0px;
+                }
+            }
+        }
+    }
+}
+
 #p_f_2 {
     main {
         align-items: stretch;

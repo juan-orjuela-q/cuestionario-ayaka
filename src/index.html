@@ -18,7 +18,7 @@
         ========== 
         -->
         <!-- Pantalla 1 -->
-        <div id="p_in_1" class="pantalla info ">
+        <div id="p_in_1" class="pantalla info activo">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-1-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
@@ -166,8 +166,8 @@
             </main>
         </div>
         <!-- Pantalla 7 -->
-        
-        <div id="p_in_7" class="pantalla pregunta activo">
+
+        <div id="p_in_7" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-5-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -196,7 +196,7 @@
                         <label class="ultimo opcion4" for="opcion4"><span><strong>No he encontrado algo que me
                                     apasione</strong></span></label>
                     </div>
-                    <a href="#" data-destino="p_in_4" class="btn btn-verde" id="validar">Continuar</a>
+                    <a href="#" data-origen="p_in_7" data-destino="" class="btn btn-verde" id="validar">Continuar</a>
                 </div>
             </main>
         </div>
@@ -210,7 +210,7 @@
             <main>
                 <div class="cont">
                     <h2>¿Te gustaría vivir <br>
-                        <strong>de lo que te apasiona?                        </strong>
+                        <strong>de lo que te apasiona? </strong>
                     </h2>
                     <div class="form-grupo radio-lg verde">
                         <input type="radio" id="pcreativa_si" name="compartir_info" value="Sí">
@@ -225,7 +225,7 @@
             </main>
         </div>
         <!-- Pantalla p am 2 -->
-        <div id="p_in_am2" class="pantalla ">
+        <div id="p_in_am2" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -233,19 +233,19 @@
             </div>
             <main>
                 <div class="cont">
-                    <h2>¿Cuáles son los principales temores  <br>
+                    <h2>¿Cuáles son los principales temores <br>
                         <strong>que te impiden dedicarte a lo que te apasiona? </strong>
                     </h2>
                     <p class="txt worksans">
                         Escoge las ilustraciones de los temores que más te identifiquen,<br> puedes escoger más de uno.
                     </p>
                     <div class="form-grupo radio-lg amarillo">
-                        
+
                         <a class="pieza" data-modal="modal1">
                             <p>Temor a las <br>ideas</p>
                             <img src="/static/img/graf/jaula.png" alt="MDN">
                         </a>
-                        <a class="pieza" data-modal="modal2" >
+                        <a class="pieza" data-modal="modal2">
                             <p>Temores de <br>Autoestima</p>
                             <img src="/static/img/graf/miedo.png" alt="MDN">
                         </a>
@@ -268,29 +268,21 @@
                         <a class="pieza" data-modal="modal7">
                             <p>Temores por falta <br>de tiempo y recursos</p>
                             <img src="/static/img/graf/jaula.png" alt="MDN">
-                        </a> 
-                    
-
-
-
+                        </a>
                     </div>
-                    
                     <p class="txt worksans">
                         Explora todas las imágenes de temores que te hagan sentido, <br>
-                        <strong>para que tengas un mapeo real de lo que te limita 
+                        <strong>para que tengas un mapeo real de lo que te limita
                         </strong>
-
                     </p>
-
-
-                    <a href="#" data-destino="p_in_5" class="btn btn-verde">Continuar</a>
+                    <a id="confirmar-temores-am" href="#" data-origen="p_in_am2" data-destino="p_f_1" class="btn btn-verde">Continuar</a>
                 </div>
             </main>
         </div>
 
         <!-- Pantalla p az 1 -->
         <!-- Pantalla p am 2 -->
-        <div id="p_in_az2" class="pantalla ">
+        <div id="p_in_az2" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -298,17 +290,17 @@
             </div>
             <main>
                 <div class="cont">
-                    <h2>¿Cuáles son los principales temores  que sientes a la hora de proponer y/o  <br>
-                        materializar un proyecto o idea en tu vida personal y/o  lugar de trabajo?  
+                    <h2>¿Cuáles son los principales temores que sientes a la hora de proponer y/o <br>
+                        materializar un proyecto o idea en tu vida personal y/o lugar de trabajo?
                     </h2>
-                    
+
                     <div class="form-grupo radio-lg amarillo">
-                        
+
                         <a class="pieza" data-modal="modal1">
                             <p>Temores de <br>autoestima</p>
                             <img src="/static/img/graf/jaula.png" alt="MDN">
                         </a>
-                        <a class="pieza" data-modal="modal2" >
+                        <a class="pieza" data-modal="modal2">
                             <p>Temores Sociales y de <br>reconocimiento</p>
                             <img src="/static/img/graf/miedo.png" alt="MDN">
                         </a>
@@ -328,15 +320,10 @@
                             <p>Temor a que <br>sea tarde</p>
                             <img src="/static/img/graf/tristeza.png" alt="MDN">
                         </a>
-                        
-                    
-
-
 
                     </div>
 
-
-                    <a href="#" data-destino="p_in_5" class="btn btn-verde">Continuar</a>
+                    <a id="confirmar-temores-az" href="#" data-origen="p_in_az2" data-destino="p_f_1" class="btn btn-verde">Continuar</a>
                 </div>
             </main>
         </div>
@@ -360,6 +347,25 @@
         Pantallas FINALES
         ========== 
         -->
+        <!-- Pantalla Final 2 -->
+        <div id="p_f_1" class="pantalla pregunta ">
+            <div class="graf">
+                <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
+                <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
+                <div class="el-circBorde"><img src="/static/img/graf/el-3-borde@1x.png" alt=""></div>
+            </div>
+            <main>
+                <div class="cont">
+                    <h2>Tener miedo no está mal, lo importante es no dejar que esos temores te detengan o paralicen.
+                        <strong>¿Cuáles de los temores elegidos en las preguntas anteriores son los que más te
+                            detienen?</strong>
+                    </h2>
+                    <form id="temores-finales">
+                    </form>
+                    <a href="#" data-origen="p_f_1" data-destino="p_f_2" class="btn btn-amarillo" id="">Continuar</a>
+                </div>
+            </main>
+        </div>
         <!-- Pantalla Final 2 -->
         <div id="p_f_2" class="pantalla info">
             <div class="graf">
@@ -399,356 +405,297 @@
             </main>
         </div>
         <!-- modal 1-->
-            <div class="overlay" id="modal1">
-                <div class="modal">
-                    <div class="fila">
-                         
-                        <div class="col izq"><img src="/static/img/graf/personatrizte.png"  ></div>
-                        <div class="col der">
-                            <img class="cerrar" src="/static/img/graf/cerrar.svg"  >
-                            <h2><strong> Escoge uno o varios de <br>
+        <div class="modal-temor" id="modal1">
+            <div class="modal">
+                <div class="fila">
+
+                    <div class="col izq"><img src="/static/img/graf/personatrizte.png"></div>
+                    <div class="col der">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                        <h2><strong> Escoge uno o varios de <br>
                                 estos temores:</strong>
-                            </h2>
-
-                            <label class="container">Temo sentirme expuest@ y ser criticad@, 
-                                ridiculizad@ o rechazad@.
-                                <input type="checkbox" id="temor_ideas_A">
-                                <span class="checkmark"></span>
-                            </label>
-                            
-                            <label class="container">Temo que mis sueños sean algo de lo que debas 
-                                sentirme avergonzad@.
-                                <input type="checkbox" id="temor_ideas_B">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo decepcionar a mi familia con mis decisiones 
-                                de vida.
-                                <input type="checkbox" id="temor_ideas_C" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo de las opiniones de mis amigos y colegas si 
-                                expreso abiertamente la decisión de dedicarme 
-                                a mi pasión.
-                                <input type="checkbox" id="temor_ideas_D" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo no tener aún la experiencia y/o habilidad 
-                                necesaria para salir al mundo con mi propuesta.
-                                <input type="checkbox" id="temor_ideas_E" >
-                                <span class="checkmark"></span>
-                            </label>
-
-                            <a href="#" class="btn-amarillo aceptar">OK</a>
-                        </div>
-                        
+                        </h2>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor A1">
+                            <span class="span-temor">Temor A1</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor A2">
+                            <span class="span-temor">Temor A2</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor A3">
+                            <span class="span-temor">Temor A3</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor A4">
+                            <span class="span-temor">Temor A4</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <a href="#" class="btn-amarillo aceptar">OK</a>
                     </div>
-                    
+
                 </div>
+
             </div>
-            
+        </div>
+
 
         <!-- modal 1 fin -->
         <!-- modal 2-->
-            <div class="overlay" id="modal2">
-                <div class="modal">
-                    <div class="fila">
-                         
-                        <div class="col izq"><img src="/static/img/graf/personatrizte.png"  ></div>
-                        <div class="col der">
-                            <img class="cerrar" src="/static/img/graf/cerrar.svg"  >
-                            <h2><strong> Escoge uno o varios de <br>
+        <div class="modal-temor" id="modal2">
+            <div class="modal">
+                <div class="fila">
+
+                    <div class="col izq"><img src="/static/img/graf/personatrizte.png"></div>
+                    <div class="col der">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                        <h2><strong> Escoge uno o varios de <br>
                                 estos temores:</strong>
-                            </h2>
-
-                            <label class="container">Temo sentirme expuest@ y ser criticad@, 
-                                ridiculizad@ o rechazad@.
-                                <input type="checkbox" id="temor_autoestima_A">
-                                <span class="checkmark"></span>
-                            </label>
-                            
-                            <label class="container">Temo que mis sueños sean algo de lo que debas 
-                                sentirme avergonzad@.
-                                <input type="checkbox" id="temor_autoestima_B" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo decepcionar a mi familia con mis decisiones 
-                                de vida.
-                                <input type="checkbox"  id="temor_autoestima_C">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo de las opiniones de mis amigos y colegas si 
-                                expreso abiertamente la decisión de dedicarme 
-                                a mi pasión.
-                                <input type="checkbox"  id="temor_autoestima_D">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo no tener aún la experiencia y/o habilidad 
-                                necesaria para salir al mundo con mi propuesta.
-                                <input type="checkbox"  id="temor_autoestima_E">
-                                <span class="checkmark"></span>
-                            </label>
-
-                            <a href="#" class="btn btn-amarillo aceptar">OK</a>
-                        </div>
-                        
+                        </h2>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor B1">
+                            <span class="span-temor">Temor B1</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor B2">
+                            <span class="span-temor">Temor B2</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor B3">
+                            <span class="span-temor">Temor B3</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor B4">
+                            <span class="span-temor">Temor B4</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor B5">
+                            <span class="span-temor">Temor 5</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
-                    
+
                 </div>
+
             </div>
-            
+        </div>
+
 
         <!-- modal 2 fin  -->
         <!-- modal 3-->
-        <div class="overlay" id="modal3">
+        <div class="modal-temor" id="modal3">
             <div class="modal">
                 <div class="fila">
-                     
-                    <div class="col izq"><img src="/static/img/graf/personatrizte.png"  ></div>
-                    <div class="col der">
-                        <img class="cerrar" src="/static/img/graf/cerrar.svg"  >
-                        <h2><strong> Escoge uno o varios de <br>
-                            estos temores:</strong>
-                        </h2>
 
-                        <label class="container">Temo sentirme expuest@ y ser criticad@, 
-                            ridiculizad@ o rechazad@.
-                            <input type="checkbox" id="temor_social_A">
+                    <div class="col izq"><img src="/static/img/graf/personatrizte.png"></div>
+                    <div class="col der">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                        <h2><strong> Escoge uno o varios de <br>
+                                estos temores:</strong>
+                        </h2>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor C1">
+                            <span class="span-temor">Temor C1</span>
                             <span class="checkmark"></span>
                         </label>
-                        
-                        <label class="container">Temo que mis sueños sean algo de lo que debas 
-                            sentirme avergonzad@.
-                            <input type="checkbox" id="temor_social_B" >
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor C2">
+                            <span class="span-temor">Temor C2</span>
                             <span class="checkmark"></span>
                         </label>
-                        <label class="container">Temo decepcionar a mi familia con mis decisiones 
-                            de vida.
-                            <input type="checkbox" id="temor_social_C" >
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor C3">
+                            <span class="span-temor">Temor C3</span>
                             <span class="checkmark"></span>
                         </label>
-                        <label class="container">Temo de las opiniones de mis amigos y colegas si 
-                            expreso abiertamente la decisión de dedicarme 
-                            a mi pasión.
-                            <input type="checkbox" id="temor_social_D" >
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor C4">
+                            <span class="span-temor">Temor C4</span>
                             <span class="checkmark"></span>
                         </label>
-                        <label class="container">Temo no tener aún la experiencia y/o habilidad 
-                            necesaria para salir al mundo con mi propuesta.
-                            <input type="checkbox" id="temor_social_E" >
+                        <a href="#" class="btn btn-amarillo aceptar">OK</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- modal 3 fin  -->
+        <!-- modal 4-->
+        <div class="modal-temor" id="modal4">
+            <div class="modal">
+                <div class="fila">
+
+                    <div class="col izq"><img src="/static/img/graf/personatrizte.png"></div>
+                    <div class="col der">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                        <h2><strong> Escoge uno o varios de <br>
+                                estos temores:</strong>
+                        </h2>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor D1">
+                            <span class="span-temor">Temor D1</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor D2">
+                            <span class="span-temor">Temor D2</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor D3">
+                            <span class="span-temor">Temor D3</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor D4">
+                            <span class="span-temor">Temor D4</span>
                             <span class="checkmark"></span>
                         </label>
 
                         <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </div>
-        
 
-    <!-- modal 3 fin  -->
-    <!-- modal 4-->
-            <div class="overlay" id="modal4">
-                <div class="modal">
-                    <div class="fila">
-                         
-                        <div class="col izq"><img src="/static/img/graf/personatrizte.png"  ></div>
-                        <div class="col der">
-                            <img  class="cerrar" src="/static/img/graf/cerrar.svg"  >
-                            <h2><strong> Escoge uno o varios de <br>
-                                estos temores:</strong>
-                            </h2>
-
-                            <label class="container">Temo sentirme expuest@ y ser criticad@, 
-                                ridiculizad@ o rechazad@.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            
-                            <label class="container">Temo que mis sueños sean algo de lo que debas 
-                                sentirme avergonzad@.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo decepcionar a mi familia con mis decisiones 
-                                de vida.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo de las opiniones de mis amigos y colegas si 
-                                expreso abiertamente la decisión de dedicarme 
-                                a mi pasión.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo no tener aún la experiencia y/o habilidad 
-                                necesaria para salir al mundo con mi propuesta.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-
-                            <a href="#" class="btn btn-amarillo aceptar">OK</a>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
 
         <!-- modal 4 fin  -->
-            <!-- modal 5-->
-            <div class="overlay" id="modal5">
-                <div class="modal">
-                    <div class="fila">
-                         
-                        <div class="col izq"><img src="/static/img/graf/personatrizte.png"  ></div>
-                        <div class="col der">
-                            <img class="cerrar" src="/static/img/graf/cerrar.svg"  >
-                            <h2><strong> Escoge uno o varios de <br>
+        <!-- modal 5-->
+        <div class="modal-temor" id="modal5">
+            <div class="modal">
+                <div class="fila">
+
+                    <div class="col izq"><img src="/static/img/graf/personatrizte.png"></div>
+                    <div class="col der">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                        <h2><strong> Escoge uno o varios de <br>
                                 estos temores:</strong>
-                            </h2>
+                        </h2>
 
-                            <label class="container">Temo sentirme expuest@ y ser criticad@, 
-                                ridiculizad@ o rechazad@.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            
-                            <label class="container">Temo que mis sueños sean algo de lo que debas 
-                                sentirme avergonzad@.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo decepcionar a mi familia con mis decisiones 
-                                de vida.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo de las opiniones de mis amigos y colegas si 
-                                expreso abiertamente la decisión de dedicarme 
-                                a mi pasión.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo no tener aún la experiencia y/o habilidad 
-                                necesaria para salir al mundo con mi propuesta.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor E1">
+                            <span class="span-temor">Temor E1</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor E2">
+                            <span class="span-temor">Temor E2</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor E3">
+                            <span class="span-temor">Temor E3</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor E4">
+                            <span class="span-temor">Temor E4</span>
+                            <span class="checkmark"></span>
+                        </label>
 
-                            <a href="#" class="btn btn-amarillo aceptar">OK</a>
-                        </div>
-                        
+                        <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
-                    
                 </div>
             </div>
-            
-
+        </div>
         <!-- modal 5 fin  -->
-            <!-- modal 6-->
-            <div class="overlay" id="modal6">
-                <div class="modal">
-                    <div class="fila">
-                         
-                        <div class="col izq"><img src="/static/img/graf/personatrizte.png"  ></div>
-                        <div class="col der">
-                            <img class="cerrar" src="/static/img/graf/cerrar.svg"  >
-                            <h2><strong> Escoge uno o varios de <br>
+        <!-- modal 6-->
+        <div class="modal-temor" id="modal6">
+            <div class="modal">
+                <div class="fila">
+
+                    <div class="col izq"><img src="/static/img/graf/personatrizte.png"></div>
+                    <div class="col der">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                        <h2><strong> Escoge uno o varios de <br>
                                 estos temores:</strong>
-                            </h2>
-
-                            <label class="container">Temo sentirme expuest@ y ser criticad@, 
-                                ridiculizad@ o rechazad@.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            
-                            <label class="container">Temo que mis sueños sean algo de lo que debas 
-                                sentirme avergonzad@.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo decepcionar a mi familia con mis decisiones 
-                                de vida.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo de las opiniones de mis amigos y colegas si 
-                                expreso abiertamente la decisión de dedicarme 
-                                a mi pasión.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo no tener aún la experiencia y/o habilidad 
-                                necesaria para salir al mundo con mi propuesta.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-
-                            <a href="#" class="btn btn-amarillo aceptar">OK</a>
-                        </div>
-                        
+                        </h2>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor F1" >
+                            <span class="span-temor">Temor F1</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor F2">
+                            <span class="span-temor">Temor F2</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor F3">
+                            <span class="span-temor">Temor F3</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor F4">
+                            <span class="span-temor">Temor F4</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
-                    
                 </div>
             </div>
-            
+        </div>
 
-            <!-- modal 6 fin  -->
-             <!-- modal 7-->
-             <div class="overlay" id="modal7">
-                
-                <div class="modal">
-                    <div class="fila">
-                         
-                        <div class="col izq"><img src="/static/img/graf/personatrizte.png"  ></div>
-                        <div class="col der">
-                            <img class="cerrar" src="/static/img/graf/cerrar.svg"  >
-                            <h2><strong> Escoge uno o varios de <br>
+
+        <!-- modal 6 fin  -->
+        <!-- modal 7-->
+        <div class="modal-temor" id="modal7">
+
+            <div class="modal">
+                <div class="fila">
+
+                    <div class="col izq"><img src="/static/img/graf/personatrizte.png"></div>
+                    <div class="col der">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                        <h2><strong> Escoge uno o varios de <br>
                                 estos temores:</strong>
-                            </h2>
+                        </h2>
 
-                            <label class="container">Temo sentirme expuest@ y ser criticad@, 
-                                ridiculizad@ o rechazad@.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            
-                            <label class="container">Temo que mis sueños sean algo de lo que debas 
-                                sentirme avergonzad@.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo decepcionar a mi familia con mis decisiones 
-                                de vida.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo de las opiniones de mis amigos y colegas si 
-                                expreso abiertamente la decisión de dedicarme 
-                                a mi pasión.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Temo no tener aún la experiencia y/o habilidad 
-                                necesaria para salir al mundo con mi propuesta.
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
-                            </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor G1">
+                            <span class="span-temor">Temor G1</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor G2">
+                            <span class="span-temor">Temor G2</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor G3">
+                            <span class="span-temor">Temor G3</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="" value="Temor G4">
+                            <span class="span-temor">Temor G4</span>
+                            <span class="checkmark"></span>
+                        </label>
 
-                            <a href="#" class="btn btn-amarillo aceptar">OK</a>
-                        </div>
-                        
+                        <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
-                    
-                </div>
-            </div>
-            
 
-            <!-- modal 7 fin  -->
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- modal 7 fin  -->
 
 
         <!-- Pantalla Contacto -->
