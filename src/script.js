@@ -1,5 +1,5 @@
 import './principal.scss'
-//import './bd.scss'
+//import './bd.js'
 
 //Botones
 const botones = document.querySelectorAll('.btn')
