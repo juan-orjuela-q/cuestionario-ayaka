@@ -3,9 +3,43 @@ var uuid = generateUUID();
 function guardarRespuestas(origen, destino) {
     let origenId = "-";
     let destinoId = "-";
+    console.log(origen);
+    console.log(destino);
     if (origen !== null) origenId = origen.id;
     if (destino !== null) destinoId = destino.id;
     console.log(origenId + "==>" + destinoId);
+
+    if(origenId==='p_in_2' && destinoId==='p_in_3'){
+        postAnswer('NOMBRE',document.getElementById('infoNombre').value);
+        setTimeout(() => {
+            if(document.getElementById('gen_hombre').checked) postAnswer('GENERO','Hombre');
+            if(document.getElementById('gen_mujer').checked) postAnswer('GENERO','Mujer');
+            if(document.getElementById('gen_nobinario').checked) postAnswer('GENERO','No binario');
+            if(document.getElementById('gen_otro').checked) postAnswer('GENERO','Otro');
+            postAnswer('PROFESION',document.getElementById('profesion').value);
+            postAnswer('EMAIL',document.getElementById('email').value);
+            if(document.getElementById('comp_si').checked) postAnswer('GENERO','Si');
+            if(document.getElementById('comp_no').checked) postAnswer('GENERO','No');
+        }, 2000);
+    }
+
+    if(origenId==='p_in_4' && destinoId==='p_in_5'){
+        if(document.getElementById('pcreativa_si').checked) postAnswer('CREATIVA','Si');
+        if(document.getElementById('pcreativa_si').checked) postAnswer('CREATIVA','No');
+    }
+
+    if(origenId==='p_in_5' && destinoId==='p_in_7'){
+        postAnswer('DEDICACION',document.getElementById('dedicacion').value);
+    }
+
+    if(origenId==='p_in_7' && destinoId==='-'){
+        if(document.getElementById('opcion1').checked) postAnswer('FRASE','A');
+        if(document.getElementById('opcion2').checked) postAnswer('FRASE','B');
+        if(document.getElementById('opcion3').checked) postAnswer('FRASE','C');
+        if(document.getElementById('opcion4').checked) postAnswer('FRASE','D');
+    }
+    //postAnswer('',document.getElementById('').value);
+
     if (origenId === 'p_in_am1' && destinoId === 'p_in_am2') {
         if (document.getElementById('pcreativa_si').checked) postAnswer('APASIONA', 'SI');
         if (document.getElementById('pcreativa_no').checked) postAnswer('APASIONA', 'NO');
@@ -105,6 +139,5 @@ function generateUUID() { // Public Domain/MIT
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
 }
-//window.addEventListener('load', function() {
-//    document.getElementById('uuid').value = generateUUID();
-//});
+
+module.exports = { guardarRespuestas };

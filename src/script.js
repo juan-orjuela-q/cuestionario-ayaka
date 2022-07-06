@@ -1,5 +1,8 @@
 import './principal.scss'
-//import './bd.js'
+
+const bd = require("./bd");
+
+
 
 //Botones
 const botones = document.querySelectorAll('.btn')
@@ -9,7 +12,7 @@ botones.forEach(btn => {
         event.preventDefault()
         const destino = document.getElementById(btn.dataset.destino)
         const origen = document.getElementById(btn.dataset.origen)
-        //guardarRespuestas(origen,destino);
+        bd.guardarRespuestas(origen,destino);
         avanzar(origen,destino)
 
         if(destino.classList.contains('anim')) {
@@ -141,3 +144,4 @@ function validacion() {
         console.log("ninguno")
     }
 }
+
