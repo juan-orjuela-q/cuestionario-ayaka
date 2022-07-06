@@ -12,13 +12,8 @@
 
 <body>
     <div id="contenedor-maestro">
-        <!--
-        ========== 
-        Pantallas INTRO
-        ========== 
-        -->
         <!-- Pantalla 1 -->
-        <div id="p_in_1" class="pantalla info activo">
+        <div id="p_in_1" class="pantalla info">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-1-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
@@ -27,7 +22,7 @@
             <main>
                 <div class="cont">
                     <h1>
-                        <img src="/static/img/tit-intro.svg"
+                        <img srcset=" /static/img/tit-intro.svg 2000w, /static/img/tit-intro-mb.svg 690w"  
                             alt="Te damos la bienvenida a las creencias y temores que nos limitan">
                         <span>Te damos la bienvenida a las creencias y temores que nos limitan</span>
                     </h1>
@@ -52,7 +47,7 @@
             </footer>
         </div>
         <!-- Pantalla 2 -->
-        <div id="p_in_2" class="pantalla pregunta ">
+        <div id="p_in_2" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-2-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-2-circulo@1x.png" alt=""></div>
@@ -103,7 +98,7 @@
             </main>
         </div>
         <!-- Pantalla 3 -->
-        <div id="p_in_3" class="pantalla anim " data-destino="p_in_4">
+        <div id="p_in_3" class="pantalla anim" data-destino="p_in_4">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-12-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
@@ -116,7 +111,7 @@
             </main>
         </div>
         <!-- Pantalla 4 -->
-        <div id="p_in_4" class="pantalla pregunta ">
+        <div id="p_in_4" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-3-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-3-circulo@1x.png" alt=""></div>
@@ -140,7 +135,7 @@
             </main>
         </div>
         <!-- Pantalla 5 -->
-        <div id="p_in_5" class="pantalla pregunta ">
+        <div id="p_in_5" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-4-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-3-circulo@1x.png" alt=""></div>
@@ -166,7 +161,6 @@
             </main>
         </div>
         <!-- Pantalla 7 -->
-
         <div id="p_in_7" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-5-feliz@1x.png" alt=""></div>
@@ -181,8 +175,7 @@
                     <div class="form-grupo radio-lg amarillo">
 
                         <input type="radio" id="opcion1" name="compartir_info" value="Sí">
-                        <label class="opcion1" for="opcion1"><span><strong>Vivo de hacer lo que me<br>
-                                    apasiona</strong></span></label>
+                        <label class="opcion1" for="opcion1"><span><strong>Vivo de hacer lo que me apasiona</strong></span></label>
 
                         <input type="radio" id="opcion2" name="compartir_info" value="No">
                         <label class="ultimo opcion2" for="opcion2"><span><strong>Hago lo que me apasiona sólo en mis
@@ -200,8 +193,13 @@
                 </div>
             </main>
         </div>
+        <!--
+        ========== 
+        Pantallas AMARILLAS
+        ========== 
+        -->
         <!-- Pantalla p am 1 -->
-        <div id="p_in_am1" class="pantalla pregunta ">
+        <div id="p_in_am1" class="pantalla pregunta activo">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-3-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-3-circulo@1x.png" alt=""></div>
@@ -279,9 +277,13 @@
                 </div>
             </main>
         </div>
-
+        <!--
+        ========== 
+        Pantallas AZULES
+        ========== 
+        -->
         <!-- Pantalla p az 1 -->
-        <!-- Pantalla p am 2 -->
+        <!-- Pantalla p az 2 -->
         <div id="p_in_az2" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
@@ -327,27 +329,12 @@
                 </div>
             </main>
         </div>
-        <!-- fin Pantalla p az 1 -->
-
-
-
-
-        <!--
-        ========== 
-        Pantallas AMARILLAS
-        ========== 
-        -->
-        <!--
-        ========== 
-        Pantallas AZULES
-        ========== 
-        -->
         <!--
         ========== 
         Pantallas FINALES
         ========== 
         -->
-        <!-- Pantalla Final 2 -->
+        <!-- Pantalla Final 1 -->
         <div id="p_f_1" class="pantalla pregunta ">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
@@ -404,6 +391,61 @@
                 </div>
             </main>
         </div>
+        <!-- Pantalla Contacto -->
+        <div id="p_contacto" class="pantalla pregunta">
+            <div class="graf">
+                <div class="el-happy"><img src="/static/img/graf/el-13-feliz@1x.png" alt=""></div>
+
+            </div>
+            <main>
+                <div class="cont">
+                    <div class="fila">
+                        <div class="col">
+                            <h2><strong>¿Estás listo para crear<br>
+                                    un futuro vibrante?<br>
+                                    Escríbenos</strong></h2>
+                        </div>
+                        <div class="col">
+                            <form action="">
+                                <div class="form-grupo">
+                                    <label for="cf-nombre">Nombre</label>
+                                    <input type="text" name="nombre" id="cf-nombre" placeholder="Escribe tu nombre">
+                                </div>
+                                <div class="form-grupo">
+                                    <label for="cf-email">Email</label>
+                                    <input type="text" name="email" id="cf-email"
+                                        placeholder="Escribe tu correo electrónico">
+                                </div>
+                                <div class="form-grupo">
+                                    <label for="cf-tel">Teléfono</label>
+                                    <input type="tel" name="tel" id="cf-tel" placeholder="Escribe tu teléfono">
+                                </div>
+                                <div class="form-grupo">
+                                    <label for="cf-tel">¿Cuáles de estas opciones te conectan para iniciar?</label>
+                                    <select name="select">
+                                        <option value="value1" disabled selected>Seleccciona una opción</option>
+                                        <option value="value2">Value 2</option>
+                                        <option value="value3">Value 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-grupo">
+                                    <label for="cf-mensaje">¿Cuáles de estas opciones te conectan para iniciar?</label>
+                                    <textarea name="" id="cf-mensaje" cols="30" rows="5"></textarea>
+                                </div>
+                                <div class="form-grupo">
+                                    <input class="btn btn-amarillo" type="submit" value="Enviar">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!--
+        ========== 
+        MODALES
+        ==========
+        -->
         <!-- modal 1-->
         <div class="modal-temor" id="modal1">
             <div class="modal">
@@ -442,8 +484,6 @@
 
             </div>
         </div>
-
-
         <!-- modal 1 fin -->
         <!-- modal 2-->
         <div class="modal-temor" id="modal2">
@@ -488,8 +528,6 @@
 
             </div>
         </div>
-
-
         <!-- modal 2 fin  -->
         <!-- modal 3-->
         <div class="modal-temor" id="modal3">
@@ -529,8 +567,6 @@
 
             </div>
         </div>
-
-
         <!-- modal 3 fin  -->
         <!-- modal 4-->
         <div class="modal-temor" id="modal4">
@@ -571,8 +607,6 @@
 
             </div>
         </div>
-
-
         <!-- modal 4 fin  -->
         <!-- modal 5-->
         <div class="modal-temor" id="modal5">
@@ -649,8 +683,6 @@
                 </div>
             </div>
         </div>
-
-
         <!-- modal 6 fin  -->
         <!-- modal 7-->
         <div class="modal-temor" id="modal7">
@@ -693,61 +725,8 @@
 
             </div>
         </div>
-
-
         <!-- modal 7 fin  -->
-
-
-        <!-- Pantalla Contacto -->
-        <div id="p_contacto" class="pantalla pregunta">
-            <div class="graf">
-                <div class="el-happy"><img src="/static/img/graf/el-13-feliz@1x.png" alt=""></div>
-
-            </div>
-            <main>
-                <div class="cont">
-                    <div class="fila">
-                        <div class="col">
-                            <h2><strong>¿Estás listo para crear<br>
-                                    un futuro vibrante?<br>
-                                    Escríbenos</strong></h2>
-                        </div>
-                        <div class="col">
-                            <form action="">
-                                <div class="form-grupo">
-                                    <label for="cf-nombre">Nombre</label>
-                                    <input type="text" name="nombre" id="cf-nombre" placeholder="Escribe tu nombre">
-                                </div>
-                                <div class="form-grupo">
-                                    <label for="cf-email">Email</label>
-                                    <input type="text" name="email" id="cf-email"
-                                        placeholder="Escribe tu correo electrónico">
-                                </div>
-                                <div class="form-grupo">
-                                    <label for="cf-tel">Teléfono</label>
-                                    <input type="tel" name="tel" id="cf-tel" placeholder="Escribe tu teléfono">
-                                </div>
-                                <div class="form-grupo">
-                                    <label for="cf-tel">¿Cuáles de estas opciones te conectan para iniciar?</label>
-                                    <select name="select">
-                                        <option value="value1" disabled selected>Seleccciona una opción</option>
-                                        <option value="value2">Value 2</option>
-                                        <option value="value3">Value 3</option>
-                                    </select>
-                                </div>
-                                <div class="form-grupo">
-                                    <label for="cf-mensaje">¿Cuáles de estas opciones te conectan para iniciar?</label>
-                                    <textarea name="" id="cf-mensaje" cols="30" rows="5"></textarea>
-                                </div>
-                                <div class="form-grupo">
-                                    <input class="btn btn-amarillo" type="submit" value="Enviar">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
+        
     </div>
 </body>
 

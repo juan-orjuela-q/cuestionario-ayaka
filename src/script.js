@@ -145,3 +145,15 @@ function validacion() {
     }
 }
 
+//Redimensionar graf
+function resizeGraf() {
+    let grafs = document.querySelectorAll('.graf')
+
+    grafs.forEach((graf)=> {
+        let main = graf.nextSibling
+        graf.style.height = `${main.offsetHeight}px`
+    })
+}
+
+resizeGraf()
+window.onresize = resizeGraf

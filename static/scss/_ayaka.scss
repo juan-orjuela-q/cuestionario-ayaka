@@ -18,6 +18,7 @@ body {
     height: 100%;
     pointer-events: none;
     opacity: 0;
+    overflow: auto;
 
     &.activo {
         pointer-events: initial;
@@ -143,9 +144,12 @@ Pantalla INTRO
 */
 #p_in_1 {
     text-align: center;
-
-    main .cont {
-        margin-bottom: 200px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    main  {
+        min-height: initial;
+        flex-grow: 2;
     }
 
     h1 {
@@ -157,8 +161,7 @@ Pantalla INTRO
     footer {
         background: white;
         padding: 20px 0;
-        position: absolute;
-        bottom: 0;
+        
         width: 100%;
         transition: transform .75s ease-out 1s;
 
@@ -247,7 +250,7 @@ Pantalla INTRO
     }
 
     .cont {
-        max-width: 800px;
+        max-width: 890px;
     }
 
     #gen_otro~input {
@@ -558,13 +561,16 @@ Pantalla INTRO
 }
 
 #p_in_7 {
+    .cont {
+        max-width: 1030px;
+    }
     .form-grupo {
         margin: 10vh 0 5vh;
         display: flex;
         align-items: stretch;
-        justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
-        width: 60vw;
+        /*width: 60vw;*/
         margin: auto;
     }
 
@@ -606,7 +612,8 @@ Pantalla INTRO
     }
 
     .radio-lg label {
-
+        width: 48%;
+        min-height: 88px;
         height: auto;
         text-align: left;
         display: inline-block;
@@ -618,10 +625,10 @@ Pantalla INTRO
         padding: 20px 30px 20px 90px !important;
         align-items: center;
         display: flex;
-        flex: 30%;
-        margin: 21px;
+        margin: 0 0 30px !important;
         background-color: $c-2;
         mix-blend-mode: hard-light;
+        box-sizing:border-box;
     }
 
     &.saliendo,
@@ -650,7 +657,7 @@ Pantalla INTRO
 
 #p_in_am1 {
     .form-grupo {
-        margin: 20vh 0 5vh;
+        margin: 15vh 0 5vh;
     }
 
     #pcreativa_no~input {
