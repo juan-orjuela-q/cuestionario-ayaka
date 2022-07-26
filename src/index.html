@@ -13,7 +13,7 @@
 <body>
     <div id="contenedor-maestro">
         <!-- Pantalla 1 -->
-        <div id="p_in_1" class="pantalla info">
+        <div id="p_in_1" class="pantalla info activo">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-1-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
@@ -134,7 +134,7 @@
                             <input class="porque-ocultar" type="radio" id="pcreativa_si" name="eres_creativo" value="Sí">
                             <label for="pcreativa_si"><strong>¡SÍ!</strong></label>
 
-                            <input class="porque-mostrar" type="radio" id="pcreativa_no" name="eres_creativo" value="No">
+                            <input class="porque-mostrar " type="radio" id="pcreativa_no" name="eres_creativo" value="No">
                             <label class="ultimo" for="pcreativa_no"><strong>¡NO!</strong></label>
                             <input class="porque" type="text" placeholder="¿Por qué?" name="" id="">
                         </div>
@@ -157,7 +157,7 @@
                         </strong>
                     </h2>
                     <div class="form-grupo radio-lg amarillo">
-                        <textarea name="textarea" rows="8" cols="50" id="dedicacion"></textarea>
+                        <textarea name="textarea" rows="8" cols="50" id="dedicacion" required></textarea>
                     </div>
                     <a href="#" data-origen="p_in_5" data-destino="p_in_6" class="btn continuar btn-amarillo">Continuar</a>
                 </div>
@@ -177,7 +177,7 @@
             </main>
         </div>
         <!-- Pantalla 7 -->
-        <div id="p_in_7" class="pantalla pregunta  activo">
+        <div id="p_in_7" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-5-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -229,10 +229,10 @@
                     </h2>
                     <div class="form-grupo radio-lg amarillo radio-grupo-requerido">
                         <input class="porque-ocultar" type="radio" id="apasiona_si" name="vivir_apasiona" value="Sí">
-                        <label for="apasiona_si"><strong>¡SÍ!</strong></label>
+                        <label for=" apasiona_si"><strong>¡SÍ!</strong></label>
 
-                        <input type="radio" id="apasiona_no" name="vivir_apasiona" value="No">
-                        <label class="porque-mostrar ultimo" for="apasiona_no"><strong>¡NO!</strong></label>
+                        <input class="porque-mostrar " type="radio" id="apasiona_no" name="vivir_apasiona" value="No">
+                        <label class="pultimo" for="apasiona_no"><strong>¡NO!</strong></label>
                         <input class="porque" type="text" placeholder="¿Por qué?" name="" id="">
                     </div>
                     <a href="#" data-origen="p_in_am1" data-destino="p_in_am2" class="btn continuar btn-amarillo">Continuar</a>
@@ -254,7 +254,7 @@
                     <p class="txt worksans">
                         Escoge las ilustraciones de los temores que más te identifiquen,<br> puedes escoger más de uno.
                     </p>
-                    <div class="form-grupo radio-lg amarillo">
+                    <div class="form-grupo radio-lg amarillo aleatorio">
 
                         <a class="pieza" data-modal="modal1">
                             <p>Temor a las <br>ideas</p>
@@ -314,7 +314,7 @@
                         materializar un proyecto o idea en tu vida personal y/o lugar de trabajo?
                     </h2>
 
-                    <div class="form-grupo radio-lg amarillo">
+                    <div class="form-grupo radio-lg amarillo aleatorio">
 
                         <a class="pieza" data-modal="modal1">
                             <p>Temores de <br>autoestima</p>
@@ -354,7 +354,7 @@
         ========== 
         -->
         <!-- Pantalla Final 1 -->
-        <div id="p_f_1" class="pantalla pregunta ">
+        <div id="p_f_1" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
