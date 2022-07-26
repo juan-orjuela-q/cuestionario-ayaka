@@ -1,11 +1,15 @@
 @media (max-width: 1600px) {
+
     //Generales
     .lg {
         font-size: 2rem;
     }
-    .btn, input[type=submit] {
+
+    .btn,
+    input[type=submit] {
         font-size: 1.75rem
     }
+
     //Pantallas
     #p_in_1 {
         .lg {
@@ -13,7 +17,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         footer {
             .fila {
                 align-items: center;
@@ -30,23 +34,71 @@
         }
     }
 }
+
 @media (max-width: 1440px) {
-    #p_in_1  {
+    #p_in_1 {
         .el-circ {
             max-width: 65vw;
         }
+
         .el-circBorde {
             max-width: 35vw;
         }
     }
+
+    #p_in_am2, #p_in_az2 {
+        flex-wrap: wrap;
+
+        a.pieza {
+            max-width: 20%
+        }
+
+        .el-circ {
+            justify-content: flex-end
+        }
+    }
 }
+
 @media (max-width: 1024px) {
-    #p_in_2  {
+    #p_in_2 {
         .form-grupo:last-of-type label {
             display: block;
             text-align: left;
             margin-bottom: .75rem
         }
+    }
+
+    .modal-temor {
+        h2 {
+            font-size: 2rem;
+
+            br {
+                display: none;
+            }
+
+        }
+
+        .checkbox-cont {
+            font-size: 1rem;
+
+            .checkmark {
+                top: -6px;
+            }
+        }
+    }
+
+    #p_in_am2, #p_in_az2 {
+
+        a.pieza {
+            max-width: 25%
+        }
+        .txt {
+            font-size: 1.5rem;
+            br {
+                display: none;
+            }
+        }
+        
     }
 }
 
@@ -54,25 +106,30 @@
     h2 {
         font-size: 2rem;
     }
+
     .lg {
         font-size: 1.5rem;
     }
+
     body {
         font-size: 1.25rem;
     }
+
     .radio-lg label {
         font-size: 2.5rem;
         width: 6rem;
         height: 6rem;
         line-height: 6rem;
     }
-    #p_in_2  {
+
+    #p_in_2 {
         .form-grupo:nth-child(3) label {
             max-width: 250px;
             margin: 0 auto .75rem;
             display: block;
             text-align: left;
         }
+
         .form-grupo:nth-child(6) label {
             max-width: 500px;
             margin: 0 auto .75rem;
@@ -80,36 +137,89 @@
             text-align: left;
         }
     }
-    #p_in_4, #p_in_5, #p_in_am1 {
+
+    #p_in_4,
+    #p_in_5,
+    #p_in_am1 {
         .form-grupo {
             margin: 5vh 0 5vh;
         }
     }
+
     #p_in_7 {
         .radio-lg label {
             width: 100%
         }
     }
-}
+    #p_in_am2, #p_in_az2 {
 
+        a.pieza {
+            max-width: 33%
+        }
+        
+    }
+    .modal-temor {
+        .fila {
+            flex-wrap: wrap;
+            .izq, .der {
+                width: 100% !important;
+                margin: 0 !important;
+                min-height: 20vh;
+            }
+        }
+    }
+    #p_f_2 {
+        .fila {
+            flex-wrap: wrap;
+            .col {
+                min-width: 100%;
+                flex-grow: 2;
+            }
+            .col:last-child img {
+                max-width: 100%;
+                margin: 0 auto -34px;
+            }
+        }
+        .cont-compartir {
+            width: 75vw
+        }
+        
+    }
+}
+@media (max-width: 560px) {
+    #p_in_am2, #p_in_az2 {
+
+        a.pieza {
+            max-width: 100%
+        }
+        
+    }
+}
 @media (max-width: 480px) {
     body {
         font-size: 1rem;
     }
-    input[type=radio] + label:after {
+
+    input[type=radio]+label:after {
         top: -2px;
     }
-    input, select, textarea {
+
+    input,
+    select,
+    textarea {
         padding: 0 1rem;
         min-height: 2.5rem;
     }
+
     .form-grupo {
         margin-bottom: 1.5rem;
     }
+
     #p_in_1 {
         footer {
             .fila {
                 flex-direction: column;
+
                 img {
                     max-height: 50px;
                     margin: 5px;
@@ -117,5 +227,5 @@
             }
         }
     }
-   
+
 }

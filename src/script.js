@@ -17,7 +17,7 @@ botones.forEach(btn => {
         //Validar requeridos
         const padre = btn.closest('.cont'),
             pantalla = btn.closest('.pantalla'),
-            requeridos = padre.querySelectorAll('input:required'),
+            requeridos = padre.querySelectorAll('input:required, textarea:required'),
             radioRequeridos = padre.querySelectorAll('.radio-grupo-requerido'),
             errores = padre.querySelectorAll('.error')
 
@@ -68,7 +68,7 @@ botones.forEach(btn => {
             let checksTemoresArr = 0
 
             checksTemores.forEach(i => {
-                if(i.checked) {
+                if (i.checked) {
                     checksTemoresArr++
                 }
             })
@@ -86,6 +86,13 @@ botones.forEach(btn => {
 
             if (btn.dataset.origen === 'p_in_7') {
                 avanzarCamino()
+            } else if (btn.dataset.origen === 'p_f_1') {
+                const temores = document.querySelectorAll('#temores-finales input:checked')
+                if (temores.length > 0) {
+                    avanzar(origen, destino)
+                } else {
+                    agregarError(btn, 'Escoge al menos 1 opción')
+                }
             } else {
                 avanzar(origen, destino)
             }
@@ -127,7 +134,7 @@ const mostrarPorque = document.querySelectorAll('.porque-mostrar'),
 
 mostrarPorque.forEach(item => {
     item.addEventListener('click', (event) => {
-        const inputPq = item.nextElementSibling
+        const inputPq = item.nextElementSibling.nextElementSibling
         inputPq.classList.add('requerido')
     })
 })
@@ -252,6 +259,12 @@ function resizeGraf() {
         graf.style.height = `${main.offsetHeight}px`
     })
 }
+//Opciones aleatorias
+const opcionesAleatorias = document.querySelectorAll('.aleatorio .pieza')
+opcionesAleatorias.forEach(opc => {
+    let num = Math.floor(Math.random() * 11)
+    opc.style.order = num
+})
 
 resizeGraf()
 window.onresize = resizeGraf
