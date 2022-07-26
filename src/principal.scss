@@ -3,4 +3,6 @@
 @import '/static/scss/_ayaka';
 @import '/static/scss/_responsive';
 
-
+#webpack-dev-server-client-overlay {
+    display: none
+}

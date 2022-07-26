@@ -1,28 +1,113 @@
 import './principal.scss'
 
-const bd = require("./bd");
+//Leo const bd = require("./bd");
 
 
 
 //Botones
-const botones = document.querySelectorAll('.btn')
+const botones = document.querySelectorAll('.continuar')
 
 botones.forEach(btn => {
     btn.addEventListener('click', (event) => {
         event.preventDefault()
         const destino = document.getElementById(btn.dataset.destino)
         const origen = document.getElementById(btn.dataset.origen)
-        bd.guardarRespuestas(origen,destino);
-        avanzar(origen,destino)
+        //Leo bd.guardarRespuestas(origen,destino);
+        //avanzar(origen, destino)
+        //Validar requeridos
+        const padre = btn.closest('.cont'),
+            pantalla = btn.closest('.pantalla'),
+            requeridos = padre.querySelectorAll('input:required'),
+            radioRequeridos = padre.querySelectorAll('.radio-grupo-requerido'),
+            errores = padre.querySelectorAll('.error')
 
-        if(destino.classList.contains('anim')) {
-            setTimeout(() => {
-                //Avanzar
-                avanzar(destino, document.getElementById(destino.dataset.destino))
-            }, 9000);
+        let validado = true
+
+        if (errores) {
+            errores.forEach(i => {
+                i.remove()
+            })
+        } else {
+            validado = true
+        }
+
+
+        //Campos requeridos
+        requeridos.forEach(i => {
+            if (i.value === '') {
+                i.classList.add('falta')
+                agregarError(i, 'Este campo es obligatorio')
+                validado = false
+            } else {
+                i.classList.remove('falta')
+            }
+        })
+
+        //Radio buttons
+        if (radioRequeridos.length > 0) {
+            radioRequeridos.forEach(radioGrupo => {
+                let i = radioGrupo.querySelectorAll('input:checked'),
+                    pq = radioGrupo.querySelector('.requerido')
+
+                if (i.length === 0) {
+                    validado = false
+                    agregarError(radioGrupo, 'Elige una opción')
+                }
+                if (pq) {
+                    if (pq.value === '') {
+                        validado = false
+                        agregarError(radioGrupo, 'Este campo es obligatorio')
+                    }
+                }
+            })
+        }
+        //Pantallas con modales
+        if (pantalla.classList.contains('mostrar-modal')) {
+            const checksTemores = document.querySelectorAll('.input-temor')
+
+            let checksTemoresArr = 0
+
+            checksTemores.forEach(i => {
+                if(i.checked) {
+                    checksTemoresArr++
+                }
+            })
+
+            if (checksTemoresArr === 0) {
+                validado = false
+                const opciones = padre.querySelector('.form-grupo')
+                agregarError(opciones, 'Escoge al menos 1 opción')
+            }
+
+        }
+
+        //Si se valida avanza
+        if (validado) {
+
+            if (btn.dataset.origen === 'p_in_7') {
+                avanzarCamino()
+            } else {
+                avanzar(origen, destino)
+            }
+
+            if (destino.classList.contains('anim')) {
+                setTimeout(() => {
+                    //Avanzar
+                    avanzar(destino, document.getElementById(destino.dataset.destino))
+                }, 9000);
+            }
+        } else {
+            agregarError(btn, 'Falta información')
         }
     })
 })
+
+function agregarError(item, texto) {
+    const msg = document.createElement('div')
+    msg.classList.add('error')
+    msg.append(texto)
+    item.parentNode.insertBefore(msg, item.nextSibling)
+}
 
 function avanzar(origen, destino) {
     origen.classList.add('saliendo')
@@ -36,6 +121,24 @@ function avanzar(origen, destino) {
     }, 3000);
 
 }
+//Porque
+const mostrarPorque = document.querySelectorAll('.porque-mostrar'),
+    ocultarPorque = document.querySelectorAll('.porque-ocultar')
+
+mostrarPorque.forEach(item => {
+    item.addEventListener('click', (event) => {
+        const inputPq = item.nextElementSibling
+        inputPq.classList.add('requerido')
+    })
+})
+
+ocultarPorque.forEach(item => {
+    item.addEventListener('click', (event) => {
+        const inputPq = item.parentNode.querySelector('.porque')
+        inputPq.classList.remove('requerido')
+    })
+})
+
 //Temores
 const pops = document.querySelectorAll('.pieza')
 pops.forEach(i => {
@@ -45,7 +148,7 @@ pops.forEach(i => {
         console.log(destino)
         const modal = document.getElementById(destino)
         modal.classList.add("mostrar")
-        
+
     })
 })
 
@@ -69,20 +172,17 @@ function cerrarpop(btnclse) {
 
 }
 
-var isChecked = document.getElementById('validar');
-isChecked.addEventListener("click", validacion);
-
 
 //Almacenar temores
-const temores = [], 
-btnTemoresAm = document.getElementById('confirmar-temores-am'),
-btnTemoresAz = document.getElementById('confirmar-temores-az'),
-temoresFinales = document.getElementById('temores-finales')
+const temores = [],
+    btnTemoresAm = document.getElementById('confirmar-temores-am'),
+    btnTemoresAz = document.getElementById('confirmar-temores-az'),
+    temoresFinales = document.getElementById('temores-finales')
 
 function guardarTemores() {
     const checksTemores = document.querySelectorAll('.input-temor')
     checksTemores.forEach((i) => {
-        if(i.checked) {
+        if (i.checked) {
             temores.push(i.value)
         }
     })
@@ -92,7 +192,7 @@ function guardarTemores() {
         let label_tem = document.createElement("label")
         label_tem.classList.add('checkbox-cont')
         temoresFinales.append(label_tem)
-        
+
         let input_tem = document.createElement("input")
         input_tem.classList.add('input-temor')
         input_tem.type = 'checkbox'
@@ -109,6 +209,8 @@ function guardarTemores() {
         label_tem.append(span_tem)
         label_tem.append(checkmark)
     })
+
+
 }
 
 btnTemoresAm.addEventListener('click', guardarTemores)
@@ -116,29 +218,25 @@ btnTemoresAz.addEventListener('click', guardarTemores)
 
 
 //Caminos
-function validacion() {
+function avanzarCamino() {
 
     var op1 = document.getElementById('opcion1').checked;
     var op2 = document.getElementById('opcion2').checked;
     var op3 = document.getElementById('opcion3').checked;
     var op4 = document.getElementById('opcion4').checked;
     const origen = document.getElementById('p_in_7')
-    const destino = document.getElementById('p_in_am1')
-    const destinoazul = document.getElementById('p_in_az2')
+    const destinoAmarillo = document.getElementById('p_in_am1')
+    const destinoAzul = document.getElementById('p_in_az2')
 
-
-
-    if (op1 || op3) {
-        console.log("primera seleccion")
+    if (op2 || op3) {
         //if (op1) postAnswer('FRASE', 'A')
         //if (op3) postAnswer('FRASE', 'C')
-        avanzar(origen, destino)
+        avanzar(origen, destinoAmarillo)
     }
-    else if (op2 || op4) {
-        console.log("segunda seleccion ")
+    else if (op1 || op4) {
         //if (op2) postAnswer('FRASE', 'B')
         //if (op4) postAnswer('FRASE', 'D')
-        avanzar(origen, destinoazul)
+        avanzar(origen, destinoAzul)
     }
     else {
         console.log("ninguno")
@@ -149,7 +247,7 @@ function validacion() {
 function resizeGraf() {
     let grafs = document.querySelectorAll('.graf')
 
-    grafs.forEach((graf)=> {
+    grafs.forEach((graf) => {
         let main = graf.nextSibling
         graf.style.height = `${main.offsetHeight}px`
     })

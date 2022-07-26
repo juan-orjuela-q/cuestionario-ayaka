@@ -73,6 +73,12 @@
             display: block;
             text-align: left;
         }
+        .form-grupo:nth-child(6) label {
+            max-width: 500px;
+            margin: 0 auto .75rem;
+            display: block;
+            text-align: left;
+        }
     }
     #p_in_4, #p_in_5, #p_in_am1 {
         .form-grupo {

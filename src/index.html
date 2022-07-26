@@ -22,7 +22,7 @@
             <main>
                 <div class="cont">
                     <h1>
-                        <img srcset=" /static/img/tit-intro.svg 2000w, /static/img/tit-intro-mb.svg 690w"  
+                        <img srcset=" /static/img/tit-intro.svg 2000w, /static/img/tit-intro-mb.svg 690w"
                             alt="Te damos la bienvenida a las creencias y temores que nos limitan">
                         <span>Te damos la bienvenida a las creencias y temores que nos limitan</span>
                     </h1>
@@ -34,7 +34,7 @@
                         <strong>Ayúdanos a descubrir cuales son esas creencias y temores que impiden que lo
                             logremos.</strong>
                     </p>
-                    <a href="#" data-origen="p_in_1" data-destino="p_in_2" class="btn btn-verde">Iniciemos</a>
+                    <a href="#" data-origen="p_in_1" data-destino="p_in_2" class="btn continuar btn-verde">Iniciemos</a>
                 </div>
             </main>
             <footer>
@@ -47,7 +47,7 @@
             </footer>
         </div>
         <!-- Pantalla 2 -->
-        <div id="p_in_2" class="pantalla pregunta">
+        <div id="p_in_2" class="pantalla pregunta ">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-2-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-2-circulo@1x.png" alt=""></div>
@@ -58,42 +58,49 @@
                     <h2>¡Antes de continuar,<br>
                         <strong>deseamos mucho conocerte!</strong>
                     </h2>
+
                     <div class="form-grupo">
-                        <input type="text" placeholder="¿Cuál es tu nombre completo?" id="infoNombre" />
+                        <input type="text" placeholder="¿Cuál es tu nombre completo?" id="infoNombre" required>
                     </div>
-                    <div class="form-grupo">
+                    <div class="form-grupo radio-grupo">
                         <p>¿Cuál es tu género?</p>
-                        <input type="radio" id="gen_hombre" name="genero" value="Hombre">
-                        <label for="gen_hombre">Hombre</label>
+                        <div class="radio-grupo-requerido">
+                            <input type="radio" id="gen_hombre" name="genero" value="Hombre">
+                            <label for="gen_hombre">Hombre</label>
 
-                        <input type="radio" id="gen_mujer" name="genero" value="Mujer">
-                        <label for="gen_mujer">Mujer</label>
+                            <input type="radio" id="gen_mujer" name="genero" value="Mujer">
+                            <label for="gen_mujer">Mujer</label>
 
-                        <input type="radio" id="gen_nobinario" name="genero" value="No binario">
-                        <label for="gen_nobinario">No binario</label>
+                            <input type="radio" id="gen_nobinario" name="genero" value="No binario">
+                            <label for="gen_nobinario">No binario</label>
 
-                        <input type="radio" id="gen_otro" name="genero" value="Otro">
-                        <label for="gen_otro">Otro</label>
-                        <input type="text" placeholder="¿Cuál?" name="" id="">
+                            <input type="radio" id="gen_otro" name="genero" value="Otro">
+                            <label for="gen_otro">Otro</label>
+                            <input type="text" placeholder="¿Cuál?" name="" id="">
+                        </div>
+
                     </div>
                     <div class="form-grupo">
                         <input id="profesion"
                             placeholder="¿ Cuál es tu profesión? (la que ejerces, no necesariamente tu título profesional)"
-                            type="text">
+                            type="text" required>
                     </div>
                     <div class="form-grupo">
-                        <input id="email" placeholder="¿Cuál es tu correo electrónico?" type="email">
+                        <input id="email" placeholder="¿Cuál es tu correo electrónico?" type="email" required>
                     </div>
-                    <div class="form-grupo">
+                    <div class="form-grupo ">
                         <p>¿Quieres que compartamos información contigo a este correo?</p>
-                        <input type="radio" id="comp_si" name="compartir_info" value="Sí">
-                        <label for="comp_si"><strong>¡SÍ!</strong> Me encantan sus creaciones</label>
+                        <div class="radio-grupo-requerido">
+                            <input type="radio" id="comp_si" name="compartir_info" value="Sí">
+                            <label for="comp_si"><strong>¡SÍ!</strong> Me encantan sus creaciones</label>
 
-                        <input type="radio" id="comp_no" name="compartir_info" value="No">
-                        <label for="comp_no"><strong>¡NO!</strong> Solo quiero participar de este estudio</label>
+                            <input type="radio" id="comp_no" name="compartir_info" value="No">
+                            <label for="comp_no"><strong>¡NO!</strong> Solo quiero participar de este estudio</label>
+                        </div>
                     </div>
 
-                    <a href="#" data-origen="p_in_2" data-destino="p_in_3" class="btn btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_2" data-destino="p_in_3" class="btn continuar btn-amarillo">Continuar</a>
+
                 </div>
             </main>
         </div>
@@ -123,14 +130,16 @@
                         <strong>persona creativa?</strong>
                     </h2>
                     <div class="form-grupo radio-lg amarillo">
-                        <input type="radio" id="pcreativa_si" name="compartir_info" value="Sí">
-                        <label for="pcreativa_si"><strong>¡SÍ!</strong></label>
+                        <div class="radio-grupo-requerido">
+                            <input class="porque-ocultar" type="radio" id="pcreativa_si" name="eres_creativo" value="Sí">
+                            <label for="pcreativa_si"><strong>¡SÍ!</strong></label>
 
-                        <input type="radio" id="pcreativa_no" name="compartir_info" value="No">
-                        <label class="ultimo" for="pcreativa_no"><strong>¡NO!</strong></label>
-                        <input type="text" placeholder="¿Por qué?" name="" id="">
+                            <input class="porque-mostrar" type="radio" id="pcreativa_no" name="eres_creativo" value="No">
+                            <label class="ultimo" for="pcreativa_no"><strong>¡NO!</strong></label>
+                            <input class="porque" type="text" placeholder="¿Por qué?" name="" id="">
+                        </div>
                     </div>
-                    <a href="#" data-origen="p_in_4" data-destino="p_in_5" class="btn btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_4" data-destino="p_in_5" class="btn continuar btn-amarillo">Continuar</a>
                 </div>
             </main>
         </div>
@@ -149,19 +158,26 @@
                     </h2>
                     <div class="form-grupo radio-lg amarillo">
                         <textarea name="textarea" rows="8" cols="50" id="dedicacion"></textarea>
-                        <!-- <input type="radio" id="pcreativa_si" name="compartir_info" value="Sí">
-                            <label for="pcreativa_si"><strong>¡SÍ!</strong></label> -->
-
-                        <!-- <input type="radio" id="pcreativa_no" name="compartir_info" value="No">
-                            <label class="ultimo" for="pcreativa_no"><strong>¡NO!</strong></label>
-                            <input type="text" placeholder="¿Por qué?" name="" id=""> -->
                     </div>
-                    <a href="#" data-origen="p_in_5" data-destino="p_in_7" class="btn btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_5" data-destino="p_in_6" class="btn continuar btn-amarillo">Continuar</a>
+                </div>
+            </main>
+        </div>
+        <!-- Pantalla 6 -->
+        <div id="p_in_6" class="pantalla anim" data-destino="p_in_7">
+            <div class="graf">
+                <div class="el-happy"><img src="/static/img/graf/el-12-feliz@1x.png" alt=""></div>
+                <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
+                <div class="el-circBorde"><img src="/static/img/graf/el-1-borde@1x.png" alt=""></div>
+            </div>
+            <main>
+                <div class="cont">
+                    <h2><strong>Continuemos...</strong></h2>
                 </div>
             </main>
         </div>
         <!-- Pantalla 7 -->
-        <div id="p_in_7" class="pantalla pregunta">
+        <div id="p_in_7" class="pantalla pregunta  activo">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-5-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -172,24 +188,25 @@
                     <h2>Escoge la frase <BR>
                         <strong>que más te identifica:</strong>
                     </h2>
-                    <div class="form-grupo radio-lg amarillo">
+                    <div class="form-grupo radio-lg amarillo radio-grupo-requerido">
 
-                        <input type="radio" id="opcion1" name="compartir_info" value="Sí">
-                        <label class="opcion1" for="opcion1"><span><strong>Vivo de hacer lo que me apasiona</strong></span></label>
+                        <input type="radio" id="opcion1" name="frase_identifica" value="Vivo de hacer lo que me apasiona">
+                        <label class="opcion1" for="opcion1"><span><strong>Vivo de hacer lo que me
+                                    apasiona</strong></span></label>
 
-                        <input type="radio" id="opcion2" name="compartir_info" value="No">
+                        <input type="radio" id="opcion2" name="frase_identifica" value="Hago lo que me apasiona sólo en mis tiempos libres">
                         <label class="ultimo opcion2" for="opcion2"><span><strong>Hago lo que me apasiona sólo en mis
                                     tiempos libres</strong></span></label>
 
-                        <input type="radio" id="opcion3" name="compartir_info" value="Sí">
+                        <input type="radio" id="opcion3" name="frase_identifica" value="Hay cosas que me apasionan pero no tengo el tiempo para ellas">
                         <label class="opcion3" for="opcion3"><span><strong>Hay cosas que me apasionan pero no tengo el
                                     tiempo para ellas</strong></span></label>
 
-                        <input type="radio" id="opcion4" name="compartir_info" value="No">
+                        <input type="radio" id="opcion4" name="frase_identifica" value="No he encontrado algo que me apasione">
                         <label class="ultimo opcion4" for="opcion4"><span><strong>No he encontrado algo que me
                                     apasione</strong></span></label>
                     </div>
-                    <a href="#" data-origen="p_in_7" data-destino="" class="btn btn-verde" id="validar">Continuar</a>
+                    <a href="#" data-origen="p_in_7" data-destino="" class="btn continuar btn-verde" id="validar">Continuar</a>
                 </div>
             </main>
         </div>
@@ -199,7 +216,7 @@
         ========== 
         -->
         <!-- Pantalla p am 1 -->
-        <div id="p_in_am1" class="pantalla pregunta activo">
+        <div id="p_in_am1" class="pantalla pregunta ">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-3-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-3-circulo@1x.png" alt=""></div>
@@ -210,20 +227,20 @@
                     <h2>¿Te gustaría vivir <br>
                         <strong>de lo que te apasiona? </strong>
                     </h2>
-                    <div class="form-grupo radio-lg verde">
-                        <input type="radio" id="pcreativa_si" name="compartir_info" value="Sí">
-                        <label for="pcreativa_si"><strong>¡SÍ!</strong></label>
+                    <div class="form-grupo radio-lg amarillo radio-grupo-requerido">
+                        <input class="porque-ocultar" type="radio" id="apasiona_si" name="vivir_apasiona" value="Sí">
+                        <label for="apasiona_si"><strong>¡SÍ!</strong></label>
 
-                        <input type="radio" id="pcreativa_no" name="compartir_info" value="No">
-                        <label class="ultimo" for="pcreativa_no"><strong>¡NO!</strong></label>
-                        <input type="text" placeholder="¿Por qué?" name="" id="">
+                        <input type="radio" id="apasiona_no" name="vivir_apasiona" value="No">
+                        <label class="porque-mostrar ultimo" for="apasiona_no"><strong>¡NO!</strong></label>
+                        <input class="porque" type="text" placeholder="¿Por qué?" name="" id="">
                     </div>
-                    <a href="#" data-origen="p_in_am1" data-destino="p_in_am2" class="btn btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_am1" data-destino="p_in_am2" class="btn continuar btn-amarillo">Continuar</a>
                 </div>
             </main>
         </div>
         <!-- Pantalla p am 2 -->
-        <div id="p_in_am2" class="pantalla pregunta">
+        <div id="p_in_am2" class="pantalla pregunta mostrar-modal">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -273,7 +290,8 @@
                         <strong>para que tengas un mapeo real de lo que te limita
                         </strong>
                     </p>
-                    <a id="confirmar-temores-am" href="#" data-origen="p_in_am2" data-destino="p_f_1" class="btn btn-verde">Continuar</a>
+                    <a id="confirmar-temores-am" href="#" data-origen="p_in_am2" data-destino="p_f_1"
+                        class="btn continuar btn-verde">Continuar</a>
                 </div>
             </main>
         </div>
@@ -284,7 +302,7 @@
         -->
         <!-- Pantalla p az 1 -->
         <!-- Pantalla p az 2 -->
-        <div id="p_in_az2" class="pantalla pregunta">
+        <div id="p_in_az2" class="pantalla pregunta mostrar-modal">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -325,7 +343,8 @@
 
                     </div>
 
-                    <a id="confirmar-temores-az" href="#" data-origen="p_in_az2" data-destino="p_f_1" class="btn btn-verde">Continuar</a>
+                    <a id="confirmar-temores-az" href="#" data-origen="p_in_az2" data-destino="p_f_1"
+                        class="btn continuar btn-verde">Continuar</a>
                 </div>
             </main>
         </div>
@@ -349,7 +368,7 @@
                     </h2>
                     <form id="temores-finales">
                     </form>
-                    <a href="#" data-origen="p_f_1" data-destino="p_f_2" class="btn btn-amarillo" id="">Continuar</a>
+                    <a href="#" data-origen="p_f_1" data-destino="p_f_2" class="btn continuar btn-amarillo" id="">Continuar</a>
                 </div>
             </main>
         </div>
@@ -659,7 +678,7 @@
                                 estos temores:</strong>
                         </h2>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_fracaso_A" value="Temor F1" >
+                            <input class="input-temor" type="checkbox" id="temor_fracaso_A" value="Temor F1">
                             <span class="span-temor">Temor F1</span>
                             <span class="checkmark"></span>
                         </label>
@@ -718,7 +737,7 @@
                             <span class="checkmark"></span>
                         </label>
 
-                        <a href="#" class="btn btn-amarillo aceptar">OK</a>
+                        <a href="#" class="btn continuar btn-amarillo aceptar">OK</a>
                     </div>
 
                 </div>
@@ -726,7 +745,7 @@
             </div>
         </div>
         <!-- modal 7 fin  -->
-        
+
     </div>
 </body>
 
