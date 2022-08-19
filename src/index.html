@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta property="og:title" content="Pruebas de compartir"/>
 </head>
 
 <body>
     <div id="contenedor-maestro">
         <!-- Pantalla 1 -->
-        <div id="p_in_1" class="pantalla info activo">
+        <div id="p_in_1" class="pantalla info ">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-1-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
@@ -216,7 +217,7 @@
         ========== 
         -->
         <!-- Pantalla p am 1 -->
-        <div id="p_in_am1" class="pantalla pregunta">
+        <div id="p_in_am1" class="pantalla pregunta ">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-3-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-3-circulo@1x.png" alt=""></div>
@@ -240,7 +241,7 @@
             </main>
         </div>
         <!-- Pantalla p am 2 -->
-        <div id="p_in_am2" class="pantalla pregunta mostrar-modal">
+        <div id="p_in_am2" class="pantalla pregunta mostrar-modal ">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-10-feliz@2x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-11-circulo@1x.png" alt=""></div>
@@ -373,7 +374,7 @@
             </main>
         </div>
         <!-- Pantalla Final 2 -->
-        <div id="p_f_2" class="pantalla info">
+        <div id="p_f_2" class="pantalla info activo">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-12-feliz@1x.png" alt=""></div>
             </div>
@@ -397,21 +398,93 @@
                             <p>En Experiencias Ayáka <strong>diseñamos entrenamientos</strong> fuera de lo común para
                                 <strong>construir un futuro vibrante</strong> para ti y tu equipo de trabajo.
                             </p>
-                            <a href="#" class="btn btn-amarillo">¡Contáctanos y co creemos!</a>
+                            <a href="#" class="btn btn-amarillo pieza" data-modal="contactanos">¡Contáctanos y co creemos!</a>
                             <img src="/static/img/personaje.png" alt="Personaje Ayaka">
                             <div class="cont-compartir">
                                 <p>Comparte con todas las personas<br>
                                     <strong>a las que crees les aporta este test.</strong>
                                 </p>
-                                <a href="#" class="btn btn-amarillo">¡Compartir!</a>
+                                <div class="btn btn-amarillo">¡Compartir! 
+                                    <span class="tooltiptext">
+                                        <a href="https://www.facebook.com"><img src="/static/img/facebook.svg"></a>
+                                        <a href="https://twitter.com/"><img src="/static/img/tw.svg"></a>
+                                        <a href="https://www.linkedin.com/"><img src="/static/img/in.svg"></a>
+
+                                    </span>
+                                 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
+        
+     
+   <!-- modal contacto-->
+   <div class="modal-temor contactos" id="contactanos">
+    <div class="modal">
+        <div class="fila">
+
+            <div class="col izq">
+                <h2><strong>¿Estás listo para crear <br>
+                    un futuro vibrante?<br>
+                    Escríbenos</strong>
+            </h2>
+
+
+            </div> 
+            <div class="col der">
+                <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                
+                <form action="">
+                    <div class="form-grupo">
+                        <label for="cf-nombre">Nombre</label>
+                        <input type="text" name="nombre" id="cf-nombre" placeholder="Escribe tu nombre">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="cf-email">Email</label>
+                        <input type="text" name="email" id="cf-email"
+                            placeholder="Escribe tu correo electrónico">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="cf-tel">Teléfono</label>
+                        <input type="tel" name="tel" id="cf-tel" placeholder="Escribe tu teléfono">
+                    </div>
+                    <!-- <div class="form-grupo">
+                        <label for="cf-tel">¿Cuáles de estas opciones te conectan para iniciar?</label>
+                        <select name="select">
+                            <option value="value1" disabled selected>Seleccciona una opción</option>
+                            <option value="value2">Value 2</option>
+                            <option value="value3">Value 3</option>
+                        </select>
+                    </div> -->
+                    <div class="form-grupo">
+                        <label for="cf-mensaje">¿ Tienes algo más para contarnos? ¡Escríbemos queremos co-crear 
+                            contigo algo genial!</label>
+                        <textarea name="" id="cf-mensaje" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="form-grupo">
+                        <input class="btn btn-amarillo" type="submit" value="Enviar">
+                    </div>
+                </form> 
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+<!-- modal contacto fin -->
+
+
+
+
         <!-- Pantalla Contacto -->
-        <div id="p_contacto" class="pantalla pregunta">
+        <div id="p_contacto" class="pantalla pregunta ">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-13-feliz@1x.png" alt=""></div>
 

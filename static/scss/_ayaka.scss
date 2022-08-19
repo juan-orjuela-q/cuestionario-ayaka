@@ -1055,6 +1055,9 @@ Pantalla INTRO
     }
 }
 
+
+
+
 .mostrar {
     display: initial !important;
 }
@@ -1266,4 +1269,76 @@ Pantalla FINALES
         left: -3%;
 
     }
+}
+
+.contactos{
+    .modal{
+        
+        background: $c-claro url('/static/img/textura-fondo.jpg') no-repeat center;
+        width: 100vw;
+        min-height: 100vh;
+        max-width: inherit;
+        
+
+        .fila {
+            background: #59e2c6;
+            mix-blend-mode: multiply;
+            overflow: auto;
+
+            .izq{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            .der{
+           
+            margin: auto;
+            background: #59e2c700;
+
+            .cerrar{
+                right: 0px;
+                top: 0px;
+            }
+            form {
+                max-width: 750px;
+               
+            }
+            
+            }
+        }
+        
+    }
+}
+
+.btn .tooltiptext {
+    visibility: hidden;
+    width: 175px;
+    background-color: #f2ce30;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    
+}
+  .btn:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .tooltiptext a {
+    width: 50px;
+    height: 30px;
+    
+}
+
+
+span.tooltiptext img {
+    width: 30px;
 }

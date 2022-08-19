@@ -177,7 +177,11 @@ function cerrarpop(btnclse) {
     var parentDiv = btnclse.closest('.modal-temor');
     parentDiv.classList.remove("mostrar")
 
-}
+};
+
+
+ 
+
 
 
 //Almacenar temores
