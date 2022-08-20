@@ -1,0 +1,2 @@
+(()=>{"use strict";document.querySelectorAll(".btn").forEach((e=>{e.addEventListener("click",(t=>{t.preventDefault();const c=e.dataset.destino;console.log(c)}))}))})();
+//# sourceMappingURL=bundle.8130e1972c0d020d.js.map
