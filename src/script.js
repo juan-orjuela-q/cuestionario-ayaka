@@ -1,6 +1,6 @@
 import './principal.scss'
 
-//Leo const bd = require("./bd");
+const bd = require("./bd");
 
 
 
@@ -12,7 +12,7 @@ botones.forEach(btn => {
         event.preventDefault()
         const destino = document.getElementById(btn.dataset.destino)
         const origen = document.getElementById(btn.dataset.origen)
-        //Leo bd.guardarRespuestas(origen,destino);
+        
         //avanzar(origen, destino)
         //Validar requeridos
         const padre = btn.closest('.cont'),
@@ -83,6 +83,8 @@ botones.forEach(btn => {
 
         //Si se valida avanza
         if (validado) {
+
+            bd.guardarRespuestas(origen, destino);
 
             if (btn.dataset.origen === 'p_in_7') {
                 avanzarCamino()
