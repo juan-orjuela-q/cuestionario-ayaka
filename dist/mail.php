@@ -7,28 +7,28 @@ if(isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['message'])){
     $message = $_POST['message'];
     //mail settings
     $to = "juan@appicua.com";
-    $subject = 'Soni Repairs - Support Request';
+    $subject = 'Nuevo contacto - Estudio Temores';
     $body = <<<EMAIL
 
-Hi There!
+!Hola¡
 
-My name is $name.
+Has recibido un nuevo mensaje de: $name.
 
-Message: $message.
+Mensaje: $message.
 
-My email is: $email
-Phone Number: $phone
+Correo electrónico: $email
+Número de contacto: $phone
 
-Kind Regards
+Enviado desde https://experienciasayaka.com/estudiotemores/
 EMAIL;
 
     if(mail($to, $subject, $body, $header)){
-        $feedback = '*Message sent! You will receive a reply shortly!';
+        $feedback = '¡Gracias por ponerte en contacto!';
     }else{
-        $feedback = '*Message failed to send';
+        $feedback = 'Se ha presentado un error, inténtalo de nuevo';
     }
 }else{
-    $feedback = 'Missing Params';
+    $feedback = 'Faltan campos';
 }
 
 echo $feedback;

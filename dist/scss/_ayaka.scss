@@ -1043,9 +1043,7 @@ Pantalla INTRO
 
 
 
-                .btn-amarillo {
-                    float: right;
-                }
+                
             }
 
 
@@ -1297,7 +1295,8 @@ Pantalla FINALES
 .contactos{
     .modal{
         
-        background: $c-claro url('/static/img/textura-fondo.jpg') no-repeat center;
+        background: $c-claro url('/static/img/textura-fondo.jpg') repeat center;
+        background-size: cover;
         width: 100vw;
         min-height: 100vh;
         max-width: inherit;
@@ -1333,7 +1332,11 @@ Pantalla FINALES
         
     }
 }
-
+#mensaje-contacto {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 16px;
+}
 .btn .tooltiptext {
     visibility: hidden;
     width: 175px;
