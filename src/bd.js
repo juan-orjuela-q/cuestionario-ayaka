@@ -106,7 +106,8 @@ function postAnswer(question, answer) {
 
     let config = {
         method: 'post',
-        url: 'https://vps260373.vps.ovh.ca:8443/lupa.php',
+        //url: 'https://vps260373.vps.ovh.ca:8443/lupa.php',
+		url: 'https://experienciasayaka.com/estudiotemores/lupa_be/lupa.php',
         //headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/text', },
         data: data
     };
