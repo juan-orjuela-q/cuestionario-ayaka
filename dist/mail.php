@@ -6,6 +6,7 @@ if(isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['message'])){
     $phone = $_POST['phone'];
     $message = $_POST['message'];
     //mail settings
+    $from = "Estudio Temores";
     $to = "juan@appicua.com";
     $subject = 'Nuevo contacto - Estudio Temores';
     $body = <<<EMAIL

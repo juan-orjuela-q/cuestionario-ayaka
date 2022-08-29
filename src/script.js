@@ -8,7 +8,7 @@ const bd = require("./bd");
 
 
 //Botones
-const botones = document.querySelectorAll('.continuar')
+const botones = document.querySelectorAll('.continuar, #enviar-contacto')
 
 botones.forEach(btn => {
     btn.addEventListener('click', (event) => {
@@ -86,28 +86,32 @@ botones.forEach(btn => {
 
         //Si se valida avanza
         if (validado) {
+            if(destino) {
+                bd.guardarRespuestas(origen, destino);
 
-            bd.guardarRespuestas(origen, destino);
-
-            if (btn.dataset.origen === 'p_in_7') {
-                avanzarCamino()
-            } else if (btn.dataset.origen === 'p_f_1') {
-                const temores = document.querySelectorAll('#temores-finales input:checked')
-                if (temores.length > 0) {
-                    avanzar(origen, destino)
+                if (btn.dataset.origen === 'p_in_7') {
+                    avanzarCamino()
+                } else if (btn.dataset.origen === 'p_f_1') {
+                    const temores = document.querySelectorAll('#temores-finales input:checked')
+                    if (temores.length > 0) {
+                        avanzar(origen, destino)
+                    } else {
+                        agregarError(btn, 'Escoge al menos 1 opción')
+                    }
                 } else {
-                    agregarError(btn, 'Escoge al menos 1 opción')
+                    avanzar(origen, destino)
+                }
+    
+                if (destino.classList.contains('anim')) {
+                    setTimeout(() => {
+                        //Avanzar
+                        avanzar(destino, document.getElementById(destino.dataset.destino))
+                    }, 9000);
                 }
             } else {
-                avanzar(origen, destino)
+                console.log('Es el contacto')
             }
 
-            if (destino.classList.contains('anim')) {
-                setTimeout(() => {
-                    //Avanzar
-                    avanzar(destino, document.getElementById(destino.dataset.destino))
-                }, 9000);
-            }
         } else {
             agregarError(btn, 'Falta información')
         }
@@ -289,14 +293,22 @@ $(document).ready(function(){
         var message=document.getElementById('cf-mensaje').value;
         var dataString = {"name": name, "email":email, "phone": phone, "message":message}
 
-        $.ajax({
-            type:"post",
-            url:"./mail.php",
-            data: dataString,
-            success: function(html) {
-                $('#mensaje-contacto').html(html);
-            }
-        });
+        if(name && email && message) {
+            $.ajax({
+                type:"post",
+                url:"./mail.php",
+                data: dataString,
+                success: function(html) {
+                    $('#mensaje-contacto').html(html);
+                }
+            });
+            $('#mensaje-contacto').removeClass('error')
+        } else {
+            $('#mensaje-contacto').html('Rellena todos los campos')
+            $('#mensaje-contacto').addClass('error')
+        }
+
+        
       event.preventDefault();
     });
 });
