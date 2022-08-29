@@ -10,7 +10,7 @@ if(isset($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['message'])){
     $subject = 'Nuevo contacto - Estudio Temores';
     $body = <<<EMAIL
 
-!Hola¡
+¡Hola!
 
 Has recibido un nuevo mensaje de: $name.
 
