@@ -12,6 +12,8 @@
     <meta property="og:title" content="Esperiencias Ayaka - Lupa Creativa"/>
     <meta property="og:description" content="Ayúdanos a descubrir cuales son esas creencias y temores que impiden que lo logremos.">
     <meta property="og:image" content="/static/img/ogtimg.png" />
+    
+
 </head>
 
 <body>
@@ -441,7 +443,7 @@
             <div class="col der">
                 <img class="cerrar" src="/static/img/graf/cerrar.svg">
                 
-                <form  method='POST' action='enviar.php'>
+                <form  id="contact" method='POST' action='enviar.php'>
                     <div class="form-grupo">
                         <label for="cf-nombre">Nombre</label>
                         <input type="text" name="nombre" id="cf-nombre" placeholder="Escribe tu nombre">
@@ -469,8 +471,9 @@
                         <textarea name="mensaje" id="cf-mensaje" cols="30" rows="5"></textarea>
                     </div>
                     <div class="form-grupo">
-                        <input class="btn btn-amarillo" type="submit" value="Enviar">
+                        <input id="enviar-contacto" class="btn btn-amarillo" type="submit" value="Enviar">
                     </div>
+                    <p id="mensaje-contacto"></p>
                 </form> 
 
                 

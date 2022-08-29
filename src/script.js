@@ -1,4 +1,7 @@
 import './principal.scss'
+import $ from "jquery"
+
+console.log($('#contenedor-maestro'))
 
 const bd = require("./bd");
 
@@ -274,3 +277,26 @@ opcionesAleatorias.forEach(opc => {
 
 resizeGraf()
 window.onresize = resizeGraf
+//Enviar correo
+$(document).ready(function(){
+
+    $( "#enviar-contacto" ).click(function( event ) {
+    console.log('pressed');
+        //values
+        var name=document.getElementById('cf-nombre').value;
+        var email=document.getElementById('cf-email').value;
+        var phone=document.getElementById('cf-tel').value;
+        var message=document.getElementById('cf-mensaje').value;
+        var dataString = {"name": name, "email":email, "phone": phone, "message":message}
+
+        $.ajax({
+            type:"post",
+            url:"./mail.php",
+            data: dataString,
+            success: function(html) {
+                $('#mensaje-contacto').html(html);
+            }
+        });
+      event.preventDefault();
+    });
+});
