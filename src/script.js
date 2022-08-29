@@ -15,7 +15,7 @@ botones.forEach(btn => {
         event.preventDefault()
         const destino = document.getElementById(btn.dataset.destino)
         const origen = document.getElementById(btn.dataset.origen)
-        
+
         //avanzar(origen, destino)
         //Validar requeridos
         const padre = btn.closest('.cont'),
@@ -65,52 +65,56 @@ botones.forEach(btn => {
             })
         }
         //Pantallas con modales
-        if (pantalla.classList.contains('mostrar-modal')) {
-            const checksTemores = document.querySelectorAll('.input-temor')
 
-            let checksTemoresArr = 0
+        if (pantalla) {
+            if (pantalla.classList.contains('mostrar-modal')) {
+                const checksTemores = document.querySelectorAll('.input-temor')
 
-            checksTemores.forEach(i => {
-                if (i.checked) {
-                    checksTemoresArr++
+                let checksTemoresArr = 0
+
+                checksTemores.forEach(i => {
+                    if (i.checked) {
+                        checksTemoresArr++
+                    }
+                })
+
+                if (checksTemoresArr === 0) {
+                    validado = false
+                    const opciones = padre.querySelector('.form-grupo')
+                    agregarError(opciones, 'Escoge al menos 1 opción')
                 }
-            })
 
-            if (checksTemoresArr === 0) {
-                validado = false
-                const opciones = padre.querySelector('.form-grupo')
-                agregarError(opciones, 'Escoge al menos 1 opción')
             }
-
         }
 
         //Si se valida avanza
         if (validado) {
-            if(destino) {
-                bd.guardarRespuestas(origen, destino);
 
-                if (btn.dataset.origen === 'p_in_7') {
-                    avanzarCamino()
-                } else if (btn.dataset.origen === 'p_f_1') {
-                    const temores = document.querySelectorAll('#temores-finales input:checked')
-                    if (temores.length > 0) {
-                        avanzar(origen, destino)
-                    } else {
-                        agregarError(btn, 'Escoge al menos 1 opción')
-                    }
-                } else {
+            bd.guardarRespuestas(origen, destino);
+
+            if (padre.id === 'contact') {
+                console.log('Es el contacto')
+            } else if (btn.dataset.origen === 'p_in_7') {
+                avanzarCamino()
+            } else if (btn.dataset.origen === 'p_f_1') {
+                const temores = document.querySelectorAll('#temores-finales input:checked')
+                if (temores.length > 0) {
                     avanzar(origen, destino)
+                } else {
+                    agregarError(btn, 'Escoge al menos 1 opción')
                 }
-    
+            } else {
+                avanzar(origen, destino)
+            }
+            if (destino){
                 if (destino.classList.contains('anim')) {
                     setTimeout(() => {
                         //Avanzar
                         avanzar(destino, document.getElementById(destino.dataset.destino))
                     }, 9000);
                 }
-            } else {
-                console.log('Es el contacto')
             }
+            
 
         } else {
             agregarError(btn, 'Falta información')
@@ -189,7 +193,7 @@ function cerrarpop(btnclse) {
 };
 
 
- 
+
 
 
 
@@ -282,23 +286,23 @@ opcionesAleatorias.forEach(opc => {
 resizeGraf()
 window.onresize = resizeGraf
 //Enviar correo
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $( "#enviar-contacto" ).click(function( event ) {
-    console.log('pressed');
+    $("#enviar-contacto").click(function (event) {
+        console.log('pressed');
         //values
-        var name=document.getElementById('cf-nombre').value;
-        var email=document.getElementById('cf-email').value;
-        var phone=document.getElementById('cf-tel').value;
-        var message=document.getElementById('cf-mensaje').value;
-        var dataString = {"name": name, "email":email, "phone": phone, "message":message}
+        var name = document.getElementById('cf-nombre').value;
+        var email = document.getElementById('cf-email').value;
+        var phone = document.getElementById('cf-tel').value;
+        var message = document.getElementById('cf-mensaje').value;
+        var dataString = { "name": name, "email": email, "phone": phone, "message": message }
 
-        if(name && email && message) {
+        if (name && email && message) {
             $.ajax({
-                type:"post",
-                url:"./mail.php",
+                type: "post",
+                url: "./mail.php",
                 data: dataString,
-                success: function(html) {
+                success: function (html) {
                     $('#mensaje-contacto').html(html);
                 }
             });
@@ -308,7 +312,7 @@ $(document).ready(function(){
             $('#mensaje-contacto').addClass('error')
         }
 
-        
-      event.preventDefault();
+
+        event.preventDefault();
     });
 });
