@@ -25,7 +25,8 @@ function guardarRespuestas(origen, destino) {
 
     if(origenId==='p_in_4' && destinoId==='p_in_5'){
         if(document.getElementById('pcreativa_si').checked) postAnswer('CREATIVA','Si');
-        if(document.getElementById('pcreativa_no').checked) postAnswer('CREATIVA','No');
+        if (document.getElementById('pcreativa_no').checked) postAnswer('CREATIVA', 'No');
+        postAnswer('CREATIVA_PORQUE', document.getElementById('creativa_porque_no').value);
     }
 
     if(origenId==='p_in_5' && destinoId==='p_in_6'){
@@ -61,6 +62,7 @@ function guardarRespuestas(origen, destino) {
         if (document.getElementById('temor_Social_B').checked) temorSocial += document.getElementById('temor_Social_B').value + "|";
         if (document.getElementById('temor_Social_C').checked) temorSocial += document.getElementById('temor_Social_C').value + "|";
         if (document.getElementById('temor_Social_D').checked) temorSocial += document.getElementById('temor_Social_D').value + "|";
+        if (document.getElementById('temor_Social_E').checked) temorSocial += document.getElementById('temor_Social_E').value + "|";
         postAnswer('TEMOR_SOCIAL', temorSocial);
 
         let temorTarde = '';
