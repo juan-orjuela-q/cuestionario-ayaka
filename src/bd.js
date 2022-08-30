@@ -41,8 +41,9 @@ function guardarRespuestas(origen, destino) {
     }
 
     if (origenId === 'p_in_am1' && destinoId === 'p_in_am2') {
-        if (document.getElementById('pcreativa_si').checked) postAnswer('APASIONA', 'SI');
-        if (document.getElementById('pcreativa_no').checked) postAnswer('APASIONA', 'NO');
+        if (document.getElementById('apasiona_si').checked) postAnswer('APASIONA', 'SI');
+        if (document.getElementById('apasiona_no').checked) postAnswer('APASIONA', 'NO');
+        postAnswer('APASIONA_PORQUE', document.getElementById('apasiona_porque').value);
     }
     if ((origenId === 'p_in_am2' || origenId==='p_in_az2') && destinoId === 'p_f_1') {
         let temorIdeas = '';
