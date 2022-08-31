@@ -983,19 +983,19 @@ Pantalla INTRO
     height: 100%;
     z-index: 99;
     display: none;
+    overflow: auto;
 
     .modal {
-        position: fixed;
-        width: 80%;
-        height: 80vh;
+        
+        width: 85%;
+        height: 85vh;
         z-index: 99999;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
         display: flex;
         max-width: 1442px;
+        position: relative;
+         margin: 20px auto;
+         height: initial;
+         min-height: 80vh;
 
 
         .fila {
@@ -1022,7 +1022,7 @@ Pantalla INTRO
                 width: 60%;
                 background-color: #fff;
                 margin-left: 10px;
-                padding: 0px 46px;
+                padding: 0px 46px 20px;
 
                 .cerrar {
                     background-image: url("/static/img/graf/circle.png");
@@ -1031,8 +1031,8 @@ Pantalla INTRO
                     height: 60px;
                     width: 60px;
                     position: absolute;
-                    right: -20px;
-                    top: -20px;
+                    right: 10px;
+                    top: 10px;
 
                     svg {
                         height: 100%;
