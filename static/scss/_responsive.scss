@@ -173,12 +173,27 @@
         
     }
     .modal-temor {
+        overflow: auto;
+        .modal {
+            position: relative;
+            margin: 20px auto;
+            height: initial;
+            min-height: initial;
+            
+        }
         .fila {
             flex-wrap: wrap;
             .izq, .der {
                 width: 100% !important;
                 margin: 0 !important;
-                min-height: 20vh;
+                
+            }
+            .der {
+                padding: 20px !important;
+            }
+            .izq {
+                height: 30vh;
+                min-height: 300px;
             }
         }
     }
