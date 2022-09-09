@@ -262,16 +262,7 @@ Pantalla INTRO
         max-width: 890px;
     }
 
-    #gen_otro~input {
-        display: none;
-        margin: .25rem auto 0;
-        max-width: 400px;
-    }
-
-    #gen_otro:checked~input {
-        display: block;
-    }
-
+       
     .graf {
         background: $c-claro url('/static/img/textura-fondo.jpg') no-repeat center;
         background-size: cover;
@@ -744,13 +735,18 @@ Pantalla INTRO
 
 #p_in_am1 {
     .form-grupo {
-        margin: 15vh 0 5vh;
+        margin: 10vh 0 30px;
     }
-
-    #apasiona_no~input {
+    .porque {
+        display: block;
         margin: 1.5rem auto 0;
-        max-width: 480px;
+        max-width: 680px;
     }
+    
+    .pultimo {
+        margin-right: 0 !important;
+    }
+   
   
     .el-happy {
         max-width: 70vw;
@@ -1368,4 +1364,64 @@ Pantalla FINALES
 
 span.tooltiptext img {
     width: 30px;
+}
+
+div#modal-terminos {
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    display: none;
+    z-index: 999;
+}
+div#modal-terminos.mostrar {
+    display: block !important;
+}
+div#modal-terminos .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    cursor: pointer;
+}
+div#modal-terminos .modal {
+    background: white;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px 30px 30px;
+    border-radius: 15px;
+    font-size: 1.25rem;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    z-index: 99;
+    transform: translateY(200px);
+    opacity: 0;
+    transition: all .5s ease;
+    display: block !important;
+}
+div#modal-terminos.mostrar .modal {
+    transform: translateY(0);
+    opacity: 1;
+}
+div#modal-terminos .cerrar {
+    position:absolute;
+    width: 30px;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+div#modal-terminos h2 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+/*#aceptar {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right :10px;
+    line-height: 1;
+}*/
+.label-aceptar {
+    font-size: 1.5rem;
 }

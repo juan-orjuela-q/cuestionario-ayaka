@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta property="og:title" content="Pruebas de compartir"/>
-    <meta property="og:title" content="Esperiencias Ayaka - Lupa Creativa"/>
-    <meta property="og:description" content="Ayúdanos a descubrir cuales son esas creencias y temores que impiden que lo logremos.">
+    <meta property="og:title" content="Pruebas de compartir" />
+    <meta property="og:title" content="Esperiencias Ayaka - Lupa Creativa" />
+    <meta property="og:description"
+        content="Ayúdanos a descubrir cuales son esas creencias y temores que impiden que lo logremos.">
     <meta property="og:image" content="/static/img/ogtimg.png" />
-    
+
 
 </head>
 
@@ -53,7 +54,7 @@
             </footer>
         </div>
         <!-- Pantalla 2 -->
-        <div id="p_in_2" class="pantalla pregunta ">
+        <div id="p_in_2" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-2-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-2-circulo@1x.png" alt=""></div>
@@ -65,8 +66,43 @@
                         <strong>deseamos mucho conocerte!</strong>
                     </h2>
 
-                    <div class="form-grupo">
+                    <!-- <div class="form-grupo">
                         <input type="text" placeholder="¿Cuál es tu nombre completo?" id="infoNombre" required>
+                    </div> -->
+                    <div class="form-grupo">
+                        <input type="text" placeholder="¿En qué país naciste?" id="infoPais" required>
+                    </div>
+                    <!-- <div class="form-grupo">
+                        <label for="cf-tel">¿Cuáles de estas opciones te conectan para iniciar?</label>
+                        <select name="select">
+                            <option value="value1" disabled selected>Seleccciona una opción</option>
+                            <option value="value2">Value 2</option>
+                            <option value="value3">Value 3</option>
+                        </select>
+                    </div>  -->
+                    <div class="form-grupo radio-grupo">
+                        <p>¿Cuántos años tienes?</p>
+                        <div class="radio-grupo-requerido">
+                            <input type="radio" id="edad_18-25" name="edad" value="18 a 25">
+                            <label for="edad_18-25">18-25</label>
+
+                            <input type="radio" id="edad_26-35" name="edad" value="26 a 35">
+                            <label for="edad_26-35">26-35</label>
+
+                            <input type="radio" id="edad_36-45" name="edad" value="36 a 45">
+                            <label for="edad_36-45">36-45</label>
+
+                            <input type="radio" id="edad_46-55" name="edad" value="46 a 55">
+                            <label for="edad_46-55">46-55</label>
+
+                            <input type="radio" id="edad_56-65" name="edad" value="56 a 65">
+                            <label for="edad_56-55">56-65</label>
+
+                            <input type="radio" id="edad_66" name="edad" value="66">
+                            <label for="edad_66">66 o más</label>
+
+                        </div>
+
                     </div>
                     <div class="form-grupo radio-grupo">
                         <p>¿Cuál es tu género?</p>
@@ -80,9 +116,9 @@
                             <input type="radio" id="gen_nobinario" name="genero" value="No binario">
                             <label for="gen_nobinario">No binario</label>
 
-                            <input type="radio" id="gen_otro" name="genero" value="Otro">
+                            <input type="radio" id="gen_otro" name="genero" value="Otro" class="otro">
                             <label for="gen_otro">Otro</label>
-                            <input type="text" placeholder="¿Cuál?" name="" id="">
+                            <input type="text" placeholder="¿Cuál?" name="" id="" class="cual">
                         </div>
 
                     </div>
@@ -90,6 +126,26 @@
                         <input id="profesion"
                             placeholder="¿ Cuál es tu profesión? (la que ejerces, no necesariamente tu título profesional)"
                             type="text" required>
+                    </div>
+                    <div class="form-grupo radio-grupo">
+                        <p>¿Cuál es el camino que actualmente estás empleando para activar tus talentos? <br><span>Si te
+                                identificas con más de 1 opción, elige a la que le dedicas más tiempo y energía.</span>
+                        </p>
+                        <div class="radio-grupo-requerido">
+                            <input type="radio" id="ocupacion_independiente" name="ocupacion" value="Independiente">
+                            <label for="ocupacion_independiente">Soy independiente</label>
+
+                            <input type="radio" id="ocupacion_empleado" name="ocupacion" value="Empleado">
+                            <label for="ocupacion_empleado">Soy empleado</label>
+
+                            <input type="radio" id="ocupacion_empresario" name="ocupacion" value="Empresario">
+                            <label for="ocupacion_empresario">Soy empresario o emprendedor</label>
+
+                            <input type="radio" id="ocupacion_otro" name="ocupacion" value="Otro" class="otro">
+                            <label for="ocupacion_otro">Otro</label>
+                            <input type="text" placeholder="¿Cuál?" name="" id="" class="cual">
+                        </div>
+
                     </div>
                     <div class="form-grupo">
                         <input id="email" placeholder="¿Cuál es tu correo electrónico?" type="email" required>
@@ -104,14 +160,21 @@
                             <label for="comp_no"><strong>¡NO!</strong> Solo quiero participar de este estudio</label>
                         </div>
                     </div>
+                    <div class="form-grupo label-aceptar">
+                        <div class="radio-grupo-requerido">
+                        <input type="checkbox" id="aceptar" value="Acepta términos">
+                        <label for="aceptar">Acepto <a href="#" id="btn-terminos">los términos y condiciones</a></label>
+                    </div>
+                    </div>
 
-                    <a href="#" data-origen="p_in_2" data-destino="p_in_3" class="btn continuar btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_2" data-destino="p_in_3"
+                        class="btn continuar btn-amarillo">Continuar</a>
 
                 </div>
             </main>
         </div>
         <!-- Pantalla 3 -->
-        <div id="p_in_3" class="pantalla anim " data-destino="p_in_4">
+        <div id="p_in_3" class="pantalla anim" data-destino="p_in_4">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-12-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-1-circulo@1x.png" alt=""></div>
@@ -137,15 +200,19 @@
                     </h2>
                     <div class="form-grupo radio-lg amarillo">
                         <div class="radio-grupo-requerido">
-                            <input class="porque-ocultar" type="radio" id="pcreativa_si" name="eres_creativo" value="Sí">
+                            <input class="porque-ocultar" type="radio" id="pcreativa_si" name="eres_creativo"
+                                value="Sí">
                             <label for="pcreativa_si"><strong>¡SÍ!</strong></label>
 
-                            <input class="porque-mostrar " type="radio" id="pcreativa_no" name="eres_creativo" value="No">
+                            <input class="porque-mostrar " type="radio" id="pcreativa_no" name="eres_creativo"
+                                value="No">
                             <label class="ultimo" for="pcreativa_no"><strong>¡NO!</strong></label>
-                            <input class="porque" type="text" placeholder="¿Por qué?" name="creativa_porque_no" id="creativa_porque_no">
+                            <input class="porque" type="text" placeholder="¿Por qué?" name="creativa_porque_no"
+                                id="creativa_porque_no">
                         </div>
                     </div>
-                    <a href="#" data-origen="p_in_4" data-destino="p_in_5" class="btn continuar btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_4" data-destino="p_in_5"
+                        class="btn continuar btn-amarillo">Continuar</a>
                 </div>
             </main>
         </div>
@@ -165,7 +232,8 @@
                     <div class="form-grupo radio-lg amarillo">
                         <textarea name="textarea" rows="8" cols="50" id="dedicacion" required></textarea>
                     </div>
-                    <a href="#" data-origen="p_in_5" data-destino="p_in_6" class="btn continuar btn-amarillo">Continuar</a>
+                    <a href="#" data-origen="p_in_5" data-destino="p_in_6"
+                        class="btn continuar btn-amarillo">Continuar</a>
                 </div>
             </main>
         </div>
@@ -196,23 +264,28 @@
                     </h2>
                     <div class="form-grupo radio-lg amarillo radio-grupo-requerido">
 
-                        <input type="radio" id="opcion1" name="frase_identifica" value="Vivo de hacer lo que me apasiona">
+                        <input type="radio" id="opcion1" name="frase_identifica"
+                            value="Vivo de hacer lo que me apasiona">
                         <label class="opcion1" for="opcion1"><span><strong>Vivo de hacer lo que me
                                     apasiona</strong></span></label>
 
-                        <input type="radio" id="opcion2" name="frase_identifica" value="Hago lo que me apasiona sólo en mis tiempos libres">
+                        <input type="radio" id="opcion2" name="frase_identifica"
+                            value="Hago lo que me apasiona sólo en mis tiempos libres">
                         <label class="ultimo opcion2" for="opcion2"><span><strong>Hago lo que me apasiona sólo en mis
                                     tiempos libres</strong></span></label>
 
-                        <input type="radio" id="opcion3" name="frase_identifica" value="Hay cosas que me apasionan pero no tengo el tiempo para ellas">
+                        <input type="radio" id="opcion3" name="frase_identifica"
+                            value="Hay cosas que me apasionan pero no tengo el tiempo para ellas">
                         <label class="opcion3" for="opcion3"><span><strong>Hay cosas que me apasionan pero no tengo el
                                     tiempo para ellas</strong></span></label>
 
-                        <input type="radio" id="opcion4" name="frase_identifica" value="No he encontrado algo que me apasione">
+                        <input type="radio" id="opcion4" name="frase_identifica"
+                            value="No he encontrado algo que me apasione">
                         <label class="ultimo opcion4" for="opcion4"><span><strong>No he encontrado algo que me
                                     apasione</strong></span></label>
                     </div>
-                    <a href="#" data-origen="p_in_7" data-destino="" class="btn continuar btn-verde" id="validar">Continuar</a>
+                    <a href="#" data-origen="p_in_7" data-destino="" class="btn continuar btn-verde"
+                        id="validar">Continuar</a>
                 </div>
             </main>
         </div>
@@ -222,7 +295,7 @@
         ========== 
         -->
         <!-- Pantalla p am 1 -->
-        <div id="p_in_am1" class="pantalla pregunta ">
+        <div id="p_in_am1" class="pantalla pregunta">
             <div class="graf">
                 <div class="el-happy"><img src="/static/img/graf/el-3-feliz@1x.png" alt=""></div>
                 <div class="el-circ"><img src="/static/img/graf/el-3-circulo@1x.png" alt=""></div>
@@ -234,14 +307,15 @@
                         <strong>de lo que te apasiona? </strong>
                     </h2>
                     <div class="form-grupo radio-lg amarillo radio-grupo-requerido">
-                        <input class="porque-ocultar" type="radio" id="apasiona_si" name="vivir_apasiona" value="Sí">
+                        <input class="" type="radio" id="apasiona_si" name="vivir_apasiona" value="Sí">
                         <label for="apasiona_si"><strong>¡SÍ!</strong></label>
-
-                        <input class="porque-mostrar " type="radio" id="apasiona_no" name="vivir_apasiona" value="No">
+                        <input class="" type="radio" id="apasiona_no" name="vivir_apasiona" value="No">
                         <label class="pultimo" for="apasiona_no"><strong>¡NO!</strong></label>
-                        <input class="porque" type="text" placeholder="¿Por qué?" name="apasiona_porque" id="apasiona_porque">
                     </div>
-                    <a href="#" data-origen="p_in_am1" data-destino="p_in_am2" class="btn continuar btn-amarillo">Continuar</a>
+                    <input class="porque" type="text" placeholder="¿Por qué?" name="apasiona_porque"
+                            id="apasiona_porque" required>
+                    <a id="cambioCamino" href="#" data-origen="p_in_am1" data-destino="p_in_am2"
+                        class="btn continuar btn-amarillo">Continuar</a>
                 </div>
             </main>
         </div>
@@ -267,7 +341,7 @@
                             <img src="/static/img/temores/temor-autoestima.jpg" alt="MDN">
                         </a>
                         <a class="pieza" data-modal="modal2">
-                            <p>Temor Social y de <br>reconocimiento</p>
+                            <p>Temor social y <br>de reconocimiento</p>
                             <img src="/static/img/temores/temor-social.jpg" alt="MDN">
                         </a>
                         <a class="pieza" data-modal="modal3">
@@ -275,7 +349,7 @@
                             <img src="/static/img/temores/temor-a-las-ideas.jpg" alt="MDN">
                         </a>
                         <a class="pieza" data-modal="modal4">
-                            <p>Temor a que <br>sea tarde</p>
+                            <p>Temor a que <br>no sea el momento</p>
                             <img src="/static/img/temores/temor-falta-de-tiempo.jpg" alt="MDN">
                         </a>
                         <a class="pieza" data-modal="modal5">
@@ -327,7 +401,7 @@
                             <img src="/static/img/temores/temor-autoestima.jpg" alt="MDN">
                         </a>
                         <a class="pieza" data-modal="modal2">
-                            <p>Temores Sociales y de <br>reconocimiento</p>
+                            <p>Temores sociales y de <br>reconocimiento</p>
                             <img src="/static/img/temores/temor-social.jpg" alt="MDN">
                         </a>
                         <a class="pieza" data-modal="modal3">
@@ -343,7 +417,7 @@
                             <img src="/static/img/temores/temor-a-que-sea-tarde.jpg" alt="MDN">
                         </a>
                         <a class="pieza" data-modal="modal4">
-                            <p>Temor a que <br>sea tarde</p>
+                            <p>Temor a que <br>no sea el momento</p>
                             <img src="/static/img/temores/temor-falta-de-tiempo.jpg" alt="MDN">
                         </a>
 
@@ -374,7 +448,8 @@
                     </h2>
                     <form id="temores-finales">
                     </form>
-                    <a href="#" data-origen="p_f_1" data-destino="p_f_2" class="btn continuar btn-amarillo" id="">Continuar</a>
+                    <a href="#" data-origen="p_f_1" data-destino="p_f_2" class="btn continuar btn-amarillo"
+                        id="">Continuar</a>
                 </div>
             </main>
         </div>
@@ -398,26 +473,32 @@
                                 <strong>transitar estos miedos</strong> para que puedas vivir con más <strong>osadía,
                                     creatividad y mente abierta para materializar todas tus ideas.</strong>
                             </p>
-                            <a href="https://experienciasayaka.com/estudiotemores/diccionario_temores_Ayaka.pdf" target="_blank" class="btn btn-amarillo">¡Haz clic aquí <br>para conocerlo!</a>
+                            <a href="https://experienciasayaka.com/estudiotemores/diccionario_temores_Ayaka.pdf"
+                                target="_blank" class="btn btn-amarillo">¡Haz clic aquí <br>para conocerlo!</a>
                         </div>
                         <div class="col">
                             <p>En Experiencias Ayáka <strong>diseñamos entrenamientos</strong> fuera de lo común para
                                 <strong>construir un futuro vibrante</strong> para ti y tu equipo de trabajo.
                             </p>
-                            <a href="#" class="btn btn-amarillo pieza" data-modal="contactanos">¡Contáctanos y co creemos!</a>
+                            <a href="#" class="btn btn-amarillo pieza" data-modal="contactanos">¡Contáctanos y co
+                                creemos!</a>
                             <img src="/static/img/personaje.png" alt="Personaje Ayaka">
                             <div class="cont-compartir">
                                 <p>Comparte con todas las personas<br>
                                     <strong>a las que crees les aporta este test.</strong>
                                 </p>
-                                <div class="btn btn-amarillo">¡Compartir! 
+                                <div class="btn btn-amarillo">¡Compartir!
                                     <span class="tooltiptext">
-                                        <a href="http://www.facebook.com/sharer.php?u=https://experienciasayaka.com/estudiotemores/" target="_blank"><img src="/static/img/facebook.svg"></a>
-                                        <a href="https://twitter.com/share?url=https://experienciasayaka.com/estudiotemores/" target="_blank"> <img src="/static/img/tw.svg"></a>
-                                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://experienciasayaka.com/estudiotemores/" target="_blank"><img src="/static/img/in.svg"></a>
-                                        <a href="https://api.whatsapp.com/send?text=https://experienciasayaka.com/estudiotemores/" target="_blank"><img src="/static/img/wp.svg"></a>
+                                        <a href="http://www.facebook.com/sharer.php?u=https://experienciasayaka.com/estudiotemores/"
+                                            target="_blank"><img src="/static/img/facebook.svg"></a>
+                                        <a href="https://twitter.com/share?url=https://experienciasayaka.com/estudiotemores/"
+                                            target="_blank"> <img src="/static/img/tw.svg"></a>
+                                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://experienciasayaka.com/estudiotemores/"
+                                            target="_blank"><img src="/static/img/in.svg"></a>
+                                        <a href="https://api.whatsapp.com/send?text=https://experienciasayaka.com/estudiotemores/"
+                                            target="_blank"><img src="/static/img/wp.svg"></a>
                                     </span>
-                                 
+
                                 </div>
                             </div>
                         </div>
@@ -425,39 +506,40 @@
                 </div>
             </main>
         </div>
-        
-     
-   <!-- modal contacto-->
-   <div class="modal-temor contactos" id="contactanos">
-    <div class="modal">
-        <div class="fila">
-
-            <div class="col izq">
-                <h2><strong>¿Estás listo para crear <br>
-                    un futuro vibrante?<br>
-                    Escríbenos</strong>
-            </h2>
 
 
-            </div> 
-            <div class="col der">
-                <img class="cerrar" src="/static/img/graf/cerrar.svg">
-                
-                <form  class="cont" id="contact" method='POST'>
-                    <div class="form-grupo">
-                        <label for="cf-nombre">Nombre*</label>
-                        <input type="text" name="nombre" id="cf-nombre" placeholder="Escribe tu nombre" required>
+        <!-- modal contacto-->
+        <div class="modal-temor contactos" id="contactanos">
+            <div class="modal">
+                <div class="fila">
+
+                    <div class="col izq">
+                        <h2><strong>¿Estás listo para crear <br>
+                                un futuro vibrante?<br>
+                                Escríbenos</strong>
+                        </h2>
+
+
                     </div>
-                    <div class="form-grupo">
-                        <label for="cf-email">Email*</label>
-                        <input type="text" name="email" id="cf-email"
-                            placeholder="Escribe tu correo electrónico" required> 
-                    </div>
-                    <div class="form-grupo">
-                        <label for="cf-tel">Teléfono*</label>
-                        <input type="tel" name="tel" id="cf-tel" placeholder="Escribe tu teléfono" required>
-                    </div>
-                    <!-- <div class="form-grupo">
+                    <div class="col der">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+
+                        <form class="cont" id="contact" method='POST'>
+                            <div class="form-grupo">
+                                <label for="cf-nombre">Nombre*</label>
+                                <input type="text" name="nombre" id="cf-nombre" placeholder="Escribe tu nombre"
+                                    required>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="cf-email">Email*</label>
+                                <input type="text" name="email" id="cf-email"
+                                    placeholder="Escribe tu correo electrónico" required>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="cf-tel">Teléfono*</label>
+                                <input type="tel" name="tel" id="cf-tel" placeholder="Escribe tu teléfono" required>
+                            </div>
+                            <!-- <div class="form-grupo">
                         <label for="cf-tel">¿Cuáles de estas opciones te conectan para iniciar?</label>
                         <select name="select">
                             <option value="value1" disabled selected>Seleccciona una opción</option>
@@ -465,27 +547,27 @@
                             <option value="value3">Value 3</option>
                         </select>
                     </div> -->
-                    <div class="form-grupo">
-                        <label for="cf-mensaje">¿ Tienes algo más para contarnos? ¡Escríbemos queremos co-crear 
-                            contigo algo genial!</label>
-                        <textarea name="mensaje" id="cf-mensaje" cols="30" rows="5" required></textarea>
-                    </div>
-                    <div class="form-grupo">
-                        <input id="enviar-contacto" class="btn btn-amarillo" type="submit" value="Enviar">
-                    </div>
-                    <p id="mensaje-contacto"></p>
-                </form> 
+                            <div class="form-grupo">
+                                <label for="cf-mensaje">¿ Tienes algo más para contarnos? ¡Escríbemos queremos co-crear
+                                    contigo algo genial!</label>
+                                <textarea name="mensaje" id="cf-mensaje" cols="30" rows="5" required></textarea>
+                            </div>
+                            <div class="form-grupo">
+                                <input id="enviar-contacto" class="btn btn-amarillo" type="submit" value="Enviar">
+                            </div>
+                            <p id="mensaje-contacto"></p>
+                        </form>
 
-                
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
-    </div>
-
-    </div>
-
-<!-- modal contacto fin -->
+        <!-- modal contacto fin -->
         <!-- Pantalla Contacto -->
         <div id="p_contacto" class="pantalla pregunta ">
             <div class="graf">
@@ -540,6 +622,29 @@
         MODALES
         ==========
         -->
+        <div id="modal-terminos">
+            <div class="modal modal-temor">
+                <div class="fila">
+                    <div class="col">
+                        <img class="cerrar" src="/static/img/graf/cerrar.svg">
+                        <h2>AUTORIZACIÓN TRATAMIENTO DE DATOS PERSONALES</h2>
+                        <p>EXPERIENCIAS AYÁKA SAS Con NIT 900648198-6 pide tu autorización para recolectar tus datos
+                            personales con el fin de aplicar esta encuesta para el estudio CREENCIAS Y TEMORES QUE NOS
+                            LIMITAN, con propósito de desarrollar informes, para generar conocimiento relacionado con
+                            emociones, sentimientos, miedos y formas de pensar de los seres humanos.
+                            Te agradecemos si nos puedes dedicar 5 minutos para responder las siguientes preguntas. Esta
+                            solicitud se hace de conformidad con la Ley 1581 de 2012 y sus Decretos Reglamentarios.
+                            Para mayor información sobre nuestra Política de Tratamiento de Datos Personales por favor
+                            escríbenos al email info@experienciasayaka.com.
+                            ¡Gracias!
+                            EQUIPO INVESTIGACIÓN CREATIVA
+                            EXPERIENCIAS AYÁKA
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </div>
         <!-- modal 1-->
         <div class="modal-temor" id="modal1">
             <div class="modal">
@@ -548,27 +653,44 @@
                     <div class="col izq"><img src="/static/img/graf/personatrizte.png"></div>
                     <div class="col der">
                         <img class="cerrar" src="/static/img/graf/cerrar.svg">
-                        <h2><strong> Escoge uno o varios de 
+                        <h2><strong> Escoge uno o varios de
                                 estos temores:</strong>
                         </h2>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_autoestima_A" value="Temo no ser lo suficientemente bueno o buena.">
-                            <span class="span-temor">Temo no ser lo suficientemente bueno o buena.</span>
+                            <input class="input-temor" type="checkbox" id="temor_autoestima_A"
+                                value="Temo no ser lo suficientemente bueno (a).">
+                            <span class="span-temor">Temo no ser lo suficientemente bueno (a).</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_autoestima_B" value="Temo estar demasiado gordo o gorda o  ser poco atractivo o atractiva.">
-                            <span class="span-temor">Temo estar demasiado gordo o gorda o  ser poco atractivo o atractiva.</span>
+                            <input class="input-temor" type="checkbox" id="temor_autoestima_B"
+                                value="Temo estar demasiado gordo (a) o ser poco atractivo (a).">
+                            <span class="span-temor">Temo estar demasiado gordo (a) o ser poco atractivo (a).</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_autoestima_C" value="Temo tener que enfrentarme a mis 'demonios interiores'">
-                            <span class="span-temor">Temo tener que enfrentarme a mis "demonios interiores"</span>
+                            <input class="input-temor" type="checkbox" id="temor_autoestima_C"
+                                value="Temo ser siempre inferior a las personas con las que me comparo.">
+                            <span class="span-temor">Temo ser siempre inferior a las personas con las que me comparo."</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_autoestima_D" value="Temo haber dado ya lo mejor de mí.">
+                            <input class="input-temor" type="checkbox" id="temor_autoestima_D"
+                                value="Temo haber dado ya lo mejor de mí.">
                             <span class="span-temor">Temo haber dado ya lo mejor de mí.</span>
+                            <span class="checkmark"></span>
+                        </label>
+
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_autoestima_E"
+                                value="Temo no ser una persona lo suficientemente especial o única.">
+                            <span class="span-temor">Temo no ser una persona lo suficientemente especial o única.</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_autoestima_F"
+                                value="Temo que mis rarezas (a nivel físico o de personalidad) disminuyan el interés de los demás  en mi idea o proyecto.">
+                            <span class="span-temor">Temo que mis rarezas (a nivel físico o de personalidad) disminuyan el interés de los demás  en mi idea o proyecto.</span>
                             <span class="checkmark"></span>
                         </label>
                         <a href="#" class="btn btn-amarillo aceptar">OK</a>
@@ -587,32 +709,31 @@
                     <div class="col izq"><img src="/static/img/temores/temor-social.jpg"></div>
                     <div class="col der">
                         <img class="cerrar" src="/static/img/graf/cerrar.svg">
-                        <h2><strong> Escoge uno o varios de 
+                        <h2><strong> Escoge uno o varios de
                                 estos temores:</strong>
                         </h2>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_Social_A" value="Temo sentirme expuesto o expuesta y ser criticado o criticada, ridiculizado o ridiculizada o rechazado o rechazada.">
-                            <span class="span-temor">Temo sentirme expuesto o expuesta y ser criticado o criticada, ridiculizado o ridiculizada o rechazado o rechazada.</span>
+                            <input class="input-temor" type="checkbox" id="temor_Social_A"
+                                value="Temo sentirme expuesto(a) y ser criticado(a), ridiculizado(a) o rechazado(a).">
+                            <span class="span-temor">Temo sentirme expuesto(a) y ser criticado(a), ridiculizado(a) o rechazado(a).</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_Social_B" value="Temo que mis sueños sean algo de lo que debas sentirme avergonzado o avergonzada.">
-                            <span class="span-temor">Temo que mis sueños sean algo de lo que debas sentirme avergonzado o avergonzada.</span>
+                            <input class="input-temor" type="checkbox" id="temor_Social_B"
+                                value="Temo que mis ideas sean algo de lo que deba sentirme avergonzado(a).">
+                            <span class="span-temor">Temo que mis ideas sean algo de lo que deba sentirme avergonzado(a).</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_Social_C" value="Temo decepcionar a mi familia con mis decisiones de vida">
-                            <span class="span-temor">Temo decepcionar a mi familia con mis decisiones de vida</span>
+                            <input class="input-temor" type="checkbox" id="temor_Social_C"
+                                value="Temo que mi forma de pensar haya cambiado tanto, que al compartir y/o materializar mis ideas y proyectos, pueda decepcionar a mis familiares y personas cercanas.">
+                            <span class="span-temor">Temo que mi forma de pensar haya cambiado tanto, que al compartir y/o materializar mis ideas y proyectos, pueda decepcionar a mis familiares y personas cercanas.</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_Social_D" value="Temo de las opiniones de mis amigos y colegas si expreso abiertamente la decisión de dedicarme a mi pasión.">
-                            <span class="span-temor">Temo de las opiniones de mis amigos y colegas si expreso abiertamente la decisión de dedicarme a mi pasión.</span>
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_Social_E" value="Temo no tener aún la experiencia y/o habilidad necesaria para salir al mundo con mi propuesta.">
-                            <span class="span-temor">Temo no tener aún la experiencia y/o habilidad necesaria para salir al mundo con mi propuesta.</span>
+                            <input class="input-temor" type="checkbox" id="temor_Social_D"
+                                value="Temo salirme de la regla de lo que “debería” ser, decir  y/o estar haciendo.">
+                            <span class="span-temor">Temo salirme de la regla de lo que “debería” ser, decir  y/o estar haciendo.</span>
                             <span class="checkmark"></span>
                         </label>
                         <a href="#" class="btn btn-amarillo aceptar">OK</a>
@@ -631,21 +752,36 @@
                     <div class="col izq"><img src="/static/img/temores/temor-a-las-ideas.jpg"></div>
                     <div class="col der">
                         <img class="cerrar" src="/static/img/graf/cerrar.svg">
-                        <h2><strong> Escoge uno o varios de 
+                        <h2><strong> Escoge uno o varios de
                                 estos temores:</strong>
                         </h2>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_ideas_A" value="Temo que lo que pueda hacer ya lo haya hecho alguien antes y mejor.">
+                            <input class="input-temor" type="checkbox" id="temor_ideas_A"
+                                value="Temo que lo que pueda hacer ya lo haya hecho alguien antes y mejor.">
                             <span class="span-temor">Temo que lo que pueda hacer ya lo haya hecho alguien antes y mejor.</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_ideas_B" value="Temo que me roben mis ideas, por lo que prefiero mantenerlas escondidas.">
+                            <input class="input-temor" type="checkbox" id="temor_ideas_B"
+                                value="Temo que me roben mis ideas, por lo que prefiero mantenerlas escondidas.">
                             <span class="span-temor">Temo que me roben mis ideas, por lo que prefiero mantenerlas escondidas.</span>
                             <span class="checkmark"></span>
                         </label>
-                        
-                        
+
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_ideas_C"
+                                value="Temo que mis ideas no sean lo suficientemente disruptivas o innovadoras para ser compartidas con el mundo.">
+                            <span class="span-temor">Temo que mis ideas no sean lo suficientemente disruptivas o innovadoras para ser compartidas con el mundo.</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_ideas_D"
+                                value="Temo que mis ideas sean insignificantes o dadas por “tontas”.">
+                            <span class="span-temor">Temo que mis ideas sean insignificantes o dadas por “tontas”.</span>
+                            <span class="checkmark"></span>
+                        </label>
+
+
                         <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
 
@@ -662,17 +798,43 @@
                     <div class="col izq"><img src="/static/img\temores/temor-falta-de-tiempo.jpg"></div>
                     <div class="col der">
                         <img class="cerrar" src="/static/img/graf/cerrar.svg">
-                        <h2><strong> Escoge uno o varios de 
+                        <h2><strong> Escoge uno o varios de
                                 estos temores:</strong>
                         </h2>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_tarde_A" value="Temo que sea muy tarde o muy temprano para empezar a vivir de mi pasión.">
-                            <span class="span-temor">Temo que sea muy tarde o muy temprano para empezar a vivir de mi pasión.</span>
+                            <input class="input-temor" type="checkbox" id="temor_tarde_A"
+                                value="Temo que sea ya muy tarde para que yo pueda materializar esa idea o proyecto.">
+                            <span class="span-temor">Temo que sea ya muy tarde para que yo pueda materializar esa idea o proyecto.</span>
                             <span class="checkmark"></span>
                         </label>
-                         
-                         
-                         
+
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_tarde_B"
+                                value="Temo no tener aún la experiencia y/o habilidad necesaria para salir al mundo con mi idea o proyecto.">
+                            <span class="span-temor">Temo no tener aún la experiencia y/o habilidad necesaria para salir al mundo con mi idea o proyecto.</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_tarde_C"
+                                value="Temo no ser capaz de controlar todo para que salga como quiero.">
+                            <span class="span-temor">Temo no ser capaz de controlar todo para que salga como quiero.</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_tarde_D"
+                                value="Temo no ver las oportunidades para materializar mis ideas o proyectos en el momento preciso.">
+                            <span class="span-temor">Temo no ver las oportunidades para materializar mis ideas o proyectos en el momento preciso.</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_tarde_E"
+                                value="Temo a que mi idea o proyecto no esté en momento de mostrarse porque siempre habrá una manera de mejorar u optimizarla.">
+                            <span class="span-temor">Temo a que mi idea o proyecto no esté en momento de mostrarse porque siempre habrá una manera de mejorar u optimizarla.</span>
+                            <span class="checkmark"></span>
+                        </label>
+
+
+
                         <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
 
@@ -689,22 +851,30 @@
                     <div class="col izq"><img src="/static/img/temores/temor-al-mercado.jpg"></div>
                     <div class="col der">
                         <img class="cerrar" src="/static/img/graf/cerrar.svg">
-                        <h2><strong> Escoge uno o varios de 
+                        <h2><strong> Escoge uno o varios de
                                 estos temores:</strong>
                         </h2>
 
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_mercado_A" value="Temo no tener mercado que quiera pagar por lo que puedo hacer con mi pasión">
-                            <span class="span-temor">Temo no tener mercado que quiera pagar por lo que puedo hacer con mi pasión</span>
+                            <input class="input-temor" type="checkbox" id="temor_mercado_A"
+                                value="Temo no tener mercado que quiera pagar por lo que puedo hacer con mi pasión">
+                            <span class="span-temor">Temo no tener mercado que quiera pagar por lo que puedo hacer con mi pasión.</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_mercado_B" value="Temo que mi trabajo no sea lo suficientemente relevante en la vida de nadie">
-                            <span class="span-temor">Temo que mi trabajo no sea lo suficientemente relevante en la vida de nadie </span>
+                            <input class="input-temor" type="checkbox" id="temor_mercado_B"
+                                value="Temo que mi trabajo no sea lo suficientemente relevante en la vida de nadie.">
+                            <span class="span-temor">Temo que mi trabajo no sea lo suficientemente relevante en la vida de nadie.</span>
                             <span class="checkmark"></span>
                         </label>
-                        
-                         
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_mercado_C"
+                                value="Temo no conocer las personas adecuadas para ser exitoso (a) en el mercado.">
+                            <span class="span-temor">Temo no conocer las personas adecuadas para ser exitoso (a) en el mercado.</span>
+                            <span class="checkmark"></span>
+                        </label>
+
+
 
                         <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
@@ -720,25 +890,39 @@
                     <div class="col izq"><img src="/static/img/temores/temor-al-fracaso.jpg"></div>
                     <div class="col der">
                         <img class="cerrar" src="/static/img/graf/cerrar.svg">
-                        <h2><strong> Escoge uno o varios de 
+                        <h2><strong> Escoge uno o varios de
                                 estos temores:</strong>
                         </h2>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_fracaso_A" value="Temo que al mirar atrás, mis esfuerzos en torno a mi pasión se hayan convertido en una gigantesca pérdida de dinero y tiempo.">
-                            <span class="span-temor">Temo que al mirar atrás, mis esfuerzos en torno a mi pasión se hayan convertido en una gigantesca pérdida de dinero y tiempo.</span>
+                            <input class="input-temor" type="checkbox" id="temor_fracaso_A"
+                                value="Temo que al mirar atrás, mis esfuerzos adicionales en torno a mis ideas se hayan convertido en una gigantesca pérdida de dinero y tiempo.">
+                            <span class="span-temor">Temo que al mirar atrás, mis esfuerzos adicionales en torno a mis ideas se hayan convertido en una gigantesca pérdida de dinero y tiempo.</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_fracaso_B" value="Temo fracasar en el intento.">
-                            <span class="span-temor">Temo fracasar en el intento.</span>
+                            <input class="input-temor" type="checkbox" id="temor_fracaso_B"
+                                value="Temo fracasar en el primer intento.">
+                            <span class="span-temor">Temo fracasar en el primer intento.</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_fracaso_C" value="Temo no conseguir el resultado esperado.">
-                            <span class="span-temor">Temo no conseguir el resultado esperado.</span>
+                            <input class="input-temor" type="checkbox" id="temor_fracaso_C"
+                                value="Temo no conseguir el resultado esperado en mis ideales.">
+                            <span class="span-temor">Temo no conseguir el resultado esperado en mis ideales.</span>
                             <span class="checkmark"></span>
                         </label>
-                        
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_fracaso_D"
+                                value="Temo que si llego a  fracasar, se olvide todo lo que he logrado anteriormente.">
+                            <span class="span-temor">Temo que si llego a  fracasar, se olvide todo lo que he logrado anteriormente.</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_fracaso_E"
+                                value="Temo afectar a más personas si llego a fracasar en mis ideas o proyectos.">
+                            <span class="span-temor">Temo afectar a más personas si llego a fracasar en mis ideas o proyectos.</span>
+                            <span class="checkmark"></span>
+                        </label>
                         <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
                 </div>
@@ -754,23 +938,40 @@
                     <div class="col izq"><img src="/static/img/temores/temor-a-que-sea-tarde.jpg"></div>
                     <div class="col der">
                         <img class="cerrar" src="/static/img/graf/cerrar.svg">
-                        <h2><strong> Escoge uno o varios de 
+                        <h2><strong> Escoge uno o varios de
                                 estos temores:</strong>
                         </h2>
 
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_recursos_A" value="Temo no ser capaz de tener la disciplina necesaria.">
+                            <input class="input-temor" type="checkbox" id="temor_recursos_A"
+                                value="Temo no ser capaz de tener la disciplina necesaria.">
                             <span class="span-temor">Temo no ser capaz de tener la disciplina necesaria.</span>
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-cont">
-                            <input class="input-temor" type="checkbox" id="temor_recursos_B" value="Temo no tener la disponibilidad de tiempo, o la independencia financiera para centrarme en mi pasión.">
-                            <span class="span-temor">Temo no tener la disponibilidad de tiempo, o la independencia financiera para centrarme en mi pasión. </span>
+                            <input class="input-temor" type="checkbox" id="temor_recursos_B"
+                                value="Temo no tener la disponibilidad de tiempo o la independencia financiera para materializar la idea o proyecto.">
+                            <span class="span-temor">Temo no tener la disponibilidad de tiempo o la independencia financiera para materializar la idea o proyecto.</span>
                             <span class="checkmark"></span>
                         </label>
-                         
-                        
-
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_recursos_C"
+                                value="Temo no tener la energía o fuerza suficiente para materializar esta idea o proyecto.">
+                            <span class="span-temor">Temo no tener la energía o fuerza suficiente para materializar esta idea o proyecto.</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_recursos_D"
+                                value="Temo no tener las habilidades comunicativas necesarias para persuadir y contagiar con mis ideas.">
+                            <span class="span-temor">Temo no tener las habilidades comunicativas necesarias para persuadir y contagiar con mis ideas.</span>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-cont">
+                            <input class="input-temor" type="checkbox" id="temor_recursos_E"
+                                value="Temo no poder solo (a) con todo lo que requiere materializar mis ideas o proyectos.">
+                            <span class="span-temor">Temo no poder solo (a) con todo lo que requiere materializar mis ideas o proyectos.</span>
+                            <span class="checkmark"></span>
+                        </label>
                         <a href="#" class="btn btn-amarillo aceptar">OK</a>
                     </div>
 
