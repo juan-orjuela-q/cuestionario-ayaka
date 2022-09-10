@@ -30,6 +30,13 @@ if (!$dbConn) {
     exit;
 }
 
+if($_GET['update20220829']){
+	$sql = "ALTER TABLE encuesta ADD COLUMN apasiona_porque VARCHAR(1024)";
+	//$mysqli = new mysqli("localhost", "u982284721_temores", "e5n1DZ7$9kCu", "u982284721_temores");
+	$mysqli->query($sql);
+	$mysqli->close();
+}
+
 if($_POST['question']=='NOMBRE')
 {
   $sql = "INSERT INTO encuesta (uuid, nombre) VALUES (?, ?)";
@@ -157,6 +164,19 @@ if($_POST['question']=='FRASE')
 if($_POST['question']=='APASIONA')
 {
   $sql = "UPDATE encuesta SET apasiona=? WHERE uuid=?";
+  $stmt = $dbConn->prepare($sql);
+  $stmt->bind_param('ss', $_POST["answer"], $_POST["uuid"]);
+  $stmt->execute();
+  if ($stmt->affected_rows>0) {
+    echo "Update successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($dbConn);
+  }
+}
+
+if($_POST['question']=='APASIONA_PORQUE')
+{
+  $sql = "UPDATE encuesta SET apasiona_porque=? WHERE uuid=?";
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $_POST["answer"], $_POST["uuid"]);
   $stmt->execute();

@@ -26,7 +26,7 @@ if (!$dbConn) {
  
  $sql = "SELECT `id`,`uuid`,`frase`,`vivir`,`temor_ideas`,`temor_autoestima`,`temor_social`,`temor_tarde`,`temor_mercado`,
                 `temor_fracaso`,`temor_recursos`,`time_log`,`nombre`,`genero`,`profesion`,`email`,`creativa`,`dedicacion`,`apasiona`,
-                `temores_finales`, `compartir`, `creativa_porque`
+                `temores_finales`, `compartir`, `creativa_porque`, `apasiona_porque`
                 FROM encuesta ORDER BY time_log";
  
  $header1 = [ 'Fecha' => 'date',
@@ -40,7 +40,7 @@ if (!$dbConn) {
               'A que se dedicaria' => 'string',
               'Frase que lo identifica' => 'string',
               'Vivir de lo que apasiona' => 'string',
-              //'amount' => 'money',
+              'Porque' => 'string',
               'Temor a las ideas' => 'string',
               'Temores de autoestima' => 'string',
               'Temores sociales y de reconocimiento' => 'string',
@@ -60,7 +60,7 @@ $encuesta = $result->fetch_all(MYSQLI_ASSOC); // fetch data
 $data1 = array();
 foreach($encuesta as $row){
   $registro = array( $row['time_log'], $row['nombre'], $row['genero'], $row['profesion'], $row['email'], $row['compartir'], $row['creativa'], $row['creativa_porque'], 
-    $row['dedicacion'], $row['frase'], $row['apasiona'], $row['temor_ideas'], $row['temor_autoestima'], $row['temor_social'], $row['temor_tarde'], 
+    $row['dedicacion'], $row['frase'], $row['apasiona'], $row['apasiona_porque'], $row['temor_ideas'], $row['temor_autoestima'], $row['temor_social'], $row['temor_tarde'], 
     $row['temor_mercado'], $row['temor_fracaso'], $row['temor_recursos'], $row['temores_finales']);
   array_push($data1,$registro);
 }
