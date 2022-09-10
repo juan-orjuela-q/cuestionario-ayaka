@@ -26,15 +26,18 @@ if (!$dbConn) {
  
  $sql = "SELECT `id`,`uuid`,`frase`,`vivir`,`temor_ideas`,`temor_autoestima`,`temor_social`,`temor_tarde`,`temor_mercado`,
                 `temor_fracaso`,`temor_recursos`,`time_log`,`nombre`,`genero`,`profesion`,`email`,`creativa`,`dedicacion`,`apasiona`,
-                `temores_finales`, `compartir`, `creativa_porque`, `apasiona_porque`
+                `temores_finales`, `compartir`, `creativa_porque`, `apasiona_porque`, `pais`, `edad`, `ocupacion`
                 FROM encuesta ORDER BY time_log";
  
  $header1 = [ 'Fecha' => 'date',
-              'Nombre' => 'string',
-              'Género' => 'string',
-              'Profesión' => 'string',
+              'Pais' => 'string',
+              'Edad' => 'string',
+              'Genero' => 'string',
+              'Profesion' => 'string',
+              'Ocupacion' => 'string',
               'Email' => 'string',
               'Compartir inf.' => 'string',
+              'Acepta terminos' => 'string',
               'Persona creativa' => 'string',
 			  'Porque no' => 'string',
               'A que se dedicaria' => 'string',
@@ -59,9 +62,10 @@ $encuesta = $result->fetch_all(MYSQLI_ASSOC); // fetch data
 
 $data1 = array();
 foreach($encuesta as $row){
-  $registro = array( $row['time_log'], $row['nombre'], $row['genero'], $row['profesion'], $row['email'], $row['compartir'], $row['creativa'], $row['creativa_porque'], 
-    $row['dedicacion'], $row['frase'], $row['apasiona'], $row['apasiona_porque'], $row['temor_ideas'], $row['temor_autoestima'], $row['temor_social'], $row['temor_tarde'], 
-    $row['temor_mercado'], $row['temor_fracaso'], $row['temor_recursos'], $row['temores_finales']);
+  $registro = array( $row['time_log'], $row['pais'], $row['edad'], $row['genero'], $row['profesion'], $row['ocupacion'], 
+    $row['email'], $row['compartir'], "SI", $row['creativa'], $row['creativa_porque'],  $row['dedicacion'], $row['frase'], 
+    $row['apasiona'], $row['apasiona_porque'], $row['temor_ideas'], $row['temor_autoestima'], $row['temor_social'], 
+    $row['temor_tarde'], $row['temor_mercado'], $row['temor_fracaso'], $row['temor_recursos'], $row['temores_finales']);
   array_push($data1,$registro);
 }
 mysqli_close($dbConn);

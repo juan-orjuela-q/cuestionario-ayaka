@@ -30,21 +30,36 @@ if (!$dbConn) {
     exit;
 }
 
-if($_GET['update20220829']){
-	$sql = "ALTER TABLE encuesta ADD COLUMN apasiona_porque VARCHAR(1024)";
-	//$mysqli = new mysqli("localhost", "u982284721_temores", "e5n1DZ7$9kCu", "u982284721_temores");
+if($_GET['update20220909']){
+    $mysqli = new mysqli("localhost", "u982284721_temores", "e5n1DZ7$9kCu", "u982284721_temores");	
+
+    $sql = "UPDATE encuesta set pais='-',edad='-',ocupacion='-'";
 	$mysqli->query($sql);
-	$mysqli->close();
+	
+    $mysqli->close();
 }
 
-if($_POST['question']=='NOMBRE')
+if($_POST['question']=='PAIS')
 {
-  $sql = "INSERT INTO encuesta (uuid, nombre) VALUES (?, ?)";
+  $sql = "INSERT INTO encuesta (uuid, pais) VALUES (?, ?)";
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $_POST["uuid"], $_POST["answer"]);
   $stmt->execute();
   if ($stmt->affected_rows>0) {
     echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($dbConn);
+  }
+}
+
+if($_POST['question']=='EDAD')
+{
+  $sql = "UPDATE encuesta SET edad=? WHERE uuid=?";
+  $stmt = $dbConn->prepare($sql);
+  $stmt->bind_param('ss', $_POST["answer"], $_POST["uuid"]);
+  $stmt->execute();
+  if ($stmt->affected_rows>0) {
+    echo "Update successfully";
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($dbConn);
   }
@@ -75,6 +90,20 @@ if($_POST['question']=='PROFESION')
     echo "Error: " . $sql . "<br>" . mysqli_error($dbConn);
   }
 }
+
+if($_POST['question']=='OCUPACION')
+{
+  $sql = "UPDATE encuesta SET ocupacion=? WHERE uuid=?";
+  $stmt = $dbConn->prepare($sql);
+  $stmt->bind_param('ss', $_POST["answer"], $_POST["uuid"]);
+  $stmt->execute();
+  if ($stmt->affected_rows>0) {
+    echo "Update successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($dbConn);
+  }
+}
+
 
 if($_POST['question']=='EMAIL')
 {
@@ -144,11 +173,7 @@ if($_POST['question']=='DEDICACION')
 
 if($_POST['question']=='FRASE')
 {
-  $frase = "";
-  if($_POST["answer"]=='A') $frase = "Vivo de hacer lo que me apasiona";
-  if($_POST["answer"]=='B') $frase = "Hago lo que me apasiona sólo en mis tiempos libres";
-  if($_POST["answer"]=='C') $frase = "Hay cosas que me apasionan pero no tengo el tiempo para ellas";
-  if($_POST["answer"]=='D') $frase = "No he encontrado algo que me apasione";
+  $frase = $_POST["answer"];
   
   $sql = "UPDATE encuesta SET frase=? WHERE uuid=?";
   $stmt = $dbConn->prepare($sql);
@@ -190,13 +215,7 @@ if($_POST['question']=='APASIONA_PORQUE')
 if($_POST['question']=='TEMOR_IDEAS')
 {
   $sql = "UPDATE encuesta SET temor_ideas=? WHERE uuid=?";
-  $answer = $_POST['answer'];
-  // Replace with text
-  $answer = str_replace("A|","Temo que lo que pueda hacer ya lo haya hecho alguien antes y mejor.\r\n",$answer);
-  $answer = str_replace("B|","Temo que me roben mis ideas, por lo que prefiero mantenerlas escondidas.\r\n",$answer);
-  //$answer = str_replace("C|","Temor Ideas C\r\n",$answer);
-  //$answer = str_replace("D|","Temor A4\r\n",$answer);
-  //$answer = str_replace("E|","Temor A5\r\n",$answer);
+  $answer = str_replace("|","\r\n", $_POST['answer']);
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $answer, $_POST["uuid"]);
   $stmt->execute();
@@ -210,13 +229,7 @@ if($_POST['question']=='TEMOR_IDEAS')
 if($_POST['question']=='TEMOR_AUTOESTIMA')
 {
   $sql = "UPDATE encuesta SET temor_autoestima=? WHERE uuid=?";
-  $answer = $_POST['answer'];
-  // Replace with text
-  $answer = str_replace("A|","Temo no ser lo suficientemente bueno o buena.\r\n",$answer);
-  $answer = str_replace("B|","Temo estar demasiado gordo o gorda o  ser poco atractivo o atractiva.\r\n",$answer);
-  $answer = str_replace("C|","Temo tener que enfrentarme a mis 'demonios interiores'\r\n",$answer);
-  $answer = str_replace("D|","Temo haber dado ya lo mejor de mí.\r\n",$answer);
-  //$answer = str_replace("E|","Temor B5\r\n",$answer);
+  $answer = str_replace("|","\r\n", $_POST['answer']);
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $answer, $_POST["uuid"]);
   $stmt->execute();
@@ -230,13 +243,7 @@ if($_POST['question']=='TEMOR_AUTOESTIMA')
 if($_POST['question']=='TEMOR_SOCIAL')
 {
   $sql = "UPDATE encuesta SET temor_social=? WHERE uuid=?";
-  $answer = $_POST['answer'];
-  // Replace with text
-  $answer = str_replace("A|","Temo sentirme expuesto o expuesta y ser criticado o criticada, ridiculizado o ridiculizada o rechazado o rechazada.\r\n",$answer);
-  $answer = str_replace("B|","Temo que mis sueños sean algo de lo que debas sentirme avergonzado o avergonzada.\r\n",$answer);
-  $answer = str_replace("C|","Temo decepcionar a mi familia con mis decisiones de vida\r\n",$answer);
-  $answer = str_replace("D|","Temo de las opiniones de mis amigos y colegas si expreso abiertamente la decisión de dedicarme a mi pasión.\r\n",$answer);
-  $answer = str_replace("E|","Temo no tener aún la experiencia y/o habilidad necesaria para salir al mundo con mi propuesta.\r\n",$answer);
+  $answer = str_replace("|","\r\n", $_POST['answer']);
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $answer, $_POST["uuid"]);
   $stmt->execute();
@@ -250,13 +257,7 @@ if($_POST['question']=='TEMOR_SOCIAL')
 if($_POST['question']=='TEMOR_TARDE')
 {
   $sql = "UPDATE encuesta SET temor_tarde=? WHERE uuid=?";
-  $answer = $_POST['answer'];
-  // Replace with text
-  $answer = str_replace("A|","Temo que sea muy tarde o muy temprano para empezar a vivir de mi pasion.\r\n",$answer);
-  //$answer = str_replace("B|","Temor D2\r\n",$answer);
-  //$answer = str_replace("C|","Temor D3\r\n",$answer);
-  //$answer = str_replace("D|","Temor D4\r\n",$answer);
-  //$answer = str_replace("E|","Temor D5\r\n",$answer);
+  $answer = str_replace("|","\r\n", $_POST['answer']);
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $answer, $_POST["uuid"]);
   $stmt->execute();
@@ -270,13 +271,7 @@ if($_POST['question']=='TEMOR_TARDE')
 if($_POST['question']=='TEMOR_MERCADO')
 {
   $sql = "UPDATE encuesta SET temor_mercado=? WHERE uuid=?";
-  $answer = $_POST['answer'];
-  // Replace with text
-  $answer = str_replace("A|","Temo no tener mercado que quiera pagar por lo que puedo hacer con mi pasión\r\n",$answer);
-  $answer = str_replace("B|","Temo que mi trabajo no sea lo suficientemente relevante en la vida de nadie\r\n",$answer);
-  //$answer = str_replace("C|","Temor E3\r\n",$answer);
-  //$answer = str_replace("D|","Temor E4\r\n",$answer);
-  //$answer = str_replace("E|","Temor E5\r\n",$answer);
+  $answer = str_replace("|","\r\n", $_POST['answer']);
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $answer, $_POST["uuid"]);
   $stmt->execute();
@@ -290,13 +285,7 @@ if($_POST['question']=='TEMOR_MERCADO')
 if($_POST['question']=='TEMOR_FRACASO')
 {
   $sql = "UPDATE encuesta SET temor_fracaso=? WHERE uuid=?";
-  $answer = $_POST['answer'];
-  // Replace with text
-  $answer = str_replace("A|","Temo que al mirar atrás, mis esfuerzos en torno a mi pasión se hayan convertido en una gigantesca pérdida de dinero y tiempo.\r\n",$answer);
-  $answer = str_replace("B|","Temo fracasar en el intento.\r\n",$answer);
-  $answer = str_replace("C|","Temo no conseguir el resultado esperado.\r\n",$answer);
-  //$answer = str_replace("D|","Temor F4\r\n",$answer);
-  //$answer = str_replace("E|","Temor F5\r\n",$answer);
+  $answer = str_replace("|","\r\n", $_POST['answer']);
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $answer, $_POST["uuid"]);
   $stmt->execute();
@@ -310,13 +299,7 @@ if($_POST['question']=='TEMOR_FRACASO')
 if($_POST['question']=='TEMOR_RECURSOS')
 {
   $sql = "UPDATE encuesta SET temor_recursos=? WHERE uuid=?";
-  $answer = $_POST['answer'];
-  // Replace with text
-  $answer = str_replace("A|","Temo no ser capaz de tener la disciplina necesaria.\r\n",$answer);
-  $answer = str_replace("B|","Temo no tener la disponibilidad de tiempo, o la independencia financiera para centrarme en mi pasión.\r\n",$answer);
-  //$answer = str_replace("C|","Temor G3\r\n",$answer);
-  //$answer = str_replace("D|","Temor G4\r\n",$answer);
-  //$answer = str_replace("E|","Temor G5\r\n",$answer);
+  $answer = str_replace("|","\r\n", $_POST['answer']);
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $answer, $_POST["uuid"]);
   $stmt->execute();
@@ -330,9 +313,7 @@ if($_POST['question']=='TEMOR_RECURSOS')
 if($_POST['question']=='TEMORES_FINALES')
 {
   $sql = "UPDATE encuesta SET temores_finales=? WHERE uuid=?";
-  $answer = $_POST['answer'];
-  // Replace with text
-  $answer = str_replace("|","\r\n",$answer);
+  $answer = str_replace("|","\r\n", $_POST['answer']);
   $stmt = $dbConn->prepare($sql);
   $stmt->bind_param('ss', $answer, $_POST["uuid"]);
   $stmt->execute();

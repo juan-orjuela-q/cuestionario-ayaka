@@ -10,14 +10,24 @@ function guardarRespuestas(origen, destino) {
     console.log(origenId + "==>" + destinoId);
 
     if(origenId==='p_in_2' && destinoId==='p_in_3'){
-        postAnswer('NOMBRE',document.getElementById('infoNombre').value);
+        postAnswer('PAIS', document.getElementById('infoPais').value);
         setTimeout(() => {
+            if (document.getElementById('edad_18-25').checked) postAnswer('EDAD', '18-25');
+            if (document.getElementById('edad_26-35').checked) postAnswer('EDAD', '26-35');
+            if (document.getElementById('edad_36-45').checked) postAnswer('EDAD', '36-45');
+            if (document.getElementById('edad_46-55').checked) postAnswer('EDAD', '46-55');
+            if (document.getElementById('edad_56-65').checked) postAnswer('EDAD', '56-65');
+            if (document.getElementById('edad_66').checked) postAnswer('EDAD', '66+');
             if(document.getElementById('gen_hombre').checked) postAnswer('GENERO','Hombre');
             if(document.getElementById('gen_mujer').checked) postAnswer('GENERO','Mujer');
             if(document.getElementById('gen_nobinario').checked) postAnswer('GENERO','No binario');
             if(document.getElementById('gen_otro').checked) postAnswer('GENERO','Otro');
             postAnswer('PROFESION',document.getElementById('profesion').value);
-            postAnswer('EMAIL',document.getElementById('email').value);
+            postAnswer('EMAIL', document.getElementById('email').value);
+            if (document.getElementById('ocupacion_independiente').checked) postAnswer('OCUPACION', document.getElementById('ocupacion_independiente').value);
+            if (document.getElementById('ocupacion_empleado').checked) postAnswer('OCUPACION', document.getElementById('ocupacion_empleado').value);
+            if (document.getElementById('ocupacion_empresario').checked) postAnswer('OCUPACION', document.getElementById('ocupacion_empresario').value);
+            if (document.getElementById('ocupacion_otro').checked) postAnswer('OCUPACION', document.getElementById('ocupacion_otro').value);
             if(document.getElementById('comp_si').checked) postAnswer('COMPARTIR','Si');
             if(document.getElementById('comp_no').checked) postAnswer('COMPARTIR','No');
         }, 2000);
@@ -49,6 +59,8 @@ function guardarRespuestas(origen, destino) {
         let temorIdeas = '';
         if (document.getElementById('temor_ideas_A').checked) temorIdeas += document.getElementById('temor_ideas_A').value + "|";
         if (document.getElementById('temor_ideas_B').checked) temorIdeas += document.getElementById('temor_ideas_B').value + "|";
+        if (document.getElementById('temor_ideas_C').checked) temorIdeas += document.getElementById('temor_ideas_C').value + "|";
+        if (document.getElementById('temor_ideas_D').checked) temorIdeas += document.getElementById('temor_ideas_D').value + "|";
         postAnswer('TEMOR_IDEAS', temorIdeas);
 
         let temorAutoestima = '';
@@ -56,6 +68,8 @@ function guardarRespuestas(origen, destino) {
         if (document.getElementById('temor_autoestima_B').checked) temorAutoestima += document.getElementById('temor_autoestima_B').value + "|";
         if (document.getElementById('temor_autoestima_C').checked) temorAutoestima += document.getElementById('temor_autoestima_C').value + "|";
         if (document.getElementById('temor_autoestima_D').checked) temorAutoestima += document.getElementById('temor_autoestima_D').value + "|";
+        if (document.getElementById('temor_autoestima_E').checked) temorAutoestima += document.getElementById('temor_autoestima_E').value + "|";
+        if (document.getElementById('temor_autoestima_F').checked) temorAutoestima += document.getElementById('temor_autoestima_F').value + "|";
         postAnswer('TEMOR_AUTOESTIMA', temorAutoestima);
 
         let temorSocial = '';
@@ -63,27 +77,36 @@ function guardarRespuestas(origen, destino) {
         if (document.getElementById('temor_Social_B').checked) temorSocial += document.getElementById('temor_Social_B').value + "|";
         if (document.getElementById('temor_Social_C').checked) temorSocial += document.getElementById('temor_Social_C').value + "|";
         if (document.getElementById('temor_Social_D').checked) temorSocial += document.getElementById('temor_Social_D').value + "|";
-        if (document.getElementById('temor_Social_E').checked) temorSocial += document.getElementById('temor_Social_E').value + "|";
         postAnswer('TEMOR_SOCIAL', temorSocial);
 
         let temorTarde = '';
         if (document.getElementById('temor_tarde_A').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
+        if (document.getElementById('temor_tarde_B').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
+        if (document.getElementById('temor_tarde_C').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
+        if (document.getElementById('temor_tarde_D').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
+        if (document.getElementById('temor_tarde_E').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
         postAnswer('TEMOR_TARDE', temorTarde);
 
         let temorMercado = '';
         if (document.getElementById('temor_mercado_A').checked) temorMercado += document.getElementById('temor_mercado_A').value + "|";
         if (document.getElementById('temor_mercado_B').checked) temorMercado += document.getElementById('temor_mercado_B').value + "|";
+        if (document.getElementById('temor_mercado_C').checked) temorMercado += document.getElementById('temor_mercado_C').value + "|";
         postAnswer('TEMOR_MERCADO', temorMercado);
 
         let temorFracaso = '';
         if (document.getElementById('temor_fracaso_A').checked) temorFracaso += document.getElementById('temor_fracaso_A').value + "|";
         if (document.getElementById('temor_fracaso_B').checked) temorFracaso += document.getElementById('temor_fracaso_B').value + "|";
         if (document.getElementById('temor_fracaso_C').checked) temorFracaso += document.getElementById('temor_fracaso_C').value + "|";
+        if (document.getElementById('temor_fracaso_D').checked) temorFracaso += document.getElementById('temor_fracaso_D').value + "|";
+        if (document.getElementById('temor_fracaso_E').checked) temorFracaso += document.getElementById('temor_fracaso_E').value + "|";
         postAnswer('TEMOR_FRACASO', temorFracaso);
 
         let temorRecursos = '';
         if (document.getElementById('temor_recursos_A').checked) temorRecursos += document.getElementById('temor_recursos_A').value + "|";
         if (document.getElementById('temor_recursos_B').checked) temorRecursos += document.getElementById('temor_recursos_B').value + "|";
+        if (document.getElementById('temor_recursos_C').checked) temorRecursos += document.getElementById('temor_recursos_C').value + "|";
+        if (document.getElementById('temor_recursos_D').checked) temorRecursos += document.getElementById('temor_recursos_D').value + "|";
+        if (document.getElementById('temor_recursos_E').checked) temorRecursos += document.getElementById('temor_recursos_E').value + "|";
         postAnswer('TEMOR_RECURSOS', temorRecursos);
     }
 
