@@ -54,7 +54,7 @@ botones.forEach(btn => {
 
                 if (i.length === 0) {
                     validado = false
-                    agregarError(radioGrupo, 'Elige una opción')
+                    agregarError(radioGrupo, 'Este campo es obligatorio')
                 }
                 if (pq) {
                     if (pq.value === '') {
@@ -106,7 +106,7 @@ botones.forEach(btn => {
             } else {
                 avanzar(origen, destino)
             }
-            if (destino){
+            if (destino) {
                 if (destino.classList.contains('anim')) {
                     setTimeout(() => {
                         //Avanzar
@@ -114,7 +114,7 @@ botones.forEach(btn => {
                     }, 9000);
                 }
             }
-            
+
 
         } else {
             agregarError(btn, 'Falta información')
@@ -193,10 +193,6 @@ function cerrarpop(btnclse) {
 };
 
 
-
-
-
-
 //Almacenar temores
 const temores = [],
     btnTemoresAm = document.getElementById('confirmar-temores-am'),
@@ -266,7 +262,12 @@ function avanzarCamino() {
         console.log("ninguno")
     }
 }
+const apasionaSi = document.getElementById('apasiona_si'),
+    apasionaNo = document.getElementById('apasiona_no'),
+    btnCambioCamino = document.getElementById('cambioCamino')
 
+apasionaSi.addEventListener('click', ()=>{btnCambioCamino.dataset.destino = 'p_in_am2'})
+apasionaNo.addEventListener('click', ()=>{btnCambioCamino.dataset.destino = 'p_in_az2'})
 //Redimensionar graf
 function resizeGraf() {
     let grafs = document.querySelectorAll('.graf')
@@ -316,3 +317,19 @@ $(document).ready(function () {
         event.preventDefault();
     });
 });
+
+// Mostrar modal terminos
+const btnTerminos = document.getElementById('btn-terminos'),
+ modalTerminos = document.getElementById('modal-terminos'),
+ cerrarTerminos = modalTerminos.querySelector('.cerrar'),
+ overlayTerminos = modalTerminos.querySelector('.overlay')
+
+console.log(btnTerminos)
+btnTerminos.addEventListener('click', mostrarTerminos)
+cerrarTerminos.addEventListener('click', ()=> modalTerminos.classList.remove('mostrar'))
+overlayTerminos.addEventListener('click', ()=> modalTerminos.classList.remove('mostrar'))
+
+function mostrarTerminos() {
+    event.preventDefault()
+    modalTerminos.classList.add('mostrar')
+}
