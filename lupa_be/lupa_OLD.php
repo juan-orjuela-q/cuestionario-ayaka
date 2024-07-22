@@ -78,19 +78,6 @@ if($_POST['question']=='GENERO')
   }
 }
 
-if($_POST['question']=='GENERO_OTRO')
-{
-  $sql = "UPDATE encuesta SET genero_otro=? WHERE uuid=?";
-  $stmt = $dbConn->prepare($sql);
-  $stmt->bind_param('ss', $_POST["answer"], $_POST["uuid"]);
-  $stmt->execute();
-  if ($stmt->affected_rows>0) {
-    echo "Update successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($dbConn);
-  }
-}
-
 if($_POST['question']=='PROFESION')
 {
   $sql = "UPDATE encuesta SET profesion=? WHERE uuid=?";

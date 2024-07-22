@@ -16,8 +16,8 @@ $dbConn = mysqli_connect("localhost", "u982284721_temores", "e5n1DZ7$9kCu", "u98
 
 if (!$dbConn) {
     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "errno de depuraciï¿½n: " . mysqli_connect_errno() . PHP_EOL;
-    echo "error de depuraciï¿½n: " . mysqli_connect_error() . PHP_EOL;
+    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
 
@@ -26,7 +26,7 @@ if (!$dbConn) {
  
  $sql = "SELECT `id`,`uuid`,`frase`,`vivir`,`temor_ideas`,`temor_autoestima`,`temor_social`,`temor_tarde`,`temor_mercado`,
                 `temor_fracaso`,`temor_recursos`,`time_log`,`nombre`,`genero`,`profesion`,`email`,`creativa`,`dedicacion`,`apasiona`,
-                `temores_finales`, `compartir`, `creativa_porque`, `apasiona_porque`, `pais`, `edad`, `ocupacion`, `genero_otro`
+                `temores_finales`, `compartir`, `creativa_porque`, `apasiona_porque`, `pais`, `edad`, `ocupacion`
                 FROM encuesta ORDER BY time_log";
  
  $header1 = [ 'Fecha' => 'date',
@@ -51,8 +51,7 @@ if (!$dbConn) {
               'Temor hacia el mercado' => 'string',
               'Temor al fracaso' => 'string',
               'Temores por falta de tiempo y recursos' => 'string',
-              'Temores finales' => 'string',
-			  'Otro Genero' => 'string'
+              'Temores finales' => 'string'
                ];
 
 $stmt = $dbConn->prepare($sql); 
@@ -66,14 +65,14 @@ foreach($encuesta as $row){
   $registro = array( $row['time_log'], $row['pais'], $row['edad'], $row['genero'], $row['profesion'], $row['ocupacion'], 
     $row['email'], $row['compartir'], "SI", $row['creativa'], $row['creativa_porque'],  $row['dedicacion'], $row['frase'], 
     $row['apasiona'], $row['apasiona_porque'], $row['temor_ideas'], $row['temor_autoestima'], $row['temor_social'], 
-    $row['temor_tarde'], $row['temor_mercado'], $row['temor_fracaso'], $row['temor_recursos'], $row['temores_finales'], $row['genero_otro']);
+    $row['temor_tarde'], $row['temor_mercado'], $row['temor_fracaso'], $row['temor_recursos'], $row['temores_finales']);
   array_push($data1,$registro);
 }
 mysqli_close($dbConn);
  //$data1 = [ ['2021-04-20', 1, 27, '44.00', 'twig'], ['2021-04-21', 1, '=C1', '-44.00', 'refund'] ];
  
 
- $data2 = [ ['2','7','??I???? ?ï¿½?-?'],
+ $data2 = [ ['2','7','??I???? ?†?-?'],
             ['4','8','??'] ];
 
  $styles2 = array( ['font-size'=>6],['font-size'=>8],['font-size'=>10],['font-size'=>16] );
@@ -110,7 +109,8 @@ else
 <html>
 <head>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 <style>
       .bd-placeholder-img {
         font-size: 1.125rem;

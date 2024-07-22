@@ -22,6 +22,7 @@ function guardarRespuestas(origen, destino) {
             if(document.getElementById('gen_mujer').checked) postAnswer('GENERO','Mujer');
             if(document.getElementById('gen_nobinario').checked) postAnswer('GENERO','No binario');
             if(document.getElementById('gen_otro').checked) postAnswer('GENERO','Otro');
+            postAnswer('GENERO_OTRO',document.getElementById('genero_otro').value);
             postAnswer('PROFESION',document.getElementById('profesion').value);
             postAnswer('EMAIL', document.getElementById('email').value);
             if (document.getElementById('ocupacion_independiente').checked) postAnswer('OCUPACION', document.getElementById('ocupacion_independiente').value);
@@ -50,10 +51,11 @@ function guardarRespuestas(origen, destino) {
         if (document.getElementById('opcion4').checked) postAnswer('FRASE', document.getElementById('opcion4').value);
     }
 
-    if (origenId === 'p_in_am1' && destinoId === 'p_in_am2') {
-        if (document.getElementById('apasiona_si').checked) postAnswer('APASIONA', 'SI');
-        if (document.getElementById('apasiona_no').checked) postAnswer('APASIONA', 'NO');
-        postAnswer('APASIONA_PORQUE', document.getElementById('apasiona_porque').value);
+    if (origenId === 'p_in_am1') {
+        if (document.getElementById('apasiona_si').checked) postAnswer('APASIONA', 'Si');
+        if (document.getElementById('apasiona_no').checked) postAnswer('APASIONA', 'No');
+        if (document.getElementById('apasiona_porque').value) postAnswer('APASIONA_PORQUE', document.getElementById('apasiona_porque').value);
+        console.log('apasiona respondido');
     }
     if ((origenId === 'p_in_am2' || origenId==='p_in_az2') && destinoId === 'p_f_1') {
         let temorIdeas = '';
@@ -81,10 +83,10 @@ function guardarRespuestas(origen, destino) {
 
         let temorTarde = '';
         if (document.getElementById('temor_tarde_A').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
-        if (document.getElementById('temor_tarde_B').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
-        if (document.getElementById('temor_tarde_C').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
-        if (document.getElementById('temor_tarde_D').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
-        if (document.getElementById('temor_tarde_E').checked) temorTarde += document.getElementById('temor_tarde_A').value + "|";
+        if (document.getElementById('temor_tarde_B').checked) temorTarde += document.getElementById('temor_tarde_B').value + "|";
+        if (document.getElementById('temor_tarde_C').checked) temorTarde += document.getElementById('temor_tarde_C').value + "|";
+        if (document.getElementById('temor_tarde_D').checked) temorTarde += document.getElementById('temor_tarde_D').value + "|";
+        if (document.getElementById('temor_tarde_E').checked) temorTarde += document.getElementById('temor_tarde_E').value + "|";
         postAnswer('TEMOR_TARDE', temorTarde);
 
         let temorMercado = '';
